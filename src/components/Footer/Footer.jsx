@@ -1,9 +1,9 @@
 import React from 'react'
 import './Footer.css'
-import logoFooter from '../../assets/images/logo-footer.png'
-import iconWa from '../../assets/icons/wa.png'
-import iconFb from '../../assets/icons/fb.png'
-import iconIg from '../../assets/icons/ig.png'
+import logoFooter from '../../assets/images/logo-footer.svg'
+import iconWa from '../../assets/icons/wa.svg'
+import iconFb from '../../assets/icons/fb.svg'
+import iconIg from '../../assets/icons/ig.svg'
 
 const Footer = () => {
     return (
