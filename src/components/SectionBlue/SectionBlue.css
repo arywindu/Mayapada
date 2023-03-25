@@ -1,0 +1,6 @@
+.section-blue{
+    background-image: linear-gradient(180deg, #2EB4E8 0%, #1871A9 100%);
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 400px;
+}
