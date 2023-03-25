@@ -1,0 +1,35 @@
+.w-100 {
+    width: 100% !important;
+    height: 75vh;
+  }
+
+  .carousel .carousel-indicators button {
+    width: 10px;
+   height: 10px;
+   border-radius: 100%;
+ }
+
+ .text-carousel {
+    position: relative;
+    bottom: 13rem;
+    left: 31rem;
+    text-align: left;
+  }
+
+ .btn-carousel {
+    position: relative;
+    bottom: 12rem;
+    left: 6rem;
+    width: 11rem;
+    height: 3rem;
+    color: #2EB4E8; 
+    background-color: none;
+    border-radius: 35px;
+    border: 1px solid;
+    border: 2px solid #2EB4E8;
+  }
+  
+  .btn-carousel:hover {
+    background-color: #2EB4E8;
+    color: white;
+  }

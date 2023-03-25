@@ -26,10 +26,10 @@ const Footer = () => {
                                     <img className="mx-auto" src={logoFooter}></img>
                                 </div>
 
-                                <h6 className="text-uppercase fw-bold mb-4">
+                                <h6 className="text-uppercase fw-bold mb-4 text-white">
                                     Mayapada Hospital Jakarta Selatan
                                 </h6>
-                                <p>
+                                <p className='text-white'>
                                     Jl. Lebak Bulus 1, Kav. 29
                                     <br></br>
                                     Jakarta Selatan
@@ -40,106 +40,106 @@ const Footer = () => {
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     Tentang Kami
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Sejarah</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Sejarah</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Visi Misi</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Visi Misi</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Nilai Utama</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Nilai Utama</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Landasan Hukum</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Landasan Hukum</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Akreditasi</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Akreditasi</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     AKADEMIK
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Program Studi</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Program Studi</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">D3 Keperawatan</a>
+                                    <a href="#!" className="text-reset text-decoration-none">D3 Keperawatan</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">S1 Admin RS</a>
+                                    <a href="#!" className="text-reset text-decoration-none">S1 Admin RS</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Profesi NERS</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Profesi NERS</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     UPMI
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Kebijakan SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Kebijakan SPMI</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Manual SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Manual SPMI</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Standar SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Standar SPMI</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">SOP</a>
+                                    <a href="#!" className="text-reset text-decoration-none">SOP</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Formulir SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Formulir SPMI</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     FASILITAS
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Sarana Prasarana</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Sarana Prasarana</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Kegiatan</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Kegiatan</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Links --> */}
-                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-white">
                                 <h6 className="text-uppercase fw-bold">
 
                                     Hubungi Kami
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">E-Mail: info@antariksa.co.id</a>
+                                    <a href="#!" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
                                 </p>
                                 <div>
-                                    <a href="" class="me-4 text-reset">
+                                    <a href="" class="me-4 text-reset text-decoration-none">
                                         <img src={iconWa}></img>
                                     </a>
-                                    <a href="" class="me-4 text-reset">
+                                    <a href="" class="me-4 text-reset text-decoration-none">
                                         <img src={iconFb}></img>
                                     </a>
-                                    <a href="" class="me-4 text-reset">
+                                    <a href="" class="me-4 text-reset text-decoration-none">
                                         <img src={iconIg}></img>
                                     </a>
                                 </div>
@@ -147,52 +147,52 @@ const Footer = () => {
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     ALUMNI
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Ikatan Alumni</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Ikatan Alumni</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Testimoni</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Testimoni</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Tracer Studi</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Tracer Studi</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     PENELITIAN
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Pengabdian</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Pengabdian</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">E-Journal</a>
+                                    <a href="#!" className="text-reset text-decoration-none">E-Journal</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     PUSAT KARIR
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Info Karir</a>
+                                    <a href="#!" className="text-reset text-decoration-none">Info Karir</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
 
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     Informasi Pendaftaran Baru

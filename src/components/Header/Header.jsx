@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo.svg'
 
 const Header = () => {
     return (
-        <div className="text-center mt-5 mb-5">
+        <div className="text-center mt-5 mb-3">
             <img className="mx-auto" src={logo}></img>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
