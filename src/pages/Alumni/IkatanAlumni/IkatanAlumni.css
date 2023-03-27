@@ -1,0 +1,26 @@
+.ikatan-alumni-container {
+    display: flex;
+    flex: 1;
+    height: 548px;
+    justify-content: end;
+}
+
+.ikatan-alumni-img {
+    position: relative;
+    object-fit: cover;
+}
+
+.ikatan-alumni-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 548px;
+    background: linear-gradient(89.79deg, #FFFFFF 45.35%, rgba(255, 255, 255, 0) 80.24%);
+}
+
+.ikatan-alumni-card {
+    margin-left: 10%;
+    width: 561px;
+}
