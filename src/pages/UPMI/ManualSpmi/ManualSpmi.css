@@ -1,0 +1,6 @@
+.manual-spmi-container {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 10% 10%;
+}
+

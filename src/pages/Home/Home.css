@@ -1,0 +1,36 @@
+.circlesbox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  .circlesbox:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    background: #278BC8;
+  }
+  
+  .circle {
+     position: relative;
+     z-index: 2;
+     border: 2px solid #278BC8;   
+     background: #fff;
+     box-shadow: 0 0 0 12px #fff;
+     width:95px;
+     height:95px;
+     border-radius:50%;
+     line-height: 85px;
+     font-weight: bold;
+  }
+
+  .text-blue {
+    color: #278BC8;
+  }

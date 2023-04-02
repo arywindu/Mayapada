@@ -1,0 +1,40 @@
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 10% 10%;
+}
+
+.nav-menu{
+    color:black;
+    text-decoration:none;
+    padding:15px;
+    border-radius:5px;
+    font-size:1.3em;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    border-bottom:4px solid grey;
+  
+  }
+.nav-menu:hover{
+    background-color:#fff;
+    text-decoration:none;
+    border-bottom:4px solid #278BC8;
+  }
+
+.image-gallery{
+  width: 100%;
+  opacity: 0.3;
+}
+
+.filter-blue{
+  background-image: linear-gradient(180deg, #2EB4E8 0%, #1871A9 100%);
+  mix-blend-mode: multiply;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
