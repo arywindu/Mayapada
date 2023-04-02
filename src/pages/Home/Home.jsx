@@ -7,11 +7,9 @@ import LogoBanPt from '../../assets/images/LogoBAN-PT.svg'
 import Layout from "../../Layout/Layout";
 import Typhography from "../../components/Typhography/Typhography";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./Home.css"
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <Layout>
       <Carousel />

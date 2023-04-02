@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.css'
 import logo from '../../assets/images/logo.svg'
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -14,15 +15,21 @@ const Header = () => {
                     <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item px-2">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <a className="nav-link active" aria-current="page" href="#">
+                                    <Link className='text-reset text-decoration-none' to="/">Home</Link>
+                                </a>
+
                             </li>
                             <li className="nav-item dropdown px-2">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Akademik
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark rounded-0">
-                                    <li><a className="dropdown-item" href="#">Program D3 Keperawatan</a></li>
-                                    <li><a className="dropdown-item" href="#">Program S1 Administrasi Rumah Sakit</a></li>
+                                    <li><a className="dropdown-item" href="#">
+                                        <Link className='text-reset text-decoration-none' to="/Keperawatan">Program D3 Keperawatan</Link>
+                                    </a></li>
+                                    <li><a className="dropdown-item" href="#">
+                                        <Link className='text-reset text-decoration-none' to="/AdministrasiRumahSakit">Program S1 Administrasi Rumah Sakit</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -30,10 +37,10 @@ const Header = () => {
                                     UPMI
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark rounded-0">
-                                    <li><a className="dropdown-item" href="#">Kebijakan SPMI</a></li>
-                                    <li><a className="dropdown-item" href="#">Manual SPMI</a></li>
-                                    <li><a className="dropdown-item" href="#">Standar SPMI</a></li>
-                                    <li><a className="dropdown-item" href="#">SOP</a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/KebijakanUpmi">Kebijakan SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/ManualSpmi">Manual SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/StandarSpmi">Standar SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SOP">SOP</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -41,8 +48,8 @@ const Header = () => {
                                     Fasilitas
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark rounded-0">
-                                    <li><a className="dropdown-item" href="#">Sarana dan Prasarana</a></li>
-                                    <li><a className="dropdown-item" href="#">Gallery Kegiatan</a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SaranaDanPrasarana">Sarana dan Prasarana</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/GalleryKegiatan">Gallery Kegiatan</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
