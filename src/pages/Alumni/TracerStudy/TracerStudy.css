@@ -1,0 +1,31 @@
+.tracer-study-container {
+    display: flex;
+    flex: 1;
+    height: 548px;
+    justify-content: start;
+}
+
+.tracer-study-container .tracer-study-img {
+    position: relative;
+    object-fit: cover;
+    width: 45%;
+}
+
+.tracer-study-container .tracer-study-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 548px;
+    background: linear-gradient(to right, rgba(255,0,0,0) , #fff 45.35%);
+}
+
+.tracer-study-container .tracer-study-card {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-left: 10%;
+    width: 561px;
+    margin-right: 7rem;
+}

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const Typhography = (props) => {
-  const { text, type, ...rest } = props;
+  const { text, type, size, color, fontWeight, ...rest } = props;
   const typhographyType = () => {
     if (type === "title") {
       return (
@@ -23,9 +23,9 @@ const Typhography = (props) => {
         <div
           className="typography"
           style={{
-            fontSize: "18px",
-            fontWeight: "400",
-            color: "#525252",
+            fontSize: size,
+            fontWeight: fontWeight,
+            color: color,
           }}
         >
           {text}
@@ -38,11 +38,18 @@ const Typhography = (props) => {
 
 Typhography.defaultProps = {
   text: "Typography",
+  type: "normal",
+  size: "18px",
+  color: "#525252",
+  fontWeight: "400",
 };
 
 Typhography.propTypes = {
   text: PropTypes.string,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string,
+  fontWeight: PropTypes.string,
 };
 
 export default Typhography;

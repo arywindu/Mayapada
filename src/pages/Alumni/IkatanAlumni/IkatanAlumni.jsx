@@ -1,5 +1,6 @@
 import "./IkatanAlumni.css";
 
+import Button from "../../../components/Button/Button";
 import Layout from "../../../Layout/Layout";
 import React from "react";
 import Typhography from "../../../components/Typhography/Typhography";
@@ -18,6 +19,7 @@ const IkatanAlumni = () => {
               text="Kami selaku pengurus mengharapkan kesediaan Bapak/Ibu untuk mengisi formulir keanggotaan ini. Data ini akan digunakan sebagai database alumni pendidikan dan mendapatkan nomor keanggotaan. Biodata anda selanjutnya digunakan sebagai korespondensi tentang seluruh informasite Kemudian"
               style={{ marginTop: "24px" }}
             />
+            <Button text="Download Form" style={{ marginTop: "24px" }} />
           </div>
         </div>
       </div>

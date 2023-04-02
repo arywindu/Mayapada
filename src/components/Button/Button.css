@@ -1,0 +1,9 @@
+.btn-style{
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px 24px;
+    background-color: #278BC8;
+    border-radius: 64px;
+    color: white;
+    cursor: pointer;
+}

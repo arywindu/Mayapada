@@ -1,0 +1,31 @@
+.alumni-story-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 0 8% 8%;
+    margin-top: 2rem;
+}
+
+.alumni-story-container .alumni-story-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 48px;
+    margin-top: 5rem;
+}
+
+.alumni-story-container .card-wrapper {
+    width: 325px;
+    min-height: 432px;
+    background-color: #ffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.alumni-story-container .card-img {
+    height: 224px;
+    object-fit: cover;
+}
+
+.alumni-story-container .card-content {
+    padding: 24px;
+}
