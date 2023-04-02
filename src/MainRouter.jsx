@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import Administrasi from "./pages/Akademik/Administrasi/Administrasi";
+import AdministrasiRumahSakit from "./pages/Akademik/AdministrasiRumahSakit/AdministrasiRumahSakit";
 import AlumniStory from "./pages/Alumni/AlumniStory/AlumniStory";
 import Home from "./pages/Home/Home";
 import IkatanAlumni from "./pages/Alumni/IkatanAlumni/IkatanAlumni";
@@ -21,7 +21,7 @@ export const MainRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Administrasi" element={<Administrasi />} />
+      <Route path="/AdministrasiRumahSakit" element={<AdministrasiRumahSakit />} />
       <Route path="/Keperawatan" element={<Keperawatan />} />
       <Route path="/KebijakanUpmi" element={<KebijakanUpmi />} />
       <Route path="/ManualSpmi" element={<ManualSpmi />} />

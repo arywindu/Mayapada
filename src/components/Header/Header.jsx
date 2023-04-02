@@ -22,7 +22,7 @@ const Header = () => {
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark rounded-0">
                                     <li><a className="dropdown-item" href="#">Program D3 Keperawatan</a></li>
-                                    <li><a className="dropdown-item" href="#">Program S1 Administrasi</a></li>
+                                    <li><a className="dropdown-item" href="#">Program S1 Administrasi Rumah Sakit</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">

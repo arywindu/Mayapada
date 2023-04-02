@@ -1,0 +1,28 @@
+.administrasi-container {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 10% 10%;
+}
+
+.centered-adm {
+    position: absolute;
+    top: 30rem;
+    left: 54%;
+    transform: translate(-50%, -50%);
+  }
+
+.bg-color-adm {
+    background-color: linear-gradient(90deg, #FFFFFF 0%, #F5F5F5 100%);
+}
+
+.btn-blue {
+    background-color: #278BC8;
+}
+
+.card {
+    padding: 25px 0 25px 0;
+    width: 85%;
+    height: 110%;
+    box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+ }

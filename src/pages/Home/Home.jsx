@@ -73,7 +73,7 @@ const Home = () => {
             <div class="col-md-6">
               <h2 className="text-blue">Visi</h2>
               <p style={{ textAlign: 'left' }}>Menjadikan Institusi yang unggul dalam menghasilkan tenaga kesehatan yang berdasarkan nilai-nilai integritas, profesional, komitmen, belas kasih, kepercayaan dan berdaya saing nasional maupun internasional, tahun 2032</p>
-              <h2 className="text-blue mt-5">Visi</h2>
+              <h2 className="text-blue mt-5">Misi</h2>
               <ol style={{ textAlign: 'left' }}>
                 <li className="mb-4">
                   Menyelenggarakan pendidikan dan pengajaran yang berfokus pada kajian ilmiah (evidence based) sesuai dengan keahlian dan keilmuan bidang Kesehatan secara profesional;
