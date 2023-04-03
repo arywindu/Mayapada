@@ -1,0 +1,32 @@
+.pjb-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+}
+
+.pjb-container .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.pjb-container .form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 10px 0;
+}
+
+.pjb-container .form-row label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.pjb-container .pjb-btn-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}

@@ -1,0 +1,43 @@
+.jalur-beasiswa-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+}
+
+.jalur-beasiswa-container .jalur-beasiswa-type-row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.jalur-beasiswa-container .jalur-beasiswa-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 512px;
+    min-height: 268px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12), 8px 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    margin: 7% 0;
+    padding: 40px;
+    text-align: center;
+}
+
+.jalur-beasiswa-container .jalur-beasiswa-persyaratan {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.jalur-beasiswa-container .jalur-beasiswa-persyaratan-card {
+    display: flex;
+    flex: 1;
+    background: #F8F8F8;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.jalur-beasiswa-container .jalur-beasiswa-persyaratan-card li {
+    margin: 10px 0;
+}

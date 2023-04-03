@@ -1,0 +1,58 @@
+.jalur-mandiri-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+}
+
+.jalur-mandiri-container .jalur-mandiri-progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.jalur-mandiri-container .jalur-mandiri-progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jalur-mandiri-container .jalur-mandiri-progress-item-top {
+    width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.jalur-mandiri-container .jalur-mandiri-progress-item-bottom {
+    display: flex;
+    background: #278BC8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: -20px;
+}
+
+.jalur-mandiri-container .jalur-mandiri-persyaratan {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.jalur-mandiri-container .jalur-mandiri-persyaratan-card {
+    display: flex;
+    flex: 1;
+    background: #F8F8F8;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.jalur-mandiri-container .jalur-mandiri-persyaratan-card li {
+    margin: 10px 0;
+}

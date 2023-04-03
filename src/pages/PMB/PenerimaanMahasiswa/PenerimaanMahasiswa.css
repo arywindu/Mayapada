@@ -1,0 +1,58 @@
+.penerimaan-mahasiswa-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-header {
+    background-repeat:no-repeat;
+    background-size: 100% 480px;
+    background-image: url("../../../assets/images/penerimaan_mahasiswa.png");
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-header-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+    height: 480px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.600) 51.5%);
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-content-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5%;
+    gap: 20px;
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-card {
+    width: 512px;
+    height: 325px;
+    background-size: 512px 325px;
+    background-repeat:no-repeat;
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-card-content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 325px;
+    background: #278ac8bf
+}
+
+.penerimaan-mahasiswa-container .penerimaan-mahasiswa-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 5% 8.5%;
+}

@@ -7,3 +7,13 @@
     color: white;
     cursor: pointer;
 }
+
+.btn-style-border{
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 1px solid #fff ;
+    color: white;
+    cursor: pointer;
+}
