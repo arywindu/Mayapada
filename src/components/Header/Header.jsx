@@ -63,23 +63,30 @@ const Header = () => {
                                 </ul>
                             </li>
                             <li className="nav-item px-2">
-                                <a className="nav-link" href="#">Pusat Karir</a>
+                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/PusatKarir">Pusat Karir</Link></a>
                             </li>
                             <li className="nav-item dropdown px-2">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Alumni
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-dark rounded-0">
-                                    <li><a className="dropdown-item" href="#">Ikatan Alumni</a></li>
-                                    <li><a className="dropdown-item" href="#">Tracer Study</a></li>
-                                    <li><a className="dropdown-item" href="#">Alumni Story</a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/IkatanAlumni">Ikatan Alumni</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/TracerStudy">Tracer Study</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/AlumniStory">Alumni Story</Link></a></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item dropdown px-2">
+                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    PMB
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-dark rounded-0">
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswa">Penerimaan Mahasiswa Baru</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurMandiri">Program Jalur Mandiri</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurBeasiswa">Program Jalur Beasiswa</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item px-2">
-                                <a className="nav-link" href="#">PMB</a>
-                            </li>
-                            <li className="nav-item px-2">
-                                <a className="nav-link" href="#">Hubungi Kami</a>
+                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/HubungiKami">Hubungi Kami</Link></a>
                             </li>
                         </ul>
                     </div>

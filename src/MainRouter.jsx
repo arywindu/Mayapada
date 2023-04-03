@@ -18,6 +18,7 @@ import SOP from "./pages/UPMI/SOP/Sop";
 import SaranaDanPrasarana from "./pages/Fasilitas/SaranaDanPrasarana/SaranaDanPrasarana";
 import StandarSpmi from "./pages/UPMI/StandarSPMI/StandarSPMI";
 import TracerStudy from "./pages/Alumni/TracerStudy/TracerStudy";
+import HubungiKami from "./pages/HubungiKami/HubungiKami"
 
 export const MainRouter = () => {
   return (
@@ -43,6 +44,7 @@ export const MainRouter = () => {
       <Route path="/GalleryKegiatan" element={<GalleryKegiatan />} />
       <Route path="/PJB" element={<ProgramJalurBeasiswa />} />
       <Route path="/RegistrasiBerhasil" element={<RegistrasiBerhasil />} />
+      <Route path="/HubungiKami" element={<HubungiKami />} />
     </Routes>
   );
 };
