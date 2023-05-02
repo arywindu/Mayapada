@@ -13,13 +13,13 @@
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
-    border-bottom:4px solid grey;
+   /*  border-bottom:4px solid grey; */
   
   }
 .nav-menu:hover{
     background-color:#fff;
     text-decoration:none;
-    border-bottom:4px solid #278BC8;
+   border-bottom:4px solid #278BC8;
   }
 
 .image-gallery{
