@@ -73,7 +73,7 @@ const Footer = () => {
                                     <a href="#!" className="text-reset text-decoration-none">Program Studi</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">D3 Keperawatan</a>
+                                    <a href="#!" className="text-reset text-decoration-none">DIII Keperawatan</a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset text-decoration-none">S1 Admin RS</a>
