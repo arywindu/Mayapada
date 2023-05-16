@@ -1,4 +1,4 @@
-import "./PenerimaanMahasiswa.css";
+import "./PenerimaanMahasiswaBaru.css";
 
 import Button from "../../../components/Button/Button";
 import Layout from "../../../Layout/Layout";

@@ -37,10 +37,10 @@ const HeaderAdmin = () => {
                                     UPMI
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/KebijakanUpmi">Kebijakan SPMI</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/ManualSpmi">Manual SPMI</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/StandarSpmi">Standar SPMI</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SOP">SOP</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/KebijakanUpmiAdmin">Kebijakan SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/ManualSpmiAdmin">Manual SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/StandarSpmiAdmin">Standar SPMI</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SopAdmin">SOP</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -63,7 +63,7 @@ const HeaderAdmin = () => {
                                 </ul>
                             </li>
                             <li className="nav-item px-2">
-                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/PusatKarir">Pusat Karir</Link></a>
+                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/PusatKarirAdmin">Pusat Karir</Link></a>
                             </li>
                             <li className="nav-item dropdown px-2">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

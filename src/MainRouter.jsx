@@ -10,7 +10,7 @@ import JalurMandiri from "./pages/PMB/JalurMandiri/JalurMandiri";
 import KebijakanUpmi from "./pages/UPMI/KebijakanUpmi/KebijakanUpmi";
 import Keperawatan from "./pages/Akademik/Keperawatan/Keperawatan";
 import ManualSpmi from "./pages/UPMI/ManualSpmi/ManualSpmi";
-import PenerimaanMahasiswa from "./pages/PMB/PenerimaanMahasiswa/PenerimaanMahasiswa";
+import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
 import ProgramJalurBeasiswa from "./pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa";
 import PusatKarir from "./pages/PusatKarir/PusatKarir";
 import RegistrasiBerhasil from "./pages/PMB/RegistrasiBerhasil/RegistrasiBerhasil";
@@ -22,6 +22,11 @@ import HubungiKami from "./pages/HubungiKami/HubungiKami"
 import LoginPage from "./pages/LoginPage/LoginPage"
 import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin"
 import KeperawatanAdmin from "./pages/Admin/KeperawatanAdmin/KeperawatanAdmin"
+import SopAdmin from "./pages/Admin/UPMIAdmin/SopAdmin/SopAdmin";
+import KebijakanUpmiAdmin from "./pages/Admin/UPMIAdmin/KebijakanUpmiAdmin/KebijakanUpmiAdmin";
+import ManualSpmiAdmin from "./pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin";
+import StandarSpmiAdmin from "./pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin";
+import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
 
 export const MainRouter = () => {
   return (
@@ -40,7 +45,7 @@ export const MainRouter = () => {
       <Route path="/IkatanAlumni" element={<IkatanAlumni />} />
       <Route path="/TracerStudy" element={<TracerStudy />} />
       <Route path="/AlumniStory" element={<AlumniStory />} />
-      <Route path="/PenerimaanMahasiswa" element={<PenerimaanMahasiswa />} />
+      <Route path="/PenerimaanMahasiswaBaru" element={<PenerimaanMahasiswaBaru />} />
       <Route path="/JalurMandiri" element={<JalurMandiri />} />
       <Route path="/JalurBeasiswa" element={<JalurBeasiswa />} />
       <Route path="/SaranaDanPrasarana" element={<SaranaDanPrasarana />} />
@@ -51,6 +56,12 @@ export const MainRouter = () => {
       <Route path="/LoginPage" element={<LoginPage />} />
       <Route path="/HomeAdmin" element={<AdminDashboard />} />
       <Route path="/KeperawatanAdmin" element={<KeperawatanAdmin />} />
+      <Route path="/SopAdmin" element={<SopAdmin />} />
+      <Route path="/KebijakanUpmiAdmin" element={<KebijakanUpmiAdmin />} />
+      <Route path="/ManualSpmiAdmin" element={<ManualSpmiAdmin />} />
+      <Route path="/StandarSpmiAdmin" element={<StandarSpmiAdmin />} />
+      <Route path="/PusatKarirAdmin" element={<PusatKarirAdmin />} />
+
     </Routes>
   );
 };

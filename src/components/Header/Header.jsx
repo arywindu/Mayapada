@@ -80,7 +80,7 @@ const Header = () => {
                                     PMB
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswa">Penerimaan Mahasiswa Baru</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswaBaru">Penerimaan Mahasiswa Baru</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurMandiri">Program Jalur Mandiri</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurBeasiswa">Program Jalur Beasiswa</Link></a></li>
                                 </ul>

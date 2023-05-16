@@ -1,13 +1,12 @@
 import React from "react";
-import "./SopAdmin.css";
 import LayoutAdmin from "../../../../Layout/LayoutAdmin";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-const SopAdmin = () => {
+const StandarSpmiAdmin = () => {
     return (
         <LayoutAdmin>
-            <div class="Home-Admin-Keperawatan">
+            <div>
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
                     <hr class="bg-danger border-2 border-top border-dark mt-1 mb-4"></hr>
                     <div class="mb-3 row">
@@ -59,4 +58,4 @@ const SopAdmin = () => {
     );
 };
 
-export default SopAdmin;
+export default StandarSpmiAdmin;
