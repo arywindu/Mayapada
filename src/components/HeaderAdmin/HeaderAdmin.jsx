@@ -16,7 +16,7 @@ const HeaderAdmin = () => {
                         <ul className="navbar-nav">
                             <li className="nav-item px-2">
                                 <a className="nav-link active" aria-current="page" href="#">
-                                    <Link className='text-reset text-decoration-none' to="/">Home</Link>
+                                    <Link className='text-reset text-decoration-none' to="/HomeAdmin">Home</Link>
                                 </a>
 
                             </li>
@@ -26,7 +26,7 @@ const HeaderAdmin = () => {
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
                                     <li><a className="dropdown-item" href="#">
-                                        <Link className='text-reset text-decoration-none' to="/Keperawatan">Program DIII Keperawatan</Link>
+                                        <Link className='text-reset text-decoration-none' to="/KeperawatanAdmin">Program DIII Keperawatan</Link>
                                     </a></li>
                                     <li><a className="dropdown-item" href="#">
                                         <Link className='text-reset text-decoration-none' to="/AdministrasiRumahSakit">Program S1 Administrasi Rumah Sakit</Link></a></li>

@@ -8,8 +8,9 @@ import iconIg from '../../assets/icons/ig.svg'
 const FooterAdmin = () => {
     return (
         <div>
-            <footer className="text-center text-lg-start bg-blue fixed-bottom">
+            <footer className="text-center text-lg-start bg-blue">
                 <div className="mb-4 text-white mt-4 text-center">
+                    <br></br>
                     Copyright ©  2023 Mayapada Nursing Academy. All rights reserved.
                 </div>
                 <div className='pb-3'>

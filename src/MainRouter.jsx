@@ -21,6 +21,7 @@ import TracerStudy from "./pages/Alumni/TracerStudy/TracerStudy";
 import HubungiKami from "./pages/HubungiKami/HubungiKami"
 import LoginPage from "./pages/LoginPage/LoginPage"
 import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin"
+import KeperawatanAdmin from "./pages/Admin/KeperawatanAdmin/KeperawatanAdmin"
 
 export const MainRouter = () => {
   return (
@@ -49,6 +50,7 @@ export const MainRouter = () => {
       <Route path="/HubungiKami" element={<HubungiKami />} />
       <Route path="/LoginPage" element={<LoginPage />} />
       <Route path="/HomeAdmin" element={<AdminDashboard />} />
+      <Route path="/KeperawatanAdmin" element={<KeperawatanAdmin />} />
     </Routes>
   );
 };

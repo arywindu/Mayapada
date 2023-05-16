@@ -1,0 +1,10 @@
+.Home-Admin-Keperawatan {
+    display: flex;
+    flex-direction: column;
+}
+
+.ck-editor__editable {
+    min-height: 500px !important;
+    min-width: 900px !important;
+}
+
