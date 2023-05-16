@@ -19,6 +19,8 @@ import SaranaDanPrasarana from "./pages/Fasilitas/SaranaDanPrasarana/SaranaDanPr
 import StandarSpmi from "./pages/UPMI/StandarSPMI/StandarSPMI";
 import TracerStudy from "./pages/Alumni/TracerStudy/TracerStudy";
 import HubungiKami from "./pages/HubungiKami/HubungiKami"
+import LoginPage from "./pages/LoginPage/LoginPage"
+import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin"
 
 export const MainRouter = () => {
   return (
@@ -45,6 +47,8 @@ export const MainRouter = () => {
       <Route path="/PJB" element={<ProgramJalurBeasiswa />} />
       <Route path="/RegistrasiBerhasil" element={<RegistrasiBerhasil />} />
       <Route path="/HubungiKami" element={<HubungiKami />} />
+      <Route path="/LoginPage" element={<LoginPage />} />
+      <Route path="/HomeAdmin" element={<AdminDashboard />} />
     </Routes>
   );
 };
