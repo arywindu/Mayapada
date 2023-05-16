@@ -3,27 +3,8 @@
     flex-direction: column;
 }
 
-.bg-hub{
- /* background-image: url(../../assets/images/bg-hubungi.png); */
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.form-hub{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 5% 10%;
-    background-color: #003F66;
-}
-.form-row {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    gap: 40px;
-}
-
-.form-row .form-control {
-    margin-top: 11px;
+.ck-editor__editable {
+    min-height: 500px !important;
+    min-width: 900px !important;
 }
 
