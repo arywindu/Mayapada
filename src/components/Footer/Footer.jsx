@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import logoFooter from '../../assets/images/logo-footer.svg'
+import logoFooter from '../../assets/images/logo-footer-new.svg'
 import iconWa from '../../assets/icons/wa.svg'
 import iconFb from '../../assets/icons/fb.svg'
 import iconIg from '../../assets/icons/ig.svg'
@@ -16,7 +16,7 @@ const Footer = () => {
 
                 {/* <!-- Section: Links  --> */}
                 <section className="border-bottom">
-                    <div className="container text-center text-md-start mt-5">
+                    <div className="container text-center text-md-start mt-5 pt-3">
                         {/* <!-- Grid row --> */}
                         <div className="row mt-3">
                             {/* <!-- Grid column --> */}

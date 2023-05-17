@@ -22,10 +22,10 @@ const Home = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/homepage/1");
+      const response = await axios.get("http://localhost:3001/api/homepage/1");
       console.log(response.data, "res");
       setData(response.data.homePage);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   return (
