@@ -36,7 +36,7 @@ const Carousel = () => {
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
             <img src={carouselImage} class="d-block w-100"></img>
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption">
               <div className="text-carousel">
                 <h5>NEWS</h5>
                 <h1>

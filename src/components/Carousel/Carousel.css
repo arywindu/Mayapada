@@ -1,10 +1,10 @@
 .w-100 {
     width: 100% !important;
-    height: 75vh;
+    height: 50vh;
   }
 
   .carousel .carousel-indicators button {
-    width: 10px;
+   width: 10px;
    height: 10px;
    border-radius: 100%;
  }

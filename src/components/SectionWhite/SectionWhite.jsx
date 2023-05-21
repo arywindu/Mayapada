@@ -7,13 +7,12 @@ const SectionWhite = (props) => {
     return (
         <div>
             <div className='section-white'>
-                <div className='container'>
+                <div className='container mt-5'>
                     <h2 style={{
                         fontSize: "40px",
                         fontWeight: "600",
                         color: "#278BC8",
                         textAlign: 'center',
-                        paddingTop: "75px"
                     }}>
                         {text}
                     </h2>

@@ -90,27 +90,31 @@ const Keperawatan = () => {
         </div>
       </div>
 
-      <div className="keperawatan-story-container">
-        <Typhography
-          type="title"
-          text="Mata Kuliah yang Ditawarkan"
-          style={{ alignSelf: "center" }}
-        />
-
-        <div className="keperawatan-story-card">
-          {dataArray.map((item) => (
-            <div className="card-wrapper">
-              <img className="card-img" src={item.img} />
-              <div className="card-content">
-                <Typhography
-                  type="normal"
-                  text={item.name}
-                  size="16px"
-                  fontWeight="600"
-                />
-              </div>
+      <div className="mb-5">
+        <div className="keperawatan-story-container">
+          <Typhography
+            type="title"
+            text="Mata Kuliah yang Ditawarkan"
+            style={{ alignSelf: "center" }}
+          />
+          <div className="container">
+            <div className="keperawatan-story-card">
+              {dataArray.map((item) => (
+                <div className="card-wrapper">
+                  <img className="card-img" src={item.img} />
+                  <div className="card-content">
+                    <Typhography
+                      type="normal"
+                      text={item.name}
+                      size="16px"
+                      fontWeight="600"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+
+          </div>
         </div>
 
         <div class="container mt-5 pt-5 mb-5 text-center">

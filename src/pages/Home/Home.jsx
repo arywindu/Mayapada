@@ -98,7 +98,7 @@ const Home = () => {
       <SectionWhite>
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
               <h2 className="text-blue">Visi</h2>
               <p style={{ textAlign: "left" }}>
                 Menjadikan Institusi yang unggul dalam menghasilkan tenaga
@@ -143,7 +143,7 @@ const Home = () => {
               </ol>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 mt-3">
               <h2 className="text-blue">Tujuan</h2>
               <ol style={{ textAlign: "left" }}>
                 <li className="mb-4">

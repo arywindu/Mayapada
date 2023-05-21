@@ -18,7 +18,7 @@ const PenerimaanMahasiswa = () => {
           <div className="penerimaan-mahasiswa-header-card">
             <div>
               <Typhography
-                text="Penerimaan Mahasiswa Baru 2023-2024"
+                text="Penerimaan Mahasiswa Baru Tahun Akademik 2023-2024"
                 size="40px"
                 fontWeight="600"
               />
