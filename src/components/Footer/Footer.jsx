@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import logoFooter from '../../assets/images/logo-footer-new.svg'
+import logoFooter from '../../assets/images/logoFooter.svg'
 import iconWa from '../../assets/icons/wa.svg'
 import iconFb from '../../assets/icons/fb.svg'
 import iconIg from '../../assets/icons/ig.svg'

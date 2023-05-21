@@ -2,12 +2,12 @@ import "./HubungiKami.css";
 
 import Button from "../../components/Button/Button";
 import EmailIcon from "../../assets/icons/email-hub.svg";
-import FbIcon from "../../assets/icons/fa-hub.svg";
-import IgIcon from "../../assets/icons/ig-hub.svg";
+import FbIcon from "../../assets/icons/faHub.svg";
+import IgIcon from "../../assets/icons/igHub.svg";
 import Layout from "../../Layout/Layout";
 import React from "react";
 import Typhography from "../../components/Typhography/Typhography";
-import WaIcon from "../../assets/icons/wa-hub.svg";
+import WaIcon from "../../assets/icons/waHub.svg";
 import imgHubKami from "../../assets/images/hubungiKamiImg.png";
 
 const HubungiKami = () => {
@@ -24,7 +24,7 @@ const HubungiKami = () => {
               <h2>Mayapada Hospital Jakarta Selatan</h2>
               <h4>(Tower 2 Lantai 8)</h4>
               <p className="mt-4">
-                Jl. Lebak Bulus 1, Kav. 29, Jakarta Selatan. 
+                Jl. Lebak Bulus 1, Kav. 29, Jakarta Selatan.
               </p>
               <h4 className="mt-5">Hubungi Kami:</h4>
               <table class="table table-borderless">

@@ -1,9 +1,5 @@
 import React from 'react'
 import './FooterAdmin.css'
-import logoFooter from '../../assets/images/logo-footer.svg'
-import iconWa from '../../assets/icons/wa.svg'
-import iconFb from '../../assets/icons/fb.svg'
-import iconIg from '../../assets/icons/ig.svg'
 
 const FooterAdmin = () => {
     return (
