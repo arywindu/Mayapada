@@ -8,6 +8,7 @@ import GalleryKegiatan from "./pages/Fasilitas/GalleryKegiatan/GalleryKegiatan";
 import Home from "./pages/Home/Home";
 import HubungiKami from "./pages/HubungiKami/HubungiKami";
 import IkatanAlumni from "./pages/Alumni/IkatanAlumni/IkatanAlumni";
+import IkatanAlumniAdmin from "./pages/Admin/Alumni/IkatanAlumniAdmin/IkatanAlumniAdmin";
 import JalurBeasiswa from "./pages/PMB/JalurBeasiswa/JalurBeasiswa";
 import JalurMandiri from "./pages/PMB/JalurMandiri/JalurMandiri";
 import KebijakanUpmi from "./pages/UPMI/KebijakanUpmi/KebijakanUpmi";
@@ -40,6 +41,7 @@ const Authenticate = () => {
       <Route path="/ManualSpmiAdmin" element={<ManualSpmiAdmin />} />
       <Route path="/StandarSpmiAdmin" element={<StandarSpmiAdmin />} />
       <Route path="/PusatKarirAdmin" element={<PusatKarirAdmin />} />
+      <Route path="/IkatanAlumniAdmin" element={<IkatanAlumniAdmin />} />
     </Routes>
   );
 };

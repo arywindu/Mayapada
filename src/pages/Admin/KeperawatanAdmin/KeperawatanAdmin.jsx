@@ -11,17 +11,10 @@ const HomeAdmin = () => {
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
                     <hr class="bg-danger border-2 border-top border-dark mt-1 mb-4"></hr>
                     <div class="mb-3 row">
-                        <label for="" class="col-sm-2 col-form-label">Active Page</label>
-                        <div class="col-sm-10">
-                            <div class="input-group mb-3">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="active" />
-                                    <label class="form-check-label" for="inlineRadio1">Active</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="disabled" />
-                                    <label class="form-check-label" for="inlineRadio2">Disabled</label>
-                                </div>
+                        <div class="mb-3 row">
+                            <label for="inoutText" class="col-sm-2 col-form-label">Text Banner</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="InputText1" />
                             </div>
                         </div>
                     </div>
@@ -38,13 +31,13 @@ const HomeAdmin = () => {
                         <div class="mb-3 row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Text Banner</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword" />
+                                <input type="text" class="form-control" id="InputText1" />
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Button 1</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword" />
+                                <input type="text" class="form-control" id="inputText2" />
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                                     <label class="form-check-label" for="defaultCheck1">

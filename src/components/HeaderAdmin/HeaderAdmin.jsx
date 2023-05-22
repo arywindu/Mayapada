@@ -70,7 +70,7 @@ const HeaderAdmin = () => {
                                     Alumni
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/IkatanAlumni">Ikatan Alumni</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/IkatanAlumniAdmin">Ikatan Alumni</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/TracerStudy">Tracer Study</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/AlumniStory">Alumni Story</Link></a></li>
                                 </ul>
@@ -87,6 +87,9 @@ const HeaderAdmin = () => {
                             </li>
                             <li className="nav-item px-2">
                                 <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/HubungiKami">Hubungi Kami</Link></a>
+                            </li>
+                            <li className="nav-item px-2">
+                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="">LogOut</Link></a>
                             </li>
                         </ul>
                     </div>
