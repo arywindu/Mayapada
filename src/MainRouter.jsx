@@ -29,6 +29,7 @@ import SopAdmin from "./pages/Admin/UPMIAdmin/SopAdmin/SopAdmin";
 import StandarSpmi from "./pages/UPMI/StandarSPMI/StandarSPMI";
 import StandarSpmiAdmin from "./pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin";
 import TracerStudy from "./pages/Alumni/TracerStudy/TracerStudy";
+import TracerStudyAdmin from "./pages/Admin/Alumni/TracerStudyAdmin/TracerStudyAdmin";
 import axios from "axios";
 
 const Authenticate = () => {
@@ -42,6 +43,7 @@ const Authenticate = () => {
       <Route path="/StandarSpmiAdmin" element={<StandarSpmiAdmin />} />
       <Route path="/PusatKarirAdmin" element={<PusatKarirAdmin />} />
       <Route path="/IkatanAlumniAdmin" element={<IkatanAlumniAdmin />} />
+      <Route path="/TracerStudyAdmin" element={<TracerStudyAdmin />} />
     </Routes>
   );
 };

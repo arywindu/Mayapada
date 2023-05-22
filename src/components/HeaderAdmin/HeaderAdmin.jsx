@@ -71,7 +71,7 @@ const HeaderAdmin = () => {
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/IkatanAlumniAdmin">Ikatan Alumni</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/TracerStudy">Tracer Study</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/TracerStudyAdmin">Tracer Study</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/AlumniStory">Alumni Story</Link></a></li>
                                 </ul>
                             </li>

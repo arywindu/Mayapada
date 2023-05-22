@@ -6,7 +6,7 @@ import LayoutAdmin from "../../../../Layout/LayoutAdmin";
 import { async } from "q";
 import axios from "axios";
 
-const IkatanAlumniAdmin = () => {
+const TracerStudyAdmin = () => {
     return (
         <LayoutAdmin>
             <div>
@@ -90,4 +90,4 @@ const IkatanAlumniAdmin = () => {
     );
 };
 
-export default IkatanAlumniAdmin;
+export default TracerStudyAdmin;
