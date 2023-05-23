@@ -22,8 +22,8 @@ import KeperawatanAdmin from "./pages/Admin/AkademikAdmin/KeperawatanAdmin/Keper
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ManualSpmi from "./pages/UPMI/ManualSpmi/ManualSpmi";
 import ManualSpmiAdmin from "./pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin";
-import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
 import PenerimaanMahasiswaAdmin from "./pages/Admin/PmbAdmin/PenerimaanMahasiswaAdmin/PenerimaanMahasiswaAdmin";
+import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
 import ProgramJalurBeasiswa from "./pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa";
 import PusatKarir from "./pages/PusatKarir/PusatKarir";
 import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
@@ -52,11 +52,19 @@ const Authenticate = () => {
       <Route path="/TracerStudyAdmin" element={<TracerStudyAdmin />} />
       <Route path="/AlumniStoryAdmin" element={<AlumniStoryAdmin />} />
       <Route path="/HubungiKamiAdmin" element={<HubungiKamiAdmin />} />
-      <Route path="/SaranaDanPrasaranaAdmin" element={<SaranaDanPrasaranaAdmin />} />
+      <Route
+        path="/SaranaDanPrasaranaAdmin"
+        element={<SaranaDanPrasaranaAdmin />}
+      />
       <Route path="/GalleryKegiatanAdmin" element={<GalleryKegiatanAdmin />} />
-      <Route path="/AdministrasiRumahSakitAdmin" element={<AdministrasiRumahSakitAdmin />} />
-      <Route path="/PenerimaanMahasiswaAdmin" element={<PenerimaanMahasiswaAdmin />} />
-
+      <Route
+        path="/AdministrasiRumahSakitAdmin"
+        element={<AdministrasiRumahSakitAdmin />}
+      />
+      <Route
+        path="/PenerimaanMahasiswaAdmin"
+        element={<PenerimaanMahasiswaAdmin />}
+      />
     </Routes>
   );
 };
@@ -108,7 +116,7 @@ export const MainRouter = () => {
   const handleLogin = async (username, password) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/auth/login",
+        `https://stikesmayapada.ac.id/api/auth/login`,
         {
           username,
           password,

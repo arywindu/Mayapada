@@ -7,79 +7,133 @@ import { async } from "q";
 import axios from "axios";
 
 const HubungiKamiAdmin = () => {
-    return (
-        <LayoutAdmin>
-            <div>
-                <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
-                    <h4><span className="bg-primary text-white">Hubungi Kami Admin</span></h4>
-                    <div id="">
-                        <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-                        <div class="mb-3 row">
-                            <label for="" class="col-sm-2 col-form-label">
-                                WhatsApp No
-                            </label>
-                            <div class="col-sm-10">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                />
-                            </div>
-                        </div>
+  const token = localStorage.getItem("token");
+  const [data, setData] = useState(null);
+  const [contactWa, setContactWa] = useState(null);
+  const [contackIg, setContactIg] = useState(null);
+  const [contactFb, setContactFb] = useState(null);
+  const [contactEmail, setContactEmail] = useState(null);
 
-                        <div class="mb-3 row">
-                            <label for="" class="col-sm-2 col-form-label">
-                                Instagram
-                            </label>
-                            <div class="col-sm-10">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                />
-                            </div>
-                        </div>
+  useEffect(() => {
+    getData();
+  }, []);
 
-                        <div class="mb-3 row">
-                            <label for="" class="col-sm-2 col-form-label">
-                                Facebook
-                            </label>
-                            <div class="col-sm-10">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                />
-                            </div>
-                        </div>
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://stikesmayapada.ac.id/api/contact/1"
+      );
+      console.log(response.data, "hub kami");
+      setData(response.data.data);
+    } catch (error) {}
+  };
 
-                        <div class="mb-3 row">
-                            <label for="" class="col-sm-2 col-form-label">
-                                Email
-                            </label>
-                            <div class="col-sm-10">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                />
-                            </div>
-                        </div>
-
-
-                        <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-                        <button
-                            class="btn btn-success mt-2"
-                            type="submit"
-                            onClick={''}
-                        >
-                            Save
-                        </button>
-                    </div>
-                </div>
+  const saveData = async () => {
+    try {
+      const response = await axios.post(
+        "https://stikesmayapada.ac.id/api/contact",
+        {
+          id: 1,
+          contact_wa: contactWa,
+          contact_ig: contackIg,
+          contact_fb: contactFb,
+          contact_email: contactEmail,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.status, "test");
+      getData();
+      const { status } = response;
+      if (status === 200) {
+        alert(`Berhasil update data`);
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      console.log(error, "error");
+    }
+  };
+  return (
+    <LayoutAdmin>
+      <div>
+        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+          <h4>
+            <span className="bg-primary text-white">Hubungi Kami Admin</span>
+          </h4>
+          <div id="">
+            <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                WhatsApp No
+              </label>
+              <div class="col-sm-10">
+                <input
+                  type="number"
+                  class="form-control"
+                  id=""
+                  onChange={(e) => setContactWa(e.target.value)}
+                />
+              </div>
             </div>
-        </LayoutAdmin>
-    );
+
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                Instagram
+              </label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id=""
+                  onChange={(e) => setContactIg(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                Facebook
+              </label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id=""
+                  onChange={(e) => setContactFb(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                Email
+              </label>
+              <div class="col-sm-10">
+                <input
+                  type="email"
+                  class="form-control"
+                  id=""
+                  onChange={(e) => setContactEmail(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+            <button
+              class="btn btn-success mt-2"
+              type="submit"
+              onClick={saveData}
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </LayoutAdmin>
+  );
 };
 
 export default HubungiKamiAdmin;
