@@ -23,6 +23,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import ManualSpmi from "./pages/UPMI/ManualSpmi/ManualSpmi";
 import ManualSpmiAdmin from "./pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin";
 import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
+import PenerimaanMahasiswaAdmin from "./pages/Admin/PmbAdmin/PenerimaanMahasiswaAdmin/PenerimaanMahasiswaAdmin";
 import ProgramJalurBeasiswa from "./pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa";
 import PusatKarir from "./pages/PusatKarir/PusatKarir";
 import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
@@ -54,6 +55,7 @@ const Authenticate = () => {
       <Route path="/SaranaDanPrasaranaAdmin" element={<SaranaDanPrasaranaAdmin />} />
       <Route path="/GalleryKegiatanAdmin" element={<GalleryKegiatanAdmin />} />
       <Route path="/AdministrasiRumahSakitAdmin" element={<AdministrasiRumahSakitAdmin />} />
+      <Route path="/PenerimaanMahasiswaAdmin" element={<PenerimaanMahasiswaAdmin />} />
 
     </Routes>
   );

@@ -29,8 +29,8 @@ const AlumniStoryAdmin = () => {
                             </div>
                         </div>
 
-                        <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-                        <div class="mb-3 row">
+                        {/* <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr> */}
+                        {/* <div class="mb-3 row">
                             <label for="" class="col-sm-2 col-form-label">
                                 Title Text
                             </label>
@@ -41,7 +41,7 @@ const AlumniStoryAdmin = () => {
                                     id=""
                                 />
                             </div>
-                        </div>
+                        </div> */}
 
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                         <div class="mb-3 row">

@@ -55,6 +55,7 @@ const PenerimaanMahasiswa = () => {
                   type="btn-border"
                   borderColor="white"
                   style={{ marginTop: "12px" }}
+                  onClick={event => window.location.href = '/JalurMandiri'}
                 />
               </div>
             </div>
@@ -80,6 +81,7 @@ const PenerimaanMahasiswa = () => {
                   type="btn-border"
                   borderColor="white"
                   style={{ marginTop: "12px" }}
+                  onClick={event => window.location.href = '/JalurBeasiswa'}
                 />
               </div>
             </div>

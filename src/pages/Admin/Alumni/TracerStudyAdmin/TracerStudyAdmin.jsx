@@ -30,7 +30,7 @@ const TracerStudyAdmin = () => {
                         </div>
 
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-                        <div class="mb-3 row">
+                        {/* <div class="mb-3 row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">
                                 Title Text
                             </label>
@@ -41,7 +41,7 @@ const TracerStudyAdmin = () => {
                                     id=""
                                 />
                             </div>
-                        </div>
+                        </div> */}
                         <div class="mb-3 row">
                             <label for="" class="col-sm-2 col-form-label">
                                 Section Text
