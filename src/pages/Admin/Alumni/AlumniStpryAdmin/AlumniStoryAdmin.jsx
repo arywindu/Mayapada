@@ -6,17 +6,17 @@ import LayoutAdmin from "../../../../Layout/LayoutAdmin";
 import { async } from "q";
 import axios from "axios";
 
-const IkatanAlumniAdmin = () => {
+const AlumniStoryAdmin = () => {
     return (
         <LayoutAdmin>
             <div>
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
-                    <h4><span className="bg-primary text-white">Ikatan Alumni Admin</span></h4>
+                    <h4><span className="bg-primary text-white">Alumni Story Admin</span></h4>
                     <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                     <div id="SectionBanner">
                         <div class="mb-3 row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">
-                                Banner Image
+                                Photo Mahasiswa
                             </label>
                             <div class="col-sm-10">
                                 <div class="input-group mb-3">
@@ -31,7 +31,7 @@ const IkatanAlumniAdmin = () => {
 
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                         <div class="mb-3 row">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">
+                            <label for="" class="col-sm-2 col-form-label">
                                 Title Text
                             </label>
                             <div class="col-sm-10">
@@ -42,40 +42,17 @@ const IkatanAlumniAdmin = () => {
                                 />
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="" class="col-sm-2 col-form-label">
-                                Section Text
-                            </label>
-                            <div class="col-sm-10">
-                                <div class="input-group mb-3">
-                                    <div className="App">
-                                        <CKEditor
-                                            editor={ClassicEditor}
-                                            data={''}
-                                            onReady={(editor) => {
-                                                // You can store the "editor" and use when it is needed.
-                                            }}
-                                            onChange={(event, editor) => {
-                                                ''
-                                            }}
-                                            onBlur={(event, editor) => { }}
-                                            onFocus={(event, editor) => { }}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                         <div class="mb-3 row">
-                            <label for="staticEmail" class="col-sm-2 col-form-label">
-                                Pdf File
+                            <label for="" class="col-sm-2 col-form-label">
+                                Isi Konten
                             </label>
                             <div class="col-sm-10">
-                                <div class="input-group mb-3">
-                                    <input type="file" class="form-control" id="inputGroupFile01" />
-                                </div>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
                             </div>
                         </div>
+
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                         <button
                             class="btn btn-success mt-2"
@@ -91,4 +68,4 @@ const IkatanAlumniAdmin = () => {
     );
 };
 
-export default IkatanAlumniAdmin;
+export default AlumniStoryAdmin;

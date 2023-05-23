@@ -55,6 +55,8 @@ const HomeAdmin = () => {
         <LayoutAdmin>
             <div class="Home-Admin">
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+                    <h4><span className="bg-primary text-white">Home Admin</span></h4>
+                    <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">
                             Logo Image

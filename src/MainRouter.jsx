@@ -4,9 +4,11 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin";
 import AdministrasiRumahSakit from "./pages/Akademik/AdministrasiRumahSakit/AdministrasiRumahSakit";
 import AlumniStory from "./pages/Alumni/AlumniStory/AlumniStory";
+import AlumniStoryAdmin from "./pages/Admin/Alumni/AlumniStpryAdmin/AlumniStoryAdmin";
 import GalleryKegiatan from "./pages/Fasilitas/GalleryKegiatan/GalleryKegiatan";
 import Home from "./pages/Home/Home";
 import HubungiKami from "./pages/HubungiKami/HubungiKami";
+import HubungiKamiAdmin from "./pages/Admin/HubungiKamiAdmin/HubungiKamiAdmin";
 import IkatanAlumni from "./pages/Alumni/IkatanAlumni/IkatanAlumni";
 import IkatanAlumniAdmin from "./pages/Admin/Alumni/IkatanAlumniAdmin/IkatanAlumniAdmin";
 import JalurBeasiswa from "./pages/PMB/JalurBeasiswa/JalurBeasiswa";
@@ -25,6 +27,7 @@ import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
 import RegistrasiBerhasil from "./pages/PMB/RegistrasiBerhasil/RegistrasiBerhasil";
 import SOP from "./pages/UPMI/SOP/Sop";
 import SaranaDanPrasarana from "./pages/Fasilitas/SaranaDanPrasarana/SaranaDanPrasarana";
+import SaranaDanPrasaranaAdmin from "./pages/Admin/FasilitasAdmin/SaranaDanPrasarana/SaranaDanPrasaranaAdmin";
 import SopAdmin from "./pages/Admin/UPMIAdmin/SopAdmin/SopAdmin";
 import StandarSpmi from "./pages/UPMI/StandarSPMI/StandarSPMI";
 import StandarSpmiAdmin from "./pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin";
@@ -44,6 +47,10 @@ const Authenticate = () => {
       <Route path="/PusatKarirAdmin" element={<PusatKarirAdmin />} />
       <Route path="/IkatanAlumniAdmin" element={<IkatanAlumniAdmin />} />
       <Route path="/TracerStudyAdmin" element={<TracerStudyAdmin />} />
+      <Route path="/AlumniStoryAdmin" element={<AlumniStoryAdmin />} />
+      <Route path="/HubungiKamiAdmin" element={<HubungiKamiAdmin />} />
+      <Route path="/SaranaDanPrasaranaAdmin" element={<SaranaDanPrasaranaAdmin />} />
+
     </Routes>
   );
 };

@@ -11,6 +11,7 @@ const TracerStudyAdmin = () => {
         <LayoutAdmin>
             <div>
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+                    <h4><span className="bg-primary text-white">Tracer Study Admin</span></h4>
                     <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                     <div id="SectionBanner">
                         <div class="mb-3 row">

@@ -29,7 +29,7 @@ const HeaderAdmin = () => {
                                         <Link className='text-reset text-decoration-none' to="/KeperawatanAdmin">Program DIII Keperawatan</Link>
                                     </a></li>
                                     <li><a className="dropdown-item" href="#">
-                                        <Link className='text-reset text-decoration-none' to="/AdministrasiRumahSakit">Program S1 Administrasi Rumah Sakit</Link></a></li>
+                                        <Link className='text-reset text-decoration-none' to="/AdministrasiRumahSakitAdmin">Program S1 Administrasi Rumah Sakit</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -48,8 +48,8 @@ const HeaderAdmin = () => {
                                     Fasilitas
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SaranaDanPrasarana">Sarana dan Prasarana</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/GalleryKegiatan">Gallery Kegiatan</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/SaranaDanPrasaranaAdmin">Sarana dan Prasarana</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/GalleryKegiatanAdmin">Gallery Kegiatan</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -72,7 +72,7 @@ const HeaderAdmin = () => {
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/IkatanAlumniAdmin">Ikatan Alumni</Link></a></li>
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/TracerStudyAdmin">Tracer Study</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/AlumniStory">Alumni Story</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/AlumniStoryAdmin">Alumni Story</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown px-2">
@@ -80,13 +80,13 @@ const HeaderAdmin = () => {
                                     PMB
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswa">Penerimaan Mahasiswa Baru</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurMandiri">Program Jalur Mandiri</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurBeasiswa">Program Jalur Beasiswa</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswaAdmin">Penerimaan Mahasiswa Baru</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurMandiriAdmin">Program Jalur Mandiri</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurBeasiswaAdmin">Program Jalur Beasiswa</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item px-2">
-                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/HubungiKami">Hubungi Kami</Link></a>
+                                <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="/HubungiKamiAdmin">Hubungi Kami</Link></a>
                             </li>
                             <li className="nav-item px-2">
                                 <a className="nav-link" href="#"><Link className='text-reset text-decoration-none' to="">LogOut</Link></a>
