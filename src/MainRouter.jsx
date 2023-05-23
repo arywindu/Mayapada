@@ -3,9 +3,11 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 
 import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin";
 import AdministrasiRumahSakit from "./pages/Akademik/AdministrasiRumahSakit/AdministrasiRumahSakit";
+import AdministrasiRumahSakitAdmin from "./pages/Admin/AkademikAdmin/AdministrasiRumahSakirAdmin/AdministrasiRumahSakitAdmin";
 import AlumniStory from "./pages/Alumni/AlumniStory/AlumniStory";
 import AlumniStoryAdmin from "./pages/Admin/Alumni/AlumniStpryAdmin/AlumniStoryAdmin";
 import GalleryKegiatan from "./pages/Fasilitas/GalleryKegiatan/GalleryKegiatan";
+import GalleryKegiatanAdmin from "./pages/Admin/FasilitasAdmin/GalleryKegiatanAdmin/GalleryKegiatanAdmin";
 import Home from "./pages/Home/Home";
 import HubungiKami from "./pages/HubungiKami/HubungiKami";
 import HubungiKamiAdmin from "./pages/Admin/HubungiKamiAdmin/HubungiKamiAdmin";
@@ -16,7 +18,7 @@ import JalurMandiri from "./pages/PMB/JalurMandiri/JalurMandiri";
 import KebijakanUpmi from "./pages/UPMI/KebijakanUpmi/KebijakanUpmi";
 import KebijakanUpmiAdmin from "./pages/Admin/UPMIAdmin/KebijakanUpmiAdmin/KebijakanUpmiAdmin";
 import Keperawatan from "./pages/Akademik/Keperawatan/Keperawatan";
-import KeperawatanAdmin from "./pages/Admin/KeperawatanAdmin/KeperawatanAdmin";
+import KeperawatanAdmin from "./pages/Admin/AkademikAdmin/KeperawatanAdmin/KeperawatanAdmin";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ManualSpmi from "./pages/UPMI/ManualSpmi/ManualSpmi";
 import ManualSpmiAdmin from "./pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin";
@@ -50,6 +52,8 @@ const Authenticate = () => {
       <Route path="/AlumniStoryAdmin" element={<AlumniStoryAdmin />} />
       <Route path="/HubungiKamiAdmin" element={<HubungiKamiAdmin />} />
       <Route path="/SaranaDanPrasaranaAdmin" element={<SaranaDanPrasaranaAdmin />} />
+      <Route path="/GalleryKegiatanAdmin" element={<GalleryKegiatanAdmin />} />
+      <Route path="/AdministrasiRumahSakitAdmin" element={<AdministrasiRumahSakitAdmin />} />
 
     </Routes>
   );

@@ -53,6 +53,14 @@ const AlumniStoryAdmin = () => {
                             </div>
                         </div>
 
+                        <button
+                            class="btn btn-primary mt-2"
+                            type="submit"
+                            onClick={''}
+                        >
+                            Add More
+                        </button>
+
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                         <button
                             class="btn btn-success mt-2"

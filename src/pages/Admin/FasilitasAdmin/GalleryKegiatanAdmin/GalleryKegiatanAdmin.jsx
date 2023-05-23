@@ -6,17 +6,17 @@ import LayoutAdmin from "../../../../Layout/LayoutAdmin";
 import { async } from "q";
 import axios from "axios";
 
-const SaranaDanPrasaranaAdmin = () => {
+const GalleryKegiatanAdmin = () => {
     return (
         <LayoutAdmin>
             <div>
                 <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
-                    <h4><span className="bg-primary text-white">Sarana Dan Prasarana Admin</span></h4>
+                    <h4><span className="bg-primary text-white">Gallery Kegiatan Admin</span></h4>
                     <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
                     <div id="">
                         <div class="mb-3 row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">
-                                Image fasilitas Pendidikan
+                                Image Kegiatan Mahasiswa
                             </label>
                             <div class="col-sm-10">
                                 <div class="input-group mb-3">
@@ -27,21 +27,7 @@ const SaranaDanPrasaranaAdmin = () => {
                                     />
                                 </div>
                             </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">
-                                    Title Text
-                                </label>
-                                <div class="col-sm-10">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id=""
-                                    />
-                                </div>
-                            </div>
                         </div>
-
-
 
                         <button
                             class="btn btn-primary mt-2"
@@ -56,7 +42,7 @@ const SaranaDanPrasaranaAdmin = () => {
 
                         <div class="mb-3 row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">
-                                Image fasilitas Umum
+                                Image Orientasi Mahasiswa baru
                             </label>
                             <div class="col-sm-10">
                                 <div class="input-group mb-3">
@@ -64,18 +50,6 @@ const SaranaDanPrasaranaAdmin = () => {
                                         type="file"
                                         class="form-control"
                                         id="inputGroupFile01"
-                                    />
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">
-                                    Title Text
-                                </label>
-                                <div class="col-sm-10">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id=""
                                     />
                                 </div>
                             </div>
@@ -90,6 +64,32 @@ const SaranaDanPrasaranaAdmin = () => {
                         </button>
 
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+
+                        <div class="mb-3 row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">
+                                Image Wisuda
+                            </label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="file"
+                                        class="form-control"
+                                        id="inputGroupFile01"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary mt-2"
+                            type="submit"
+                            onClick={''}
+                        >
+                            Add More
+                        </button>
+
+                        <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+
                         <button
                             class="btn btn-success mt-2"
                             type="submit"
@@ -104,4 +104,4 @@ const SaranaDanPrasaranaAdmin = () => {
     );
 };
 
-export default SaranaDanPrasaranaAdmin;
+export default GalleryKegiatanAdmin;
