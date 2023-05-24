@@ -1,16 +1,34 @@
 import "./HubungiKami.css";
 
+import React, { useEffect, useState } from "react";
+
 import Button from "../../components/Button/Button";
 import EmailIcon from "../../assets/icons/email-hub.svg";
 import FbIcon from "../../assets/icons/faHub.svg";
 import IgIcon from "../../assets/icons/igHub.svg";
 import Layout from "../../Layout/Layout";
-import React from "react";
 import Typhography from "../../components/Typhography/Typhography";
 import WaIcon from "../../assets/icons/waHub.svg";
+import axios from "axios";
 import imgHubKami from "../../assets/images/hubungiKamiImg.png";
 
 const HubungiKami = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://stikesmayapada.ac.id/api/contact/1"
+      );
+      console.log(response.data, "hub kami");
+      const responseData = response.data.data;
+      setData(responseData);
+    } catch (error) {}
+  };
   return (
     <Layout>
       <div className="bg-hub">
@@ -34,28 +52,28 @@ const HubungiKami = () => {
                       <img src={WaIcon}></img>
                       &nbsp; Whatsapp
                     </td>
-                    <td>: 081907397674</td>
+                    <td>: {data && data.contact_wa}</td>
                   </tr>
                   <tr>
                     <td>
                       <img src={IgIcon}></img>
                       &nbsp; Instagram
                     </td>
-                    <td>: @mayapadaacademy</td>
+                    <td>: {data && data.contact_ig}</td>
                   </tr>
                   <tr>
                     <td>
                       <img src={FbIcon}></img>
                       &nbsp; Facebook
                     </td>
-                    <td>: @mayapadacampus</td>
+                    <td>: {data && data.contact_fb}</td>
                   </tr>
                   <tr>
                     <td>
                       <img src={EmailIcon}></img>
                       &nbsp; Email
                     </td>
-                    <td>: Info.antariksa.ac.id</td>
+                    <td>: {data && data.contact_email}</td>
                   </tr>
                 </tbody>
               </table>

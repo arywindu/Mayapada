@@ -24,7 +24,12 @@ const HubungiKamiAdmin = () => {
         "https://stikesmayapada.ac.id/api/contact/1"
       );
       console.log(response.data, "hub kami");
-      setData(response.data.data);
+      const responseData = response.data.data;
+      setContactWa(responseData.contact_wa);
+      setContactIg(responseData.contact_ig);
+      setContactFb(responseData.contact_fb);
+      setContactEmail(responseData.contact_email);
+      setData(responseData);
     } catch (error) {}
   };
 
@@ -74,6 +79,7 @@ const HubungiKamiAdmin = () => {
                   type="number"
                   class="form-control"
                   id=""
+                  value={contactWa}
                   onChange={(e) => setContactWa(e.target.value)}
                 />
               </div>
@@ -88,6 +94,7 @@ const HubungiKamiAdmin = () => {
                   type="text"
                   class="form-control"
                   id=""
+                  value={contackIg}
                   onChange={(e) => setContactIg(e.target.value)}
                 />
               </div>
@@ -102,6 +109,7 @@ const HubungiKamiAdmin = () => {
                   type="text"
                   class="form-control"
                   id=""
+                  value={contactFb}
                   onChange={(e) => setContactFb(e.target.value)}
                 />
               </div>
@@ -116,6 +124,7 @@ const HubungiKamiAdmin = () => {
                   type="email"
                   class="form-control"
                   id=""
+                  value={contactEmail}
                   onChange={(e) => setContactEmail(e.target.value)}
                 />
               </div>
