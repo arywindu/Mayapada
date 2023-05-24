@@ -86,6 +86,7 @@ const IkatanAlumniAdmin = () => {
                     onChange={handleAlumniImg}
                   />
                 </div>
+                <div>{data && data.ikatan_alumni_img}</div>
               </div>
             </div>
 
@@ -111,7 +112,7 @@ const IkatanAlumniAdmin = () => {
                   <div className="App">
                     <CKEditor
                       editor={ClassicEditor}
-                      data={""}
+                      data={data && data.ikatan_alumni_text}
                       onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                       }}
@@ -140,6 +141,7 @@ const IkatanAlumniAdmin = () => {
                     onChange={handleAlumniPDF}
                   />
                 </div>
+                <div>{data && data.ikatan_alumni_form}</div>
               </div>
             </div>
             <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>

@@ -1,39 +1,40 @@
 import "./ManualSpmi.css";
 
+import React, { useEffect, useState } from "react";
+
 import Layout from "../../../Layout/Layout";
-import React from "react";
 import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 
 const ManualSpmi = () => {
-    return (
-        <Layout>
-            <div className="manual-spmi-container">
-                <Typhography type="title" text="Manual SPMI" />
-                <Typhography
-                    type="normal"
-                    text="Manual SPMI"
-                    style={{ marginTop: "24px" }}
-                />
-                <ol className="mt-3" style={{ textAlign: 'left' }}>
-                    <li className="mb-4">
-                        Manual Penetapan Standar
-                    </li>
-                    <li className="mb-4">
-                        Manual Pelaksanaan Standar
-                    </li>
-                    <li className="mb-4">
-                        Manual SPMI Evaluasi Pelaksanaan Standar
-                    </li>
-                    <li className="mb-4">
-                        Manual SPMI Pengendalian Standar
-                    </li>
-                    <li className="mb-4">
-                        Manual Peningkatan atau Pengembangan Standar
-                    </li>
-                </ol>
-            </div>
-        </Layout>
-    );
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://stikesmayapada.ac.id/api/spmi/1/manual"
+      );
+      console.log(response.data, "res");
+      setData(response.data.data);
+    } catch (error) {}
+  };
+  return (
+    <Layout>
+      <div className="manual-spmi-container">
+        <Typhography type="title" text="Manual SPMI" />
+        {/* <Typhography
+          type="normal"
+          text="Manual SPMI"
+          style={{ marginTop: "24px" }}
+        /> */}
+        <div dangerouslySetInnerHTML={{ __html: data && data.manual }}></div>
+      </div>
+    </Layout>
+  );
 };
 
 export default ManualSpmi;

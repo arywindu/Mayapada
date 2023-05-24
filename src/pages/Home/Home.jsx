@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <Layout>
+    <Layout logo={data && data.logo_image}>
       <Carousel />
       <div className="home-container" style={{ backgroundColor: "#F5F5F5" }}>
         <div className="text-center">
