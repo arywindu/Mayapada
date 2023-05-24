@@ -85,6 +85,7 @@ const TracerStudyAdmin = () => {
                     onChange={handleTracerImg}
                   />
                 </div>
+                <div>{data && data.tracer_study_img}</div>
               </div>
             </div>
 
@@ -110,7 +111,7 @@ const TracerStudyAdmin = () => {
                   <div className="App">
                     <CKEditor
                       editor={ClassicEditor}
-                      data={""}
+                      data={data && data.tracer_study_text}
                       onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                       }}
@@ -139,6 +140,7 @@ const TracerStudyAdmin = () => {
                     onChange={handleTracerPDF}
                   />
                 </div>
+                <div>{data && data.tracer_study_form}</div>
               </div>
             </div>
             <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>

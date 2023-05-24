@@ -86,6 +86,7 @@ const HomeAdmin = () => {
                   onChange={handleLogo}
                 />
               </div>
+              <div>{data && data.logo_image}</div>
             </div>
           </div>
           <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>

@@ -38,10 +38,10 @@ const HubungiKamiAdmin = () => {
       const response = await axios.post(
         "https://stikesmayapada.ac.id/api/contact/1",
         {
-          contact_wa: contactWa,
-          contact_ig: contackIg,
-          contact_fb: contactFb,
-          contact_email: contactEmail,
+          contactWa: contactWa,
+          contactIg: contackIg,
+          contactFb: contactFb,
+          contactEmail: contactEmail,
         },
         {
           headers: {

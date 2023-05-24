@@ -21,6 +21,7 @@ const PusatKarirAdmin = () => {
         "https://stikesmayapada.ac.id/api/carrer/1"
       );
       console.log(response.data, "res");
+      setCTitle(response.data.data.title);
       setData(response.data.data);
     } catch (error) {
       console.log(error);
@@ -30,7 +31,7 @@ const PusatKarirAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/carrer",
+        "https://stikesmayapada.ac.id/api/carrer/1",
         {
           title: cTitle,
           text: cText,
@@ -44,7 +45,7 @@ const PusatKarirAdmin = () => {
       console.log(response.status, "test");
       getData();
       const { status } = response;
-      if (status === 200) {
+      if (status === 201) {
         alert(`Berhasil update data`);
       }
     } catch (error) {
