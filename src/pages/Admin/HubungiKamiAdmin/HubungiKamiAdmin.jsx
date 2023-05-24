@@ -36,9 +36,8 @@ const HubungiKamiAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/contact",
+        "https://stikesmayapada.ac.id/api/contact/1",
         {
-          id: 1,
           contact_wa: contactWa,
           contact_ig: contackIg,
           contact_fb: contactFb,
