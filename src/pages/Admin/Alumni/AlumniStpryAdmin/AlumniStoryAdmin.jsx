@@ -18,7 +18,7 @@ const AlumniStoryAdmin = () => {
                             <label for="staticEmail" class="col-sm-2 col-form-label">
                                 Photo Mahasiswa
                             </label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-6">
                                 <div class="input-group mb-3">
                                     <input
                                         type="file"
@@ -26,6 +26,15 @@ const AlumniStoryAdmin = () => {
                                         id="inputGroupFile01"
                                     />
                                 </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <button
+                                    class="btn btn-success mt-2"
+                                    type="submit"
+                                    onClick={''}
+                                >
+                                    Save
+                                </button>
                             </div>
                         </div>
 
@@ -62,13 +71,6 @@ const AlumniStoryAdmin = () => {
                         </button>
 
                         <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-                        <button
-                            class="btn btn-success mt-2"
-                            type="submit"
-                            onClick={''}
-                        >
-                            Save
-                        </button>
                     </div>
                 </div>
             </div>

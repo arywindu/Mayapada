@@ -81,8 +81,8 @@ const HeaderAdmin = () => {
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-light rounded-0">
                                     <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/PenerimaanMahasiswaAdmin">Penerimaan Mahasiswa Baru</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurMandiriAdmin">Program Jalur Mandiri</Link></a></li>
-                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/JalurBeasiswaAdmin">Program Jalur Beasiswa</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/ProgramjalurMandiriAdmin">Program Jalur Mandiri</Link></a></li>
+                                    <li><a className="dropdown-item" href="#"><Link className='text-reset text-decoration-none' to="/ProgramJalurBeasiswaAdmin">Program Jalur Beasiswa</Link></a></li>
                                 </ul>
                             </li>
                             <li className="nav-item px-2">
