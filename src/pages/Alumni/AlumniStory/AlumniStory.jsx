@@ -1,8 +1,10 @@
 import "./AlumniStory.css";
 
+import React, { useEffect, useState } from "react";
+
 import Layout from "../../../Layout/Layout";
-import React from "react";
 import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 import cardPhoto1 from "../../../assets/images/photo1.png";
 
 const dataArray = [
@@ -39,6 +41,21 @@ const dataArray = [
 ];
 
 const AlumniStory = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://stikesmayapada.ac.id/api/alumni/story/alumni"
+      );
+      console.log(response.data, "res");
+      setData(response.data.data);
+    } catch (error) {}
+  };
   return (
     <Layout>
       <div className="alumni-story-container">
@@ -49,26 +66,27 @@ const AlumniStory = () => {
         />
 
         <div className="alumni-story-card">
-          {dataArray.map((item) => (
-            <div className="card-wrapper">
-              <img className="card-img" src={item.img} />
-              <div className="card-content">
-                <Typhography
-                  type="normal"
-                  text={item.name}
-                  size="16px"
-                  fontWeight="600"
-                />
+          {data &&
+            data.map((item) => (
+              <div className="card-wrapper">
+                <img className="card-img" src={item.alumni_story_img} />
+                <div className="card-content">
+                  <Typhography
+                    type="normal"
+                    text={item.alumni_story_name}
+                    size="16px"
+                    fontWeight="600"
+                  />
 
-                <Typhography
-                  type="normal"
-                  text={item.desc}
-                  size="16px"
-                  style={{ marginTop: "10px" }}
-                />
+                  <Typhography
+                    type="normal"
+                    text={item.alumni_story_history}
+                    size="16px"
+                    style={{ marginTop: "10px" }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </Layout>
