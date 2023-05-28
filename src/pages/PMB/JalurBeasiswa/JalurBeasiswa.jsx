@@ -1,10 +1,30 @@
 import "./JalurBeasiswa.css";
 
+import React, { useEffect, useState } from "react";
+
 import Layout from "../../../Layout/Layout";
-import React from "react";
 import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 
 const JalurBeasiswa = () => {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://stikesmayapada.ac.id/api/PMB/beasiswa/1"
+      );
+      console.log(response.data, "res");
+      const dataRes = response.data.data;
+      setContent(dataRes.konten);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Layout>
       <div className="jalur-beasiswa-container">
@@ -69,34 +89,11 @@ const JalurBeasiswa = () => {
           />
 
           <div className="jalur-beasiswa-persyaratan-card">
-            <ol>
-              <li>Lulusan SMA / SMK / SPK / Paket C.</li>
-              <li>Membawa Fotocopy Legalisir Ijazah (2 lembar).</li>
-              <li>Fotocopy Rapot Semester 1-6 (1 Lembar).</li>
-              <li>Membawa Fotocopy KTP & KK (masing-masing 1 lembar).</li>
-              <li>
-                Membawa Pas Photo Berwarna 3x4 & 4x6 (masing-masing 2 lembar).
-              </li>
-              <li>
-                Mengisi Formulir Pendaftaran (Biaya formulir Rp. 175.000).
-              </li>
-              <li>
-                Mengikuti Tes Tertulis (Bahasa Indonesia, MTK, Bahasa Inggris
-                dan IPA).
-              </li>
-              <li>
-                Melampirkan Hasil Tes Kesehatan yang Sesuai dengan Ketentuan
-                Kampus.
-              </li>
-              <li>Tes Psikotes dan Wawancara.</li>
-              <li>
-                <div>Tinggi badan.</div>
-                <ol type="a">
-                  <li>Perempuan : 150 cm</li>
-                  <li>Laki-laki : 155 cm</li>
-                </ol>
-              </li>
-            </ol>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content,
+              }}
+            ></div>
           </div>
         </div>
       </div>
