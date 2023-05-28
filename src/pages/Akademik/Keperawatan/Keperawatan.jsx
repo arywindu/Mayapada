@@ -119,7 +119,6 @@ const Keperawatan = () => {
       setDataFotoKuliah(responseData);
     } catch (error) {}
   };
-  console.log(data, 'data');
   return (
     <Layout>
       <div>
