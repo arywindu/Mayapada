@@ -132,7 +132,7 @@ const Keperawatan = () => {
       <div class="container bg-color-adm">
         <div class="row mt-5 pt-5">
           <div class="col-md-6">
-            <img src={KepImage01} width={'100%'} height={'100%'}></img>
+            <img src={imgVisiMisi} width={'100%'} height={'100%'}></img>
           </div>
 
           <div class="col-md-6">
