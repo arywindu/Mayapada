@@ -1,11 +1,71 @@
 import "./ProgramJalurBeasiswa.css";
 
+import React, { useState } from "react";
+
 import Button from "../../../components/Button/Button";
 import Layout from "../../../Layout/Layout";
-import React from "react";
 import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 
 const ProgramJalurBeasiswa = () => {
+  const [data, setData] = useState({
+    programKelas: "",
+    namaLengkap: "",
+    tempatLahir: "",
+    tanggalLahir: "",
+    jenisKelamin: "",
+    pilihAgama: "",
+    beratBadan: "",
+    tinggiBadan: "",
+    namaOrtu: "",
+    alamat: "",
+    provinsi: "",
+    kota: "",
+    kodePos: "",
+    ktp: "",
+    noHp: "",
+    nisn: "",
+    email: "",
+    asalSekolah: "",
+    alamatAsalSekolah: "",
+  });
+
+  const saveData = async () => {
+    try {
+      const response = await axios.post(
+        "https://stikesmayapada.ac.id/api/form/register",
+        {
+          programKelas: data.programKelas,
+          namaLengkap: data.namaLengkap,
+          tempatLahir: data.tempatLahir,
+          tanggalLahir: data.tanggalLahir,
+          jenisKelamin: data.jenisKelamin,
+          pilihAgama: data.pilihAgama,
+          beratBadan: data.beratBadan,
+          tinggiBadan: data.tinggiBadan,
+          namaOrtu: data.namaOrtu,
+          alamat: data.alamat,
+          provinsi: data.provinsi,
+          kota: data.kota,
+          kodePos: data.kodePos,
+          ktp: data.ktp,
+          noHp: data.noHp,
+          nisn: data.nisn,
+          email: data.email,
+          asalSekolah: data.asalSekolah,
+          alamatAsalSekolah: data.alamatAsalSekolah,
+        }
+      );
+      console.log(response.status, "test");
+      const { status } = response;
+      if (status === 200) {
+        window.location.href = "/RegistrasiBerhasil";
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      console.log(error, "error");
+    }
+  };
   return (
     <Layout>
       <div className="pjb-container">
@@ -15,19 +75,35 @@ const ProgramJalurBeasiswa = () => {
           <div className="form-row">
             <div className="col">
               <label>Program Kelas* :</label>
-              <input
-                type="text"
+              <select
                 className="form-control"
                 placeholder="--Pilih Program Kelas--"
-              />
+                value={data && data.programKelas}
+                onChange={(e) =>
+                  setData({ ...data, programKelas: e.target.value })
+                }
+              >
+                <option value="" disabled selected>
+                  --Pilih Program Kelas--
+                </option>
+                <option value="Kelas Reguler">Kelas Regular</option>
+              </select>
             </div>
             <div className="col">
               <label>Jenis Kelamin* :</label>
-              <input
-                type="text"
+              <select
                 className="form-control"
                 placeholder="--Pilih Jenis Kelamin--"
-              />
+                onChange={(e) =>
+                  setData({ ...data, jenisKelamin: e.target.value })
+                }
+              >
+                <option value="" disabled selected>
+                  --Pilih Jenis Kelamin--
+                </option>
+                <option value="Laki Laki">Laki Laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
             </div>
           </div>
 
@@ -38,15 +114,31 @@ const ProgramJalurBeasiswa = () => {
                 type="text"
                 className="form-control"
                 placeholder="contoh: Putri"
+                value={data && data.namaLengkap}
+                onChange={(e) =>
+                  setData({ ...data, namaLengkap: e.target.value })
+                }
               />
             </div>
             <div className="col">
               <label>Pilih Agama* :</label>
-              <input
-                type="text"
+              <select
                 className="form-control"
                 placeholder="--Pilih Agama--"
-              />
+                onChange={(e) =>
+                  setData({ ...data, pilihAgama: e.target.value })
+                }
+              >
+                <option value="" disabled selected>
+                  Pilih Agama* :
+                </option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Budha">Budha</option>
+                <option value="Konghucu">Konghucu</option>
+              </select>
             </div>
           </div>
 
@@ -57,6 +149,10 @@ const ProgramJalurBeasiswa = () => {
                 type="text"
                 className="form-control"
                 placeholder="contoh: Jakarta"
+                value={data && data.tempatLahir}
+                onChange={(e) =>
+                  setData({ ...data, tempatLahir: e.target.value })
+                }
               />
             </div>
             <div className="col">
@@ -65,6 +161,10 @@ const ProgramJalurBeasiswa = () => {
                 type="number"
                 className="form-control"
                 placeholder="contoh: 55"
+                value={data && data.beratBadan}
+                onChange={(e) =>
+                  setData({ ...data, beratBadan: e.target.value })
+                }
               />
             </div>
           </div>
@@ -76,6 +176,10 @@ const ProgramJalurBeasiswa = () => {
                 type="text"
                 className="form-control"
                 placeholder="contoh: 2023-03-15"
+                value={data && data.tanggalLahir}
+                onChange={(e) =>
+                  setData({ ...data, tanggalLahir: e.target.value })
+                }
               />
             </div>
             <div className="col">
@@ -84,6 +188,10 @@ const ProgramJalurBeasiswa = () => {
                 type="number"
                 className="form-control"
                 placeholder="contoh: 170"
+                value={data && data.tinggiBadan}
+                onChange={(e) =>
+                  setData({ ...data, tinggiBadan: e.target.value })
+                }
               />
             </div>
           </div>
@@ -100,27 +208,53 @@ const ProgramJalurBeasiswa = () => {
           <div className="form-row">
             <div className="col">
               <label>Nama Orang Tua/Wali* :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.namaOrtu}
+                onChange={(e) => setData({ ...data, namaOrtu: e.target.value })}
+              />
             </div>
             <div className="col">
               <label>Nomor KTP* :</label>
-              <input type="number" className="form-control" />
+              <input
+                type="number"
+                className="form-control"
+                value={data && data.ktp}
+                onChange={(e) => setData({ ...data, ktp: e.target.value })}
+              />
             </div>
           </div>
 
           <div className="form-row">
             <div className="col">
               <label>Alamat Lengkap* :</label>
-              <textarea type="text" className="form-control" rows="5" />
+              <textarea
+                type="text"
+                className="form-control"
+                rows="5"
+                value={data && data.alamat}
+                onChange={(e) => setData({ ...data, alamat: e.target.value })}
+              />
             </div>
             <div className="col">
               <div className="col">
                 <label>Nomor Telepon/Handphone* :</label>
-                <input type="number" className="form-control" />
+                <input
+                  type="number"
+                  className="form-control"
+                  value={data && data.noHp}
+                  onChange={(e) => setData({ ...data, noHp: e.target.value })}
+                />
               </div>
               <div className="col" style={{ marginTop: "20px" }}>
                 <label>Nomor Induk Siswa Nasional (NISN)* :</label>
-                <input type="number" className="form-control" />
+                <input
+                  type="number"
+                  className="form-control"
+                  value={data && data.nisn}
+                  onChange={(e) => setData({ ...data, nisn: e.target.value })}
+                />
               </div>
             </div>
           </div>
@@ -128,50 +262,73 @@ const ProgramJalurBeasiswa = () => {
           <div className="form-row">
             <div className="col">
               <label>Provinsi* :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.provinsi}
+                onChange={(e) => setData({ ...data, provinsi: e.target.value })}
+              />
             </div>
             <div className="col">
               <label>Alamat Email* :</label>
-              <input type="email" className="form-control" />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="col">
-              <label>Provinsi* :</label>
-              <input type="text" className="form-control" />
-            </div>
-            <div className="col">
-              <label>Alamat Email* :</label>
-              <input type="email" className="form-control" />
+              <input
+                type="email"
+                className="form-control"
+                value={data && data.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+              />
             </div>
           </div>
 
           <div className="form-row">
             <div className="col">
               <label>Kota/Kabupaten* :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.kota}
+                onChange={(e) => setData({ ...data, kota: e.target.value })}
+              />
             </div>
             <div className="col">
               <label>Asal Sekolah * :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.asalSekolah}
+                onChange={(e) =>
+                  setData({ ...data, asalSekolah: e.target.value })
+                }
+              />
             </div>
           </div>
 
           <div className="form-row">
             <div className="col">
               <label>Kode Pos* :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.kodePos}
+                onChange={(e) => setData({ ...data, kodePos: e.target.value })}
+              />
             </div>
             <div className="col">
               <label>Alamat Sekolah Asal* :</label>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                value={data && data.alamatAsalSekolah}
+                onChange={(e) =>
+                  setData({ ...data, alamatAsalSekolah: e.target.value })
+                }
+              />
             </div>
           </div>
         </div>
 
         <div className="pjb-btn-row">
-          <Button text="Daftar" />
+          <Button text="Daftar" onClick={saveData} />
           <Button
             text="Hapus"
             style={{ backgroundColor: "#494949", marginLeft: "20px" }}
