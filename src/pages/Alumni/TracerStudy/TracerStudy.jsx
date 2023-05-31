@@ -1,12 +1,12 @@
-import "./TracerStudy.css";
+import './TracerStudy.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Button from "../../../components/Button/Button";
-import Layout from "../../../Layout/Layout";
-import Typhography from "../../../components/Typhography/Typhography";
-import axios from "axios";
-import tracerStudy from "../../../assets/images/tracer_study.jpeg";
+import Button from '../../../components/Button/Button';
+import Layout from '../../../Layout/Layout';
+import Typhography from '../../../components/Typhography/Typhography';
+import axios from 'axios';
+import tracerStudy from '../../../assets/images/tracer_study.jpeg';
 
 const TracerStudy = () => {
   const [data, setData] = useState(null);
@@ -18,9 +18,9 @@ const TracerStudy = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/alumni/tracer/1"
+        'https://api.stikesmayapada.ac.id/api/alumni/tracer/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -38,9 +38,9 @@ const TracerStudy = () => {
             ></div>
             <Button
               text="Download Form"
-              style={{ marginTop: "24px" }}
+              style={{ marginTop: '24px' }}
               onClick={() =>
-                window.open(`${data && data.tracer_study_form}`, "_blank")
+                window.open(`${data && data.tracer_study_form}`, '_blank')
               }
             />
           </div>

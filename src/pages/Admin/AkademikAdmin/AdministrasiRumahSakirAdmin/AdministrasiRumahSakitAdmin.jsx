@@ -26,7 +26,7 @@ const AdministrasiRumahSakitAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/administrasi-rumah-sakit/1'
+        'https://api.stikesmayapada.ac.id/api/administrasi-rumah-sakit/1'
       );
       const responseData = response.data;
       setBanner(responseData.banner_image);
@@ -85,7 +85,7 @@ const AdministrasiRumahSakitAdmin = () => {
       formData.append('file_jadwal_genap', fileGenapPeriode);
 
       const response = await axios.put(
-        `https://stikesmayapada.ac.id/api/administrasi-rumah-sakit/1`,
+        `https://api.stikesmayapada.ac.id/api/administrasi-rumah-sakit/1`,
         formData,
         {
           headers: {

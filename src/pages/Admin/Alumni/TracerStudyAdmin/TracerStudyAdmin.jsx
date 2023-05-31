@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const TracerStudyAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [tracerStudyText, setTracerStudyText] = useState(null);
   const [tracerStudyImg, setTracerStudyImg] = useState(null);
@@ -20,9 +20,9 @@ const TracerStudyAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/alumni/tracer/1"
+        'https://api.stikesmayapada.ac.id/api/alumni/tracer/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -30,21 +30,21 @@ const TracerStudyAdmin = () => {
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append("id", 1);
-      formData.append("tracerStudyText", tracerStudyText);
-      formData.append("tracerStudyImg", tracerStudyImg);
-      formData.append("tracerStudyForm", tracerStudyForm);
+      formData.append('id', 1);
+      formData.append('tracerStudyText', tracerStudyText);
+      formData.append('tracerStudyImg', tracerStudyImg);
+      formData.append('tracerStudyForm', tracerStudyForm);
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/alumni/tracer",
+        'https://api.stikesmayapada.ac.id/api/alumni/tracer',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -52,7 +52,7 @@ const TracerStudyAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
@@ -66,7 +66,7 @@ const TracerStudyAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Tracer Study Admin</span>
           </h4>

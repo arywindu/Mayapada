@@ -1,12 +1,12 @@
-import "./PenerimaanMahasiswaBaru.css";
+import './PenerimaanMahasiswaBaru.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Button from "../../../components/Button/Button";
-import Layout from "../../../Layout/Layout";
-import Typhography from "../../../components/Typhography/Typhography";
-import axios from "axios";
-import penerimaanMahasiswa from "../../../assets/images/penerimaan_mahasiswa.png";
+import Button from '../../../components/Button/Button';
+import Layout from '../../../Layout/Layout';
+import Typhography from '../../../components/Typhography/Typhography';
+import axios from 'axios';
+import penerimaanMahasiswa from '../../../assets/images/penerimaan_mahasiswa.png';
 
 const PenerimaanMahasiswa = () => {
   const [banner, setBanner] = useState(null);
@@ -22,9 +22,9 @@ const PenerimaanMahasiswa = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/PMB/1"
+        'https://api.stikesmayapada.ac.id/api/PMB/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       const dataRes = response.data.data;
       setBanner(dataRes.banner_img);
       setTitle(dataRes.title_text);
@@ -94,8 +94,8 @@ const PenerimaanMahasiswa = () => {
                   text="info lengkap"
                   type="btn-border"
                   borderColor="white"
-                  style={{ marginTop: "12px" }}
-                  onClick={(event) => (window.location.href = "/JalurMandiri")}
+                  style={{ marginTop: '12px' }}
+                  onClick={(event) => (window.location.href = '/JalurMandiri')}
                 />
               </div>
             </div>
@@ -120,8 +120,8 @@ const PenerimaanMahasiswa = () => {
                   text="info lengkap"
                   type="btn-border"
                   borderColor="white"
-                  style={{ marginTop: "12px" }}
-                  onClick={(event) => (window.location.href = "/JalurBeasiswa")}
+                  style={{ marginTop: '12px' }}
+                  onClick={(event) => (window.location.href = '/JalurBeasiswa')}
                 />
               </div>
             </div>

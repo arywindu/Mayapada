@@ -1,39 +1,39 @@
-import "./ProgramJalurBeasiswa.css";
+import './ProgramJalurBeasiswa.css';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Button from "../../../components/Button/Button";
-import Layout from "../../../Layout/Layout";
-import Typhography from "../../../components/Typhography/Typhography";
-import axios from "axios";
+import Button from '../../../components/Button/Button';
+import Layout from '../../../Layout/Layout';
+import Typhography from '../../../components/Typhography/Typhography';
+import axios from 'axios';
 
 const ProgramJalurBeasiswa = () => {
   const [data, setData] = useState({
-    programKelas: "",
-    namaLengkap: "",
-    tempatLahir: "",
-    tanggalLahir: "",
-    jenisKelamin: "",
-    pilihAgama: "",
-    beratBadan: "",
-    tinggiBadan: "",
-    namaOrtu: "",
-    alamat: "",
-    provinsi: "",
-    kota: "",
-    kodePos: "",
-    ktp: "",
-    noHp: "",
-    nisn: "",
-    email: "",
-    asalSekolah: "",
-    alamatAsalSekolah: "",
+    programKelas: '',
+    namaLengkap: '',
+    tempatLahir: '',
+    tanggalLahir: '',
+    jenisKelamin: '',
+    pilihAgama: '',
+    beratBadan: '',
+    tinggiBadan: '',
+    namaOrtu: '',
+    alamat: '',
+    provinsi: '',
+    kota: '',
+    kodePos: '',
+    ktp: '',
+    noHp: '',
+    nisn: '',
+    email: '',
+    asalSekolah: '',
+    alamatAsalSekolah: '',
   });
 
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/form/register",
+        'https://api.stikesmayapada.ac.id/api/form/register',
         {
           programKelas: data.programKelas,
           namaLengkap: data.namaLengkap,
@@ -56,14 +56,14 @@ const ProgramJalurBeasiswa = () => {
           alamatAsalSekolah: data.alamatAsalSekolah,
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       const { status } = response;
       if (status === 200) {
-        window.location.href = "/RegistrasiBerhasil";
+        window.location.href = '/RegistrasiBerhasil';
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
   return (
@@ -198,10 +198,10 @@ const ProgramJalurBeasiswa = () => {
 
           <div
             style={{
-              width: "100%",
-              height: "1px",
-              borderBottom: "1px solid #A8A9AA",
-              margin: "5% 0",
+              width: '100%',
+              height: '1px',
+              borderBottom: '1px solid #A8A9AA',
+              margin: '5% 0',
             }}
           />
 
@@ -247,7 +247,7 @@ const ProgramJalurBeasiswa = () => {
                   onChange={(e) => setData({ ...data, noHp: e.target.value })}
                 />
               </div>
-              <div className="col" style={{ marginTop: "20px" }}>
+              <div className="col" style={{ marginTop: '20px' }}>
                 <label>Nomor Induk Siswa Nasional (NISN)* :</label>
                 <input
                   type="number"
@@ -331,7 +331,7 @@ const ProgramJalurBeasiswa = () => {
           <Button text="Daftar" onClick={saveData} />
           <Button
             text="Hapus"
-            style={{ backgroundColor: "#494949", marginLeft: "20px" }}
+            style={{ backgroundColor: '#494949', marginLeft: '20px' }}
           />
         </div>
       </div>

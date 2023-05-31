@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import Popup from "reactjs-popup";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import Popup from 'reactjs-popup';
+import { async } from 'q';
+import axios from 'axios';
 
 const SaranaDanPrasaranaAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [dataPendidikan, setDataPendidikan] = useState(null);
   const [dataUmum, setDataUmum] = useState(null);
   const [edit, setEdit] = useState(false);
@@ -48,9 +48,9 @@ const SaranaDanPrasaranaAdmin = () => {
   const getDataPendidikan = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/sarana-prasarana/1/images"
+        'https://api.stikesmayapada.ac.id/api/sarana-prasarana/1/images'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setDataPendidikan(response.data);
     } catch (error) {
       console.log(error);
@@ -60,9 +60,9 @@ const SaranaDanPrasaranaAdmin = () => {
   const getDataUmum = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/sarana-prasarana/2/images"
+        'https://api.stikesmayapada.ac.id/api/sarana-prasarana/2/images'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setDataUmum(response.data);
     } catch (error) {
       console.log(error);
@@ -73,21 +73,21 @@ const SaranaDanPrasaranaAdmin = () => {
     if (edit) {
       try {
         let formData = new FormData();
-        formData.append("type", "FASILITAS_PENDIDIKAN");
-        formData.append("card_image", pendidikanImg);
-        formData.append("card_description", pendidikanDesc);
-        formData.append("status", 1);
+        formData.append('type', 'FASILITAS_PENDIDIKAN');
+        formData.append('card_image', pendidikanImg);
+        formData.append('card_description', pendidikanDesc);
+        formData.append('status', 1);
         const response = await axios.put(
-          `https://stikesmayapada.ac.id/api/sarana-prasarana/images/${pendidikanId}`,
+          `https://api.stikesmayapada.ac.id/api/sarana-prasarana/images/${pendidikanId}`,
           formData,
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
+              'Content-Type': 'multipart/form-data',
             },
           }
         );
-        console.log(response.status, "test");
+        console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -101,26 +101,26 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, "error");
+        console.log(error, 'error');
       }
     } else {
       try {
         let formData = new FormData();
-        formData.append("type", "FASILITAS_PENDIDIKAN");
-        formData.append("card_image", pendidikanImg);
-        formData.append("card_description", pendidikanDesc);
-        formData.append("status", 1);
+        formData.append('type', 'FASILITAS_PENDIDIKAN');
+        formData.append('card_image', pendidikanImg);
+        formData.append('card_description', pendidikanDesc);
+        formData.append('status', 1);
         const response = await axios.post(
-          "https://stikesmayapada.ac.id/api/sarana-prasarana/1/images",
+          'https://api.stikesmayapada.ac.id/api/sarana-prasarana/1/images',
           formData,
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
+              'Content-Type': 'multipart/form-data',
             },
           }
         );
-        console.log(response.status, "test");
+        console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -134,7 +134,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, "error");
+        console.log(error, 'error');
       }
     }
   };
@@ -147,21 +147,21 @@ const SaranaDanPrasaranaAdmin = () => {
     if (edit) {
       try {
         let formData = new FormData();
-        formData.append("type", "FASILITAS_UMUM");
-        formData.append("card_image", umumImg);
-        formData.append("card_description", umumDesc);
-        formData.append("status", 1);
+        formData.append('type', 'FASILITAS_UMUM');
+        formData.append('card_image', umumImg);
+        formData.append('card_description', umumDesc);
+        formData.append('status', 1);
         const response = await axios.put(
-          `https://stikesmayapada.ac.id/api/sarana-prasarana/images/${umumId}`,
+          `https://api.stikesmayapada.ac.id/api/sarana-prasarana/images/${umumId}`,
           formData,
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
+              'Content-Type': 'multipart/form-data',
             },
           }
         );
-        console.log(response.status, "test");
+        console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -175,26 +175,26 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, "error");
+        console.log(error, 'error');
       }
     } else {
       try {
         let formData = new FormData();
-        formData.append("type", "FASILITAS_UMUM");
-        formData.append("card_image", umumImg);
-        formData.append("card_description", umumDesc);
-        formData.append("status", 1);
+        formData.append('type', 'FASILITAS_UMUM');
+        formData.append('card_image', umumImg);
+        formData.append('card_description', umumDesc);
+        formData.append('status', 1);
         const response = await axios.post(
-          "https://stikesmayapada.ac.id/api/sarana-prasarana/2/images",
+          'https://api.stikesmayapada.ac.id/api/sarana-prasarana/2/images',
           formData,
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
+              'Content-Type': 'multipart/form-data',
             },
           }
         );
-        console.log(response.status, "test");
+        console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -208,7 +208,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, "error");
+        console.log(error, 'error');
       }
     }
   };
@@ -220,7 +220,7 @@ const SaranaDanPrasaranaAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">
               Sarana Dan Prasarana Admin
@@ -258,7 +258,7 @@ const SaranaDanPrasaranaAdmin = () => {
                       <img
                         src={item.card_image}
                         className="mx-auto"
-                        width={"30%"}
+                        width={'30%'}
                       />
                     </td>
                     <td>{item.card_description}</td>
@@ -299,7 +299,7 @@ const SaranaDanPrasaranaAdmin = () => {
                       <img
                         src={item.card_image}
                         className="mx-auto"
-                        width={"30%"}
+                        width={'30%'}
                       />
                     </td>
                     <td>{item.card_description}</td>
@@ -315,17 +315,17 @@ const SaranaDanPrasaranaAdmin = () => {
           >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <div
                 style={{
-                  backgroundColor: "white",
-                  width: "70%",
-                  padding: "30px",
-                  borderRadius: "10px",
+                  backgroundColor: 'white',
+                  width: '70%',
+                  padding: '30px',
+                  borderRadius: '10px',
                 }}
               >
                 <div class="mb-3 row">
@@ -368,16 +368,16 @@ const SaranaDanPrasaranaAdmin = () => {
                 <button
                   class="btn btn-primary mt-2"
                   type="submit"
-                  style={{ marginLeft: "20px" }}
+                  style={{ marginLeft: '20px' }}
                   onClick={saveDataPendidikan}
                 >
-                  {edit ? "Edit" : "Add More"}
+                  {edit ? 'Edit' : 'Add More'}
                 </button>
                 {edit && (
                   <button
                     class="btn btn-danger mt-2"
                     type="submit"
-                    style={{ marginLeft: "20px" }}
+                    style={{ marginLeft: '20px' }}
                     onClick={closeModalFirst}
                   >
                     Delete
@@ -394,17 +394,17 @@ const SaranaDanPrasaranaAdmin = () => {
           >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <div
                 style={{
-                  backgroundColor: "white",
-                  width: "70%",
-                  padding: "30px",
-                  borderRadius: "10px",
+                  backgroundColor: 'white',
+                  width: '70%',
+                  padding: '30px',
+                  borderRadius: '10px',
                 }}
               >
                 <div class="mb-3 row">
@@ -447,16 +447,16 @@ const SaranaDanPrasaranaAdmin = () => {
                 <button
                   class="btn btn-primary mt-2"
                   type="submit"
-                  style={{ marginLeft: "20px" }}
+                  style={{ marginLeft: '20px' }}
                   onClick={saveDataUmum}
                 >
-                  {edit ? "Edit" : "Add More"}
+                  {edit ? 'Edit' : 'Add More'}
                 </button>
                 {edit && (
                   <button
                     class="btn btn-danger mt-2"
                     type="submit"
-                    style={{ marginLeft: "20px" }}
+                    style={{ marginLeft: '20px' }}
                     onClick={closeModalSecond}
                   >
                     Delete

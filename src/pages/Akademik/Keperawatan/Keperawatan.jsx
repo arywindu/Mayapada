@@ -67,7 +67,7 @@ const Keperawatan = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/1'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/1'
       );
       const responseData = response.data;
       console.log(responseData);
@@ -84,7 +84,7 @@ const Keperawatan = () => {
   const getJadwal = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=KURIKULUM '
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=KURIKULUM '
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.file_path);
@@ -95,7 +95,7 @@ const Keperawatan = () => {
   const getKuliah = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=JADWAL'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=JADWAL'
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.file_path);
@@ -107,7 +107,7 @@ const Keperawatan = () => {
   const getFotoKuliah = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/images/all'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/images/all'
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.image);

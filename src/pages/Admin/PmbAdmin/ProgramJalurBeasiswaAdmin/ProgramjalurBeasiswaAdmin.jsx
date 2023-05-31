@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const ProgramJalurBeasiswaAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [content, setContent] = useState(null);
 
   useEffect(() => {
@@ -17,9 +17,9 @@ const ProgramJalurBeasiswaAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/PMB/beasiswa/1"
+        'https://api.stikesmayapada.ac.id/api/PMB/beasiswa/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       const dataRes = response.data.data;
       setContent(dataRes.konten);
     } catch (error) {
@@ -30,7 +30,7 @@ const ProgramJalurBeasiswaAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/PMB/beasiswa/1",
+        'https://api.stikesmayapada.ac.id/api/PMB/beasiswa/1',
         {
           konten: content,
         },
@@ -40,7 +40,7 @@ const ProgramJalurBeasiswaAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -48,14 +48,14 @@ const ProgramJalurBeasiswaAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Jalur Beasiswa Admin</span>
           </h4>

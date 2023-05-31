@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import axios from 'axios';
 
 const StandarSpmiAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [standar, setStandar] = useState(null);
 
@@ -17,9 +17,9 @@ const StandarSpmiAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/spmi/1/standar"
+        'https://api.stikesmayapada.ac.id/api/spmi/1/standar'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -27,7 +27,7 @@ const StandarSpmiAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.put(
-        "https://stikesmayapada.ac.id/api/spmi/1",
+        'https://api.stikesmayapada.ac.id/api/spmi/1',
         {
           standar: standar,
         },
@@ -37,7 +37,7 @@ const StandarSpmiAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -45,13 +45,13 @@ const StandarSpmiAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Standar SPMI Admin</span>
           </h4>

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import Popup from "reactjs-popup";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import Popup from 'reactjs-popup';
+import { async } from 'q';
+import axios from 'axios';
 
 const AlumniStoryAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [openFirst, setOpenFirst] = useState(false);
   const [edit, setEdit] = useState(false);
@@ -31,9 +31,9 @@ const AlumniStoryAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/alumni/story/alumni"
+        'https://api.stikesmayapada.ac.id/api/alumni/story/alumni'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -41,21 +41,21 @@ const AlumniStoryAdmin = () => {
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append("ikatanAlumniText", "");
-      formData.append("alumniStoryName", alumniStoryName);
-      formData.append("alumniStoryHistory", alumniStoryHistory);
-      formData.append("alumniStoryImg", alumniStoryImg);
+      formData.append('ikatanAlumniText', '');
+      formData.append('alumniStoryName', alumniStoryName);
+      formData.append('alumniStoryHistory', alumniStoryHistory);
+      formData.append('alumniStoryImg', alumniStoryImg);
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/alumni/story",
+        'https://api.stikesmayapada.ac.id/api/alumni/story',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -64,7 +64,7 @@ const AlumniStoryAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
@@ -75,7 +75,7 @@ const AlumniStoryAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Alumni Story Admin</span>
           </h4>
@@ -111,7 +111,7 @@ const AlumniStoryAdmin = () => {
                         <img
                           src={item.alumni_story_img}
                           className="mx-auto"
-                          width={"30%"}
+                          width={'30%'}
                         />
                       </td>
                       <td>{item.alumni_story_name}</td>
@@ -128,17 +128,17 @@ const AlumniStoryAdmin = () => {
             >
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >
                 <div
                   style={{
-                    backgroundColor: "white",
-                    width: "70%",
-                    padding: "30px",
-                    borderRadius: "10px",
+                    backgroundColor: 'white',
+                    width: '70%',
+                    padding: '30px',
+                    borderRadius: '10px',
                   }}
                 >
                   <div class="mb-3 row">
@@ -198,16 +198,16 @@ const AlumniStoryAdmin = () => {
                   <button
                     class="btn btn-primary mt-2"
                     type="submit"
-                    style={{ marginLeft: "20px" }}
+                    style={{ marginLeft: '20px' }}
                     onClick={saveData}
                   >
-                    {edit ? "Edit" : "Add More"}
+                    {edit ? 'Edit' : 'Add More'}
                   </button>
                   {edit && (
                     <button
                       class="btn btn-danger mt-2"
                       type="submit"
-                      style={{ marginLeft: "20px" }}
+                      style={{ marginLeft: '20px' }}
                       onClick={closeModalFirst}
                     >
                       Delete

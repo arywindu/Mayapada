@@ -126,7 +126,7 @@ export const MainRouter = () => {
   const handleLogin = async (username, password) => {
     try {
       const response = await axios.post(
-        `https://stikesmayapada.ac.id/api/auth/login`,
+        `https://api.stikesmayapada.ac.id/api/auth/login`,
         {
           username,
           password,

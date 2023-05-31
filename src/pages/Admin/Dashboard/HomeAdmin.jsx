@@ -1,15 +1,15 @@
-import "./HomeAdmin.css";
+import './HomeAdmin.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const HomeAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [visiMisi, setVisiMisi] = useState(null);
   const [landasanHukum, setLandasanHukum] = useState(null);
@@ -23,9 +23,9 @@ const HomeAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/homepage/1"
+        'https://api.stikesmayapada.ac.id/api/homepage/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -33,22 +33,22 @@ const HomeAdmin = () => {
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append("status", 1);
-      formData.append("logoImage", logoImage);
-      formData.append("visiMisi", visiMisi);
-      formData.append("landasanHukum", landasanHukum);
-      formData.append("strukturOrganisasi", strukturOrganisasi);
+      formData.append('status', 1);
+      formData.append('logoImage', logoImage);
+      formData.append('visiMisi', visiMisi);
+      formData.append('landasanHukum', landasanHukum);
+      formData.append('strukturOrganisasi', strukturOrganisasi);
       const response = await axios.put(
-        "https://stikesmayapada.ac.id/api/homepage/1",
+        'https://api.stikesmayapada.ac.id/api/homepage/1',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -56,19 +56,19 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
   const handleLogo = (event) => {
-    console.log(event.target.files[0], "logo");
+    console.log(event.target.files[0], 'logo');
     setLogoImage(event.target.files[0]);
   };
 
   return (
     <LayoutAdmin>
       <div class="Home-Admin">
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Home Admin</span>
           </h4>
@@ -176,7 +176,7 @@ const HomeAdmin = () => {
                   <div className="App">
                     <CKEditor
                       editor={ClassicEditor}
-                      data={data && data.visi_misi}
+                      // data={data && data.visi_misi}
                       onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                       }}

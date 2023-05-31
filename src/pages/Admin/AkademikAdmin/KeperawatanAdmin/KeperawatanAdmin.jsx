@@ -48,7 +48,7 @@ const HomeAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/1'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/1'
       );
       const responseData = response.data;
       setBanner(responseData.banner_image);
@@ -64,7 +64,7 @@ const HomeAdmin = () => {
   const getJadwal = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=KURIKULUM '
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=KURIKULUM '
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.file_path);
@@ -75,7 +75,7 @@ const HomeAdmin = () => {
   const getKuliah = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=JADWAL'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/all?selectBy=JADWAL'
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.file_path);
@@ -87,7 +87,7 @@ const HomeAdmin = () => {
   const getFotoKuliah = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/images/all'
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/images/all'
       );
       const responseData = response.data;
       const images = responseData.map((item) => item.image);
@@ -106,7 +106,7 @@ const HomeAdmin = () => {
       formData.append('image', fotoMataKuliah);
       formData.append('description', titleText);
       const response = await axios.post(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/images',
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/images',
         formData,
         {
           headers: {
@@ -134,7 +134,7 @@ const HomeAdmin = () => {
       formData.append('file_path', selectedJadwal);
       formData.append('type', 'KURIKULUM');
       const response = await axios.post(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files',
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files',
         formData,
         {
           headers: {
@@ -160,7 +160,7 @@ const HomeAdmin = () => {
       formData.append('file_path', fileKuliah);
       formData.append('type', 'JADWAL');
       const response = await axios.post(
-        'https://stikesmayapada.ac.id/api/akademik-keperawatan/files',
+        'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files',
         formData,
         {
           headers: {
@@ -193,7 +193,7 @@ const HomeAdmin = () => {
       formData.append('title_mata_kuliah', titleMataKuliah);
 
       const response = await axios.put(
-        `https://stikesmayapada.ac.id/api/akademik-keperawatan/1`,
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/1`,
         formData,
         {
           headers: {
@@ -224,7 +224,7 @@ const HomeAdmin = () => {
       formData.append('image', file);
       formData.append('description', description);
       const response = await axios.put(
-        `https://stikesmayapada.ac.id/api/akademik-keperawatan/images/${itemId}`,
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/images/${itemId}`,
         formData,
         {
           headers: {
@@ -253,7 +253,7 @@ const HomeAdmin = () => {
       formData.append('file_path', file);
       formData.append('type', 'JADWAL');
       const response = await axios.put(
-        `https://stikesmayapada.ac.id/api/akademik-keperawatan/files/${itemId}`,
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/${itemId}`,
         formData,
         {
           headers: {
@@ -283,7 +283,7 @@ const HomeAdmin = () => {
       formData.append('file_path', file);
       formData.append('type', 'KURIKULUM ');
       const response = await axios.put(
-        `https://stikesmayapada.ac.id/api/akademik-keperawatan/files/${itemId}`,
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/files/${itemId}`,
         formData,
         {
           headers: {

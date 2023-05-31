@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const HubungiKamiAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [contactWa, setContactWa] = useState(null);
   const [contackIg, setContactIg] = useState(null);
@@ -21,9 +21,9 @@ const HubungiKamiAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/contact/1"
+        'https://api.stikesmayapada.ac.id/api/contact/1'
       );
-      console.log(response.data, "hub kami");
+      console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setContactWa(responseData.contact_wa);
       setContactIg(responseData.contact_ig);
@@ -36,7 +36,7 @@ const HubungiKamiAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/contact/1",
+        'https://api.stikesmayapada.ac.id/api/contact/1',
         {
           contactWa: contactWa,
           contactIg: contackIg,
@@ -49,7 +49,7 @@ const HubungiKamiAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -57,13 +57,13 @@ const HubungiKamiAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Hubungi Kami Admin</span>
           </h4>

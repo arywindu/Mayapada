@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../Layout/LayoutAdmin";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../Layout/LayoutAdmin';
+import axios from 'axios';
 
 const PusatKarirAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [cTitle, setCTitle] = useState(null);
   const [cText, setCText] = useState(null);
@@ -18,9 +18,9 @@ const PusatKarirAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/carrer/1"
+        'https://api.stikesmayapada.ac.id/api/carrer/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setCTitle(response.data.data.title);
       setData(response.data.data);
     } catch (error) {
@@ -31,7 +31,7 @@ const PusatKarirAdmin = () => {
   const saveData = async () => {
     try {
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/carrer/1",
+        'https://api.stikesmayapada.ac.id/api/carrer/1',
         {
           title: cTitle,
           text: cText,
@@ -42,7 +42,7 @@ const PusatKarirAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 201) {
@@ -50,13 +50,13 @@ const PusatKarirAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Pusat Karir Admin</span>
           </h4>

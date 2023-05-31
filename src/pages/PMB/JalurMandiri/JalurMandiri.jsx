@@ -1,10 +1,10 @@
-import "./JalurMandiri.css";
+import './JalurMandiri.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Layout from "../../../Layout/Layout";
-import Typhography from "../../../components/Typhography/Typhography";
-import axios from "axios";
+import Layout from '../../../Layout/Layout';
+import Typhography from '../../../components/Typhography/Typhography';
+import axios from 'axios';
 
 const JalurMandiri = () => {
   const [data, setData] = useState(null);
@@ -16,9 +16,9 @@ const JalurMandiri = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/PMB/mandiri/1"
+        'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       const dataRes = response.data.data;
       setData(dataRes);
     } catch (error) {
@@ -42,10 +42,10 @@ const JalurMandiri = () => {
           </div>
           <div
             style={{
-              width: "10%",
-              height: "1px",
-              borderBottom: "1px dashed #278BC8",
-              marginBottom: "30px",
+              width: '10%',
+              height: '1px',
+              borderBottom: '1px dashed #278BC8',
+              marginBottom: '30px',
             }}
           />
           <div className="jalur-mandiri-progress-item">
@@ -59,10 +59,10 @@ const JalurMandiri = () => {
           </div>
           <div
             style={{
-              width: "10%",
-              height: "1px",
-              borderBottom: "1px dashed #278BC8",
-              marginBottom: "30px",
+              width: '10%',
+              height: '1px',
+              borderBottom: '1px dashed #278BC8',
+              marginBottom: '30px',
             }}
           />
           <div className="jalur-mandiri-progress-item">

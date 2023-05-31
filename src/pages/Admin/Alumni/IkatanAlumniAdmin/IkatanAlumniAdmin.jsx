@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const IkatanAlumniAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [ikatanAlumniText, setIkatanAlumniText] = useState(null);
   const [ikatanAlumniImg, setIkatanAlumniImg] = useState(null);
@@ -20,9 +20,9 @@ const IkatanAlumniAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/alumni/ikatan/1"
+        'https://api.stikesmayapada.ac.id/api/alumni/ikatan/1'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -30,21 +30,21 @@ const IkatanAlumniAdmin = () => {
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append("id", 1);
-      formData.append("ikatanAlumniText", ikatanAlumniText);
-      formData.append("ikatanAlumniImg", ikatanAlumniImg);
-      formData.append("ikatanAlumniForm", ikatanAlumniForm);
+      formData.append('id', 1);
+      formData.append('ikatanAlumniText', ikatanAlumniText);
+      formData.append('ikatanAlumniImg', ikatanAlumniImg);
+      formData.append('ikatanAlumniForm', ikatanAlumniForm);
       const response = await axios.post(
-        "https://stikesmayapada.ac.id/api/alumni/ikatan",
+        'https://api.stikesmayapada.ac.id/api/alumni/ikatan',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
-      console.log(response.status, "test");
+      console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -52,7 +52,7 @@ const IkatanAlumniAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
@@ -67,7 +67,7 @@ const IkatanAlumniAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Ikatan Alumni Admin</span>
           </h4>

@@ -24,7 +24,7 @@ const Administrasi = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://stikesmayapada.ac.id/api/administrasi-rumah-sakit/1'
+        'https://api.stikesmayapada.ac.id/api/administrasi-rumah-sakit/1'
       );
       const responseData = response.data;
       setBanner(responseData.banner_image);

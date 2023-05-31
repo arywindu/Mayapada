@@ -1,16 +1,16 @@
-import "./HubungiKami.css";
+import './HubungiKami.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Button from "../../components/Button/Button";
-import EmailIcon from "../../assets/icons/email-hub.svg";
-import FbIcon from "../../assets/icons/faHub.svg";
-import IgIcon from "../../assets/icons/igHub.svg";
-import Layout from "../../Layout/Layout";
-import Typhography from "../../components/Typhography/Typhography";
-import WaIcon from "../../assets/icons/waHub.svg";
-import axios from "axios";
-import imgHubKami from "../../assets/images/hubungiKamiImg.png";
+import Button from '../../components/Button/Button';
+import EmailIcon from '../../assets/icons/email-hub.svg';
+import FbIcon from '../../assets/icons/faHub.svg';
+import IgIcon from '../../assets/icons/igHub.svg';
+import Layout from '../../Layout/Layout';
+import Typhography from '../../components/Typhography/Typhography';
+import WaIcon from '../../assets/icons/waHub.svg';
+import axios from 'axios';
+import imgHubKami from '../../assets/images/hubungiKamiImg.png';
 
 const HubungiKami = () => {
   const [data, setData] = useState(null);
@@ -22,9 +22,9 @@ const HubungiKami = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://stikesmayapada.ac.id/api/contact/1"
+        'https://api.stikesmayapada.ac.id/api/contact/1'
       );
-      console.log(response.data, "hub kami");
+      console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setData(responseData);
     } catch (error) {}
@@ -33,7 +33,7 @@ const HubungiKami = () => {
     <Layout>
       <div className="bg-hub">
         <div class="hubungi-kami-container">
-          <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+          <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
             <div class="col-md-5">
               <img src={imgHubKami}></img>
             </div>
@@ -89,7 +89,7 @@ const HubungiKami = () => {
             />
             <div className="form-row">
               <div
-                style={{ display: "flex", flex: 1, flexDirection: "column" }}
+                style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
               >
                 <input
                   type="text"
@@ -108,7 +108,7 @@ const HubungiKami = () => {
                 />
               </div>
               <div
-                style={{ display: "flex", flex: 1, flexDirection: "column" }}
+                style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
               >
                 <textarea
                   type="text"
@@ -119,14 +119,14 @@ const HubungiKami = () => {
                 <div
                   style={{
                     flex: 1,
-                    alignSelf: "flex-end",
-                    alignContent: "flex-end",
+                    alignSelf: 'flex-end',
+                    alignContent: 'flex-end',
                   }}
                 >
                   <Button
                     text="Send"
                     borderColor="white"
-                    style={{ marginTop: "12px" }}
+                    style={{ marginTop: '12px' }}
                   />
                 </div>
               </div>
