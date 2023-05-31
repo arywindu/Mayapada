@@ -1,13 +1,12 @@
 import "./HeaderAdmin.css";
 
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import React from "react";
 
 const HeaderAdmin = () => {
-  let navigate = useNavigate();
   const logOut = () => {
     localStorage.clear();
+    window.location.href = "/";
   };
   return (
     <div className="text-center mt-5 mb-3">
