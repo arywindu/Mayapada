@@ -28,6 +28,7 @@ const HomeAdmin = () => {
   const [openBanner, setOpenBanner] = useState(false);
   const [edit, setEdit] = useState(false);
   const [bannerId, setBannerId] = useState(null);
+  const [headline, setHeadline] = useState(null);
 
   useEffect(() => {
     getData();
@@ -91,7 +92,7 @@ const HomeAdmin = () => {
       let formData = new FormData();
       formData.append("homePageId", 1);
       formData.append("bannerImage", bannerImg);
-      formData.append("headline", "");
+      formData.append("headline", headline);
       formData.append("bannerText", textBanner);
       formData.append("button1", btnBanner1);
       formData.append("button2", btnBanner2);
@@ -126,7 +127,7 @@ const HomeAdmin = () => {
       let formData = new FormData();
       formData.append("homePageId", 1);
       formData.append("bannerImage", bannerImg);
-      formData.append("headline", "");
+      formData.append("headline", headline);
       formData.append("bannerText", textBanner);
       formData.append("button1", btnBanner1);
       formData.append("button2", btnBanner2);
@@ -199,6 +200,7 @@ const HomeAdmin = () => {
     setShowBtn1(false);
     setShowBtn2(false);
     setTextBanner(null);
+    setHeadline(null);
   };
 
   return (
@@ -236,6 +238,7 @@ const HomeAdmin = () => {
                       setShowBtn1(item.button_1_show === 1 ? true : false);
                       setShowBtn2(item.button_2_show === 1 ? true : false);
                       setTextBanner(item.banner_text);
+                      setHeadline(item.headline);
                       setBannerId(item.id);
                       setEdit(true);
                     }}
@@ -514,6 +517,19 @@ const HomeAdmin = () => {
                         onChange={handleBanner}
                       />
                     </div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">
+                    Headline
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={headline}
+                      onChange={(e) => setHeadline(e.target.value)}
+                    />
                   </div>
                 </div>
                 <div class="mb-3 row">

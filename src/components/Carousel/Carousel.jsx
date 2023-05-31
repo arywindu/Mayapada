@@ -3,7 +3,8 @@ import "./Carousel.css";
 import React from "react";
 import carouselImage from "../../assets/images/carousel1.png";
 
-const Carousel = () => {
+const Carousel = (props) => {
+  const { data } = props;
   return (
     <div>
       <div
@@ -12,29 +13,46 @@ const Carousel = () => {
         data-bs-ride="carousel"
       >
         <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+          {data &&
+            data.map((item, index) => (
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to={`${index}`}
+                class={index === 0 ? "active" : ""}
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+            ))}
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
+          {data &&
+            data.map((item, index) => (
+              <div
+                class={`carousel-item ${index === 0 ? "active" : ""}`}
+                data-bs-interval="10000"
+              >
+                <img src={item.banner_image} class="d-block w-100"></img>
+                <div class="carousel-caption">
+                  <div className="text-carousel">
+                    <h5>{item.headline}</h5>
+                    <h1>{item.banner_text}</h1>
+                  </div>
+                  {item.button_1_show === 1 && (
+                    <button type="button" class="btn btn-carousel btn">
+                      {item.button_1}
+                    </button>
+                  )}
+                  &nbsp; &nbsp;
+                  {item.button_2_show === 1 && (
+                    <button type="button" class="btn btn-carousel btn">
+                      {item.button_2}
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+          {/* <div class="carousel-item active" data-bs-interval="10000">
             <img src={carouselImage} class="d-block w-100"></img>
             <div class="carousel-caption">
               <div className="text-carousel">
@@ -69,7 +87,7 @@ const Carousel = () => {
                 Some representative placeholder content for the third slide.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
