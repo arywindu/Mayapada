@@ -1,54 +1,80 @@
-import './HomeAdmin.css';
+import "./HomeAdmin.css";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import LayoutAdmin from '../../../Layout/LayoutAdmin';
-import { async } from 'q';
-import axios from 'axios';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import LayoutAdmin from "../../../Layout/LayoutAdmin";
+import Popup from "reactjs-popup";
+import { async } from "q";
+import axios from "axios";
 
 const HomeAdmin = () => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const [data, setData] = useState(null);
-  const [visiMisi, setVisiMisi] = useState(null);
+  const [dataBanner, setDataBanner] = useState(null);
+  const [textVisi, setTextVisi] = useState(null);
+  const [textMisi, setTextMisi] = useState(null);
+  const [tujuan, setTujuan] = useState(null);
   const [landasanHukum, setLandasanHukum] = useState(null);
   const [strukturOrganisasi, setStrukturOrganisasi] = useState(null);
   const [logoImage, setLogoImage] = useState(null);
+  const [bannerImg, setBannerImg] = useState(null);
+  const [textBanner, setTextBanner] = useState(null);
+  const [btnBanner1, setBtnBanner1] = useState(null);
+  const [btnBanner2, setBtnBanner2] = useState(null);
+  const [showBtn1, setShowBtn1] = useState(false);
+  const [showBtn2, setShowBtn2] = useState(false);
+  const [openBanner, setOpenBanner] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [bannerId, setBannerId] = useState(null);
 
   useEffect(() => {
     getData();
+    getDataBanner();
   }, []);
 
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/homepage/1'
+        "https://api.stikesmayapada.ac.id/api/homepage/1"
       );
-      console.log(response.data, 'res');
+      console.log(response.data, "res");
       setData(response.data.data);
+    } catch (error) {}
+  };
+
+  const getDataBanner = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.stikesmayapada.ac.id/api/homepage/1/banner"
+      );
+      console.log(response.data, "res");
+      setDataBanner(response.data.data);
     } catch (error) {}
   };
 
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append('status', 1);
-      formData.append('logoImage', logoImage);
-      formData.append('visiMisi', visiMisi);
-      formData.append('landasanHukum', landasanHukum);
-      formData.append('strukturOrganisasi', strukturOrganisasi);
+      formData.append("status", 1);
+      formData.append("logoImage", logoImage);
+      formData.append("textVisi", textVisi);
+      formData.append("textMisi", textMisi);
+      formData.append("tujuan", tujuan);
+      formData.append("landasanHukum", landasanHukum);
+      formData.append("strukturOrganisasi", strukturOrganisasi);
       const response = await axios.put(
-        'https://api.stikesmayapada.ac.id/api/homepage/1',
+        "https://api.stikesmayapada.ac.id/api/homepage/1",
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response.status, 'test');
+      console.log(response.status, "test");
       getData();
       const { status } = response;
       if (status === 200) {
@@ -56,22 +82,176 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      console.log(error, "error");
+    }
+  };
+
+  const saveDataBanner = async () => {
+    try {
+      let formData = new FormData();
+      formData.append("homePageId", 1);
+      formData.append("bannerImage", bannerImg);
+      formData.append("headline", "");
+      formData.append("bannerText", textBanner);
+      formData.append("button1", btnBanner1);
+      formData.append("button2", btnBanner2);
+      formData.append("button1Show", showBtn1 ? 1 : 0);
+      formData.append("button2Show", showBtn2 ? 1 : 0);
+      const response = await axios.post(
+        "https://api.stikesmayapada.ac.id/api/homepage/1/banner",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response.status, "test");
+      getData();
+      getDataBanner();
+      const { status } = response;
+      if (status === 200 || status === 201) {
+        alert(`Berhasil update data`);
+        closeModalBanner();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      console.log(error, "error");
+    }
+  };
+
+  const editDataBanner = async () => {
+    try {
+      let formData = new FormData();
+      formData.append("homePageId", 1);
+      formData.append("bannerImage", bannerImg);
+      formData.append("headline", "");
+      formData.append("bannerText", textBanner);
+      formData.append("button1", btnBanner1);
+      formData.append("button2", btnBanner2);
+      formData.append("button1Show", showBtn1 ? 1 : 0);
+      formData.append("button2Show", showBtn2 ? 1 : 0);
+      const response = await axios.put(
+        `https://api.stikesmayapada.ac.id/api/homepage/1/banner/${bannerId}`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response.status, "test");
+      getData();
+      getDataBanner();
+      const { status } = response;
+      if (status === 200 || status === 201) {
+        alert(`Berhasil update data`);
+        closeModalBanner();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      console.log(error, "error");
+    }
+  };
+
+  const deleteBanner = async () => {
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/homepage/1/banner/${bannerId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response.status, "test");
+      getData();
+      getDataBanner();
+      const { status } = response;
+      if (status === 200 || status === 201) {
+        alert(`Berhasil delete data`);
+        closeModalBanner();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      console.log(error, "error");
     }
   };
 
   const handleLogo = (event) => {
-    console.log(event.target.files[0], 'logo');
+    console.log(event.target.files[0], "logo");
     setLogoImage(event.target.files[0]);
+  };
+
+  const handleBanner = (event) => {
+    setBannerImg(event.target.files[0]);
+  };
+
+  const closeModalBanner = () => {
+    setOpenBanner(false);
+    setEdit(false);
+    setBannerImg(null);
+    setBtnBanner1(null);
+    setBtnBanner2(null);
+    setShowBtn1(false);
+    setShowBtn2(false);
+    setTextBanner(null);
   };
 
   return (
     <LayoutAdmin>
       <div class="Home-Admin">
-        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
+        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
           <h4>
             <span className="bg-primary text-white">Home Admin</span>
           </h4>
+          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+          <div>Banner</div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            style={{ margin: "20px 0" }}
+            onClick={() => setOpenBanner(true)}
+          >
+            Add More
+          </button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataBanner &&
+                dataBanner.map((item) => (
+                  <tr
+                    onClick={() => {
+                      setOpenBanner(true);
+                      setBtnBanner1(item.button_1);
+                      setBtnBanner2(item.button_2);
+                      setShowBtn1(item.button_1_show === 1 ? true : false);
+                      setShowBtn2(item.button_2_show === 1 ? true : false);
+                      setTextBanner(item.banner_text);
+                      setBannerId(item.id);
+                      setEdit(true);
+                    }}
+                  >
+                    <td>
+                      <img
+                        src={item.banner_image}
+                        className="mx-auto"
+                        width={"30%"}
+                      />
+                    </td>
+                    <td>{item.banner_text}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
           <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
           <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -91,7 +271,7 @@ const HomeAdmin = () => {
           </div>
           <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
           <div id="SectionBanner">
-            <div class="mb-3 row">
+            {/* <div class="mb-3 row">
               <label for="staticEmail" class="col-sm-2 col-form-label">
                 Banner Image
               </label>
@@ -165,24 +345,74 @@ const HomeAdmin = () => {
                   Add More Banner
                 </button>
               </div>
-            </div>
+            </div> */}
             <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
             <div class="mb-3 row">
               <label for="" class="col-sm-2 col-form-label">
-                Section Visi Misi
+                Section Visi
               </label>
               <div class="col-sm-10">
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
                       editor={ClassicEditor}
-                      // data={data && data.visi_misi}
+                      data={data && data.text_visi}
                       onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                       }}
                       onChange={(event, editor) => {
                         const data = editor.getData();
-                        setVisiMisi(data);
+                        setTextVisi(data);
+                      }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                Section Misi
+              </label>
+              <div class="col-sm-10">
+                <div class="input-group mb-3">
+                  <div className="App">
+                    <CKEditor
+                      editor={ClassicEditor}
+                      data={data && data.text_misi}
+                      onReady={(editor) => {
+                        // You can store the "editor" and use when it is needed.
+                      }}
+                      onChange={(event, editor) => {
+                        const data = editor.getData();
+                        setTextMisi(data);
+                      }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+            <div class="mb-3 row">
+              <label for="" class="col-sm-2 col-form-label">
+                Section Tujuan
+              </label>
+              <div class="col-sm-10">
+                <div class="input-group mb-3">
+                  <div className="App">
+                    <CKEditor
+                      editor={ClassicEditor}
+                      data={data && data.tujuan}
+                      onReady={(editor) => {
+                        // You can store the "editor" and use when it is needed.
+                      }}
+                      onChange={(event, editor) => {
+                        const data = editor.getData();
+                        setTujuan(data);
                       }}
                       onBlur={(event, editor) => {}}
                       onFocus={(event, editor) => {}}
@@ -250,6 +480,136 @@ const HomeAdmin = () => {
               Save
             </button>
           </div>
+
+          <Popup
+            open={openBanner}
+            closeOnDocumentClick
+            onClose={closeModalBanner}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "white",
+                  width: "70%",
+                  padding: "30px",
+                  borderRadius: "10px",
+                }}
+              >
+                <div class="mb-3 row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">
+                    Banner Image
+                  </label>
+                  <div class="col-sm-10">
+                    <div class="input-group mb-3">
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="inputGroupFile01"
+                        onChange={handleBanner}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">
+                    Text Banner
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={textBanner}
+                      onChange={(e) => setTextBanner(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">
+                    Button 1
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={btnBanner1}
+                      onChange={(e) => setBtnBanner1(e.target.value)}
+                    />
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="defaultCheck1"
+                        checked={showBtn1}
+                        onChange={() => setShowBtn1((prev) => !prev)}
+                      />
+                      <label class="form-check-label" for="defaultCheck1">
+                        Show Button 1
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">
+                    Button 2
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={btnBanner2}
+                      onChange={(e) => setBtnBanner2(e.target.value)}
+                    />
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="defaultCheck1"
+                        checked={showBtn2}
+                        onChange={() => setShowBtn2((prev) => !prev)}
+                      />
+                      <label class="form-check-label" for="defaultCheck1">
+                        Show Button 2
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="btn btn-secondary mt-2"
+                  type="submit"
+                  onClick={closeModalBanner}
+                >
+                  Cancel
+                </button>
+                <button
+                  class="btn btn-primary mt-2"
+                  type="submit"
+                  style={{ marginLeft: "20px" }}
+                  onClick={edit ? editDataBanner : saveDataBanner}
+                >
+                  {edit ? "Edit" : "Add More"}
+                </button>
+                {edit && (
+                  <button
+                    class="btn btn-danger mt-2"
+                    type="submit"
+                    style={{ marginLeft: "20px" }}
+                    onClick={deleteBanner}
+                  >
+                    Delete
+                  </button>
+                )}
+              </div>
+            </div>
+          </Popup>
         </div>
       </div>
     </LayoutAdmin>
