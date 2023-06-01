@@ -30,6 +30,7 @@ const HomeAdmin = () => {
   const [bannerId, setBannerId] = useState(null);
   const [headline, setHeadline] = useState(null);
   const [category, setCategory] = useState(null);
+  const [indexing, setIndexing] = useState(null);
 
   useEffect(() => {
     getData();
@@ -58,6 +59,7 @@ const HomeAdmin = () => {
 
   const saveData = async () => {
     try {
+      console.log(logoImage, '<<<<<<<<<<<<<<<,,');
       let formData = new FormData();
       formData.append('status', 1);
       formData.append('logoImage', logoImage);
@@ -125,9 +127,10 @@ const HomeAdmin = () => {
 
   const editDataBanner = async () => {
     try {
+      // console.log(bannerImg);
       let formData = new FormData();
       formData.append('homePageId', 1);
-      formData.append('bannerImage', bannerImg);
+      formData.append('bannerImage', bannerImg[indexing]);
       formData.append('headline', headline);
       formData.append('bannerText', textBanner);
       formData.append('button1', btnBanner1);
@@ -200,10 +203,12 @@ const HomeAdmin = () => {
   const handleBanner = (event) => {
     setBannerImg(event.target.files[0]);
   };
-  const handleBanners = (event, index, bannerId) => {
+  const handleBanners = (event, index) => {
     const selectedFile = event.target.files[0];
     setBannerImg((prevFotoMataKuliah) => {
-      const updatedFotoMataKuliah = [...prevFotoMataKuliah];
+      const updatedFotoMataKuliah = Array.isArray(prevFotoMataKuliah)
+        ? [...prevFotoMataKuliah]
+        : [];
       updatedFotoMataKuliah[index] = selectedFile;
       return updatedFotoMataKuliah;
     });
@@ -220,6 +225,8 @@ const HomeAdmin = () => {
     setTextBanner(null);
     setHeadline(null);
   };
+
+  console.log(data && data.logo_image, 'jancooookkkkkkkkkkkk');
 
   return (
     <LayoutAdmin>
@@ -245,7 +252,7 @@ const HomeAdmin = () => {
             <thead>
               <tr>
                 <th scope="col">Image</th>
-                <th scope="col">Title</th>
+                <th scope="col">Banner Text</th>
               </tr>
             </thead>
             <tbody>
@@ -261,6 +268,7 @@ const HomeAdmin = () => {
                       setTextBanner(item.banner_text);
                       setHeadline(item.headline);
                       setBannerId(item.id);
+                      setIndexing(index);
                       setEdit(true);
                     }}
                   >
@@ -268,7 +276,7 @@ const HomeAdmin = () => {
                       <img
                         src={item.banner_image}
                         className="mx-auto"
-                        width={'30%'}
+                        width={'15%'}
                       />
                     </td>
                     <td>{item.banner_text}</td>
@@ -534,10 +542,14 @@ const HomeAdmin = () => {
                       <input
                         type="file"
                         class="form-control"
-                        id="inputGroupFile01"
-                        onChange={
-                          category === 'add' ? handleBanner : handleBanners
-                        }
+                        id={`inputGroupFile${bannerId}`}
+                        onChange={(event) => {
+                          if (category === 'add') {
+                            handleBanner(event);
+                          } else {
+                            handleBanners(event, indexing);
+                          }
+                        }}
                       />
                     </div>
                   </div>
