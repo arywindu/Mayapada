@@ -74,7 +74,9 @@ const SaranaDanPrasaranaAdmin = () => {
       try {
         let formData = new FormData();
         formData.append('type', 'FASILITAS_PENDIDIKAN');
-        formData.append('card_image', pendidikanImg);
+        if (pendidikanImg !== null && pendidikanImg !== undefined) {
+          formData.append('card_image', pendidikanImg);
+        }
         formData.append('card_description', pendidikanDesc);
         formData.append('status', 1);
         const response = await axios.put(
@@ -148,7 +150,9 @@ const SaranaDanPrasaranaAdmin = () => {
       try {
         let formData = new FormData();
         formData.append('type', 'FASILITAS_UMUM');
-        formData.append('card_image', umumImg);
+        if (umumImg !== null && umumImg !== undefined) {
+          formData.append('card_image', umumImg);
+        }
         formData.append('card_description', umumDesc);
         formData.append('status', 1);
         const response = await axios.put(
