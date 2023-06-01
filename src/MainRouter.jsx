@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
-import AdminDashboard from "./pages/Admin/Dashboard/HomeAdmin";
-import AdministrasiRumahSakit from "./pages/Akademik/AdministrasiRumahSakit/AdministrasiRumahSakit";
-import AdministrasiRumahSakitAdmin from "./pages/Admin/AkademikAdmin/AdministrasiRumahSakirAdmin/AdministrasiRumahSakitAdmin";
-import AlumniStory from "./pages/Alumni/AlumniStory/AlumniStory";
-import AlumniStoryAdmin from "./pages/Admin/Alumni/AlumniStpryAdmin/AlumniStoryAdmin";
-import GalleryKegiatan from "./pages/Fasilitas/GalleryKegiatan/GalleryKegiatan";
-import GalleryKegiatanAdmin from "./pages/Admin/FasilitasAdmin/GalleryKegiatanAdmin/GalleryKegiatanAdmin";
-import Home from "./pages/Home/Home";
-import HubungiKami from "./pages/HubungiKami/HubungiKami";
-import HubungiKamiAdmin from "./pages/Admin/HubungiKamiAdmin/HubungiKamiAdmin";
-import IkatanAlumni from "./pages/Alumni/IkatanAlumni/IkatanAlumni";
-import IkatanAlumniAdmin from "./pages/Admin/Alumni/IkatanAlumniAdmin/IkatanAlumniAdmin";
-import JalurBeasiswa from "./pages/PMB/JalurBeasiswa/JalurBeasiswa";
-import JalurMandiri from "./pages/PMB/JalurMandiri/JalurMandiri";
-import KebijakanUpmi from "./pages/UPMI/KebijakanUpmi/KebijakanUpmi";
-import KebijakanUpmiAdmin from "./pages/Admin/UPMIAdmin/KebijakanUpmiAdmin/KebijakanUpmiAdmin";
-import Keperawatan from "./pages/Akademik/Keperawatan/Keperawatan";
-import KeperawatanAdmin from "./pages/Admin/AkademikAdmin/KeperawatanAdmin/KeperawatanAdmin";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import ManualSpmi from "./pages/UPMI/ManualSpmi/ManualSpmi";
-import ManualSpmiAdmin from "./pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin";
-import PenerimaanMahasiswaAdmin from "./pages/Admin/PmbAdmin/PenerimaanMahasiswaAdmin/PenerimaanMahasiswaAdmin";
-import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
-import ProgramJalurBeasiswa from "./pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa";
-import ProgramJalurBeasiswaAdmin from "./pages/Admin/PmbAdmin/ProgramJalurBeasiswaAdmin/ProgramjalurBeasiswaAdmin";
-import ProgramJalurMandiriAdmin from "./pages/Admin/PmbAdmin/ProgramJalurMandiriAdmin/ProgramJalurmandiriAdmin";
-import PusatKarir from "./pages/PusatKarir/PusatKarir";
-import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
-import RegistrasiBerhasil from "./pages/PMB/RegistrasiBerhasil/RegistrasiBerhasil";
-import SOP from "./pages/UPMI/SOP/Sop";
-import SaranaDanPrasarana from "./pages/Fasilitas/SaranaDanPrasarana/SaranaDanPrasarana";
-import SaranaDanPrasaranaAdmin from "./pages/Admin/FasilitasAdmin/SaranaDanPrasarana/SaranaDanPrasaranaAdmin";
-import SopAdmin from "./pages/Admin/UPMIAdmin/SopAdmin/SopAdmin";
-import StandarSpmi from "./pages/UPMI/StandarSPMI/StandarSPMI";
-import StandarSpmiAdmin from "./pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin";
-import TracerStudy from "./pages/Alumni/TracerStudy/TracerStudy";
-import TracerStudyAdmin from "./pages/Admin/Alumni/TracerStudyAdmin/TracerStudyAdmin";
-import axios from "axios";
+import AdminDashboard from './pages/Admin/Dashboard/HomeAdmin';
+import AdministrasiRumahSakit from './pages/Akademik/AdministrasiRumahSakit/AdministrasiRumahSakit';
+import AdministrasiRumahSakitAdmin from './pages/Admin/AkademikAdmin/AdministrasiRumahSakirAdmin/AdministrasiRumahSakitAdmin';
+import AlumniStory from './pages/Alumni/AlumniStory/AlumniStory';
+import AlumniStoryAdmin from './pages/Admin/Alumni/AlumniStpryAdmin/AlumniStoryAdmin';
+import GalleryKegiatan from './pages/Fasilitas/GalleryKegiatan/GalleryKegiatan';
+import GalleryKegiatanAdmin from './pages/Admin/FasilitasAdmin/GalleryKegiatanAdmin/GalleryKegiatanAdmin';
+import Home from './pages/Home/Home';
+import HubungiKami from './pages/HubungiKami/HubungiKami';
+import HubungiKamiAdmin from './pages/Admin/HubungiKamiAdmin/HubungiKamiAdmin';
+import IkatanAlumni from './pages/Alumni/IkatanAlumni/IkatanAlumni';
+import IkatanAlumniAdmin from './pages/Admin/Alumni/IkatanAlumniAdmin/IkatanAlumniAdmin';
+import JalurBeasiswa from './pages/PMB/JalurBeasiswa/JalurBeasiswa';
+import JalurMandiri from './pages/PMB/JalurMandiri/JalurMandiri';
+import KebijakanUpmi from './pages/UPMI/KebijakanUpmi/KebijakanUpmi';
+import KebijakanUpmiAdmin from './pages/Admin/UPMIAdmin/KebijakanUpmiAdmin/KebijakanUpmiAdmin';
+import Keperawatan from './pages/Akademik/Keperawatan/Keperawatan';
+import KeperawatanAdmin from './pages/Admin/AkademikAdmin/KeperawatanAdmin/KeperawatanAdmin';
+import LoginPage from './pages/LoginPage/LoginPage';
+import ManualSpmi from './pages/UPMI/ManualSpmi/ManualSpmi';
+import ManualSpmiAdmin from './pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiAdmin';
+import PenerimaanMahasiswaAdmin from './pages/Admin/PmbAdmin/PenerimaanMahasiswaAdmin/PenerimaanMahasiswaAdmin';
+import PenerimaanMahasiswaBaru from './pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru';
+import ProgramJalurBeasiswa from './pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa';
+import ProgramJalurBeasiswaAdmin from './pages/Admin/PmbAdmin/ProgramJalurBeasiswaAdmin/ProgramjalurBeasiswaAdmin';
+import ProgramJalurMandiriAdmin from './pages/Admin/PmbAdmin/ProgramJalurMandiriAdmin/programJalurmandiriAdmin';
+import PusatKarir from './pages/PusatKarir/PusatKarir';
+import PusatKarirAdmin from './pages/Admin/PusatKarirAdmin/PusatKarirAdmin';
+import RegistrasiBerhasil from './pages/PMB/RegistrasiBerhasil/RegistrasiBerhasil';
+import SOP from './pages/UPMI/SOP/Sop';
+import SaranaDanPrasarana from './pages/Fasilitas/SaranaDanPrasarana/SaranaDanPrasarana';
+import SaranaDanPrasaranaAdmin from './pages/Admin/FasilitasAdmin/SaranaDanPrasarana/SaranaDanPrasaranaAdmin';
+import SopAdmin from './pages/Admin/UPMIAdmin/SopAdmin/SopAdmin';
+import StandarSpmi from './pages/UPMI/StandarSPMI/StandarSPMI';
+import StandarSpmiAdmin from './pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin';
+import TracerStudy from './pages/Alumni/TracerStudy/TracerStudy';
+import TracerStudyAdmin from './pages/Admin/Alumni/TracerStudyAdmin/TracerStudyAdmin';
+import axios from 'axios';
 
 const Authenticate = () => {
   return (
@@ -117,7 +117,7 @@ const Unauthenticate = (props) => {
 };
 
 export const MainRouter = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
 
   let navigate = useNavigate();
 
@@ -136,20 +136,20 @@ export const MainRouter = () => {
       const { data } = response;
       const { success, token } = data;
       if (success) {
-        localStorage.setItem("token", token);
+        localStorage.setItem('token', token);
         setIsAuthenticate(true);
-        navigate("/HomeAdmin");
+        navigate('/HomeAdmin');
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      console.log(error, 'error');
     }
   };
 
   const handleLogout = () => {
     setIsAuthenticate(false);
     localStorage.clear();
-    navigate("/");
+    navigate('/');
   };
 
   useEffect(() => {

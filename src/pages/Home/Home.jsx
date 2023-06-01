@@ -1,19 +1,19 @@
-import "./Home.css";
+import './Home.css';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Carousel from "../../components/Carousel/Carousel";
-import Layout from "../../Layout/Layout";
-import LogoBanPt from "../../assets/images/LogoBAN-PT.svg";
-import LogoLamKes from "../../assets/images/LogoLAMKes.svg";
-import SectionBlue from "../../components/SectionBlue/SectionBlue";
-import SectionNilaiUtamaKami from "../../components/SectionNilaiUtamaKami/SectionNilaiUtamaKami";
-import SectionWhite from "../../components/SectionWhite/SectionWhite";
-import Typhography from "../../components/Typhography/Typhography";
-import axios from "axios";
+import Carousel from '../../components/Carousel/Carousel';
+import Layout from '../../Layout/Layout';
+import LogoBanPt from '../../assets/images/LogoBAN-PT.svg';
+import LogoLamKes from '../../assets/images/LogoLAMKes.svg';
+import SectionBlue from '../../components/SectionBlue/SectionBlue';
+import SectionNilaiUtamaKami from '../../components/SectionNilaiUtamaKami/SectionNilaiUtamaKami';
+import SectionWhite from '../../components/SectionWhite/SectionWhite';
+import Typhography from '../../components/Typhography/Typhography';
+import axios from 'axios';
 
 const Home = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [dataBanner, setDataBanner] = useState(null);
 
@@ -25,9 +25,9 @@ const Home = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://api.stikesmayapada.ac.id/api/homepage/1"
+        'https://api.stikesmayapada.ac.id/api/homepage/1'
       );
-      console.log(response.data.data, "res");
+      console.log(response.data.data, 'res');
       setData(response.data.data);
     } catch (error) {}
   };
@@ -35,9 +35,9 @@ const Home = () => {
   const getDataBanner = async () => {
     try {
       const response = await axios.get(
-        "https://api.stikesmayapada.ac.id/api/homepage/1/banner"
+        'https://api.stikesmayapada.ac.id/api/homepage/1/banner'
       );
-      console.log(response.data, "res");
+      console.log(response.data, 'res');
       setDataBanner(response.data.data);
     } catch (error) {}
   };
@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <Layout logo={data && data.logo_image}>
       <Carousel data={dataBanner} />
-      <div className="home-container" style={{ backgroundColor: "#F5F5F5" }}>
+      <div className="home-container" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="text-center">
           <div class="container">
             <div class="row justify-content-center">
@@ -54,7 +54,7 @@ const Home = () => {
                 type="title"
                 text="Sejarah Mayapada Nursing Academy"
               />
-              <div class="circlesbox mb-5" style={{ color: "#278BC8" }}>
+              <div class="circlesbox mb-5" style={{ color: '#278BC8' }}>
                 <div class="circle">
                   <p>1996</p>
                 </div>
@@ -64,7 +64,7 @@ const Home = () => {
               </div>
 
               <div class="col-lg-3 col-md-6 mb-5 pb-5">
-                <ul style={{ textAlign: "left", color: "#278BC8" }}>
+                <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Pendirian Akademi Keperawatan Anariksa oleh Yayasan Mitra
                     Antariksa
@@ -73,14 +73,14 @@ const Home = () => {
               </div>
 
               <div class="col-lg-3 col-md-6 mb-5 pb-5">
-                <ul style={{ textAlign: "left", color: "#278BC8" }}>
+                <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">Alih Bina</li>
                   <li className="mt-3">Akreditasi BAN-PT “C”</li>
                 </ul>
               </div>
 
               <div class="col-lg-3 col-md-6 mb-5 pb-5">
-                <ul style={{ textAlign: "left", color: "#278BC8" }}>
+                <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Akreditasi BAN-PTkes “B” Diploma III Keperawatan
                   </li>
@@ -91,7 +91,7 @@ const Home = () => {
               </div>
 
               <div class="col-lg-3 col-md-6 mb-5 pb-5">
-                <ul style={{ textAlign: "left", color: "#278BC8" }}>
+                <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Perubahan Bentuk Sekolah Tinggi Ilmu Kesehatan Mayapada SK
                     Kemenristik Dikti No: Tanggal:
@@ -133,7 +133,7 @@ const Home = () => {
       <SectionBlue
         type="normal"
         text="Landasan Hukum"
-        style={{ marginTop: "24px" }}
+        style={{ marginTop: '24px' }}
         liText="Undang-Undang No. 28 Tahun 2004 tentang Yayasan"
       >
         <div
