@@ -44,7 +44,7 @@ const Administrasi = () => {
   return (
     <Layout>
       <div className="filter-blue-adm">
-        <img src={AdmImage} width={'100%'}></img>
+        <img src={banner} width={'100%'}></img>
         <div class="centered-adm">
           <h1 className="text-white">
             Program Studi S1 Administrasi Rumah Sakit
@@ -69,7 +69,7 @@ const Administrasi = () => {
           </div>
 
           <div class="col-md-6">
-            <img src={AdmImage01} width={'100%'} height={'80%'}></img>
+            <img src={imgVisiMisi} width={'100%'} height={'80%'}></img>
           </div>
         </div>
       </div>

@@ -287,7 +287,7 @@ const HomeAdmin = () => {
                   type="file"
                   class="form-control"
                   id="inputGroupFile01"
-                  onChange={category === 'add' ? handleLogo : handleLogos}
+                  onChange={handleLogo}
                 />
               </div>
               <div>{data && data.logo_image}</div>
