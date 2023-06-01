@@ -111,15 +111,12 @@ const SaranaDanPrasarana = () => {
                   <div class="row justify-content-center">
                     {dataPendidikan &&
                       dataPendidikan.map((item, i) => {
-                        const x = item.split('uploads/public/uploads');
-                        console.log(x, 'KONTOOOOLLLLLL');
                         return (
                           <div
                             class={
                               i % 3 ? `col-lg-4 col-md-6` : 'col-lg-4 col-md-12'
                             }
                           >
-                            <p>{x}</p>
                             <img src={item.card_image} width={'100%'}></img>
                             <p
                               style={{ textAlign: 'left', fontWeight: 'bold' }}
