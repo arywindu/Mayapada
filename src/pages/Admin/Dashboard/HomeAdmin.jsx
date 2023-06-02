@@ -44,7 +44,7 @@ const HomeAdmin = () => {
       );
       console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getDataBanner = async () => {
@@ -54,7 +54,7 @@ const HomeAdmin = () => {
       );
       console.log(response.data, 'res');
       setDataBanner(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -285,7 +285,7 @@ const HomeAdmin = () => {
             </tbody>
           </table>
           <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-          <div class="mb-3 row">
+          {/* <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">
               Logo Image
             </label>
@@ -301,7 +301,7 @@ const HomeAdmin = () => {
               <div>{data && data.logo_image}</div>
             </div>
           </div>
-          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr> */}
           <div id="SectionBanner">
             {/* <div class="mb-3 row">
               <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -396,8 +396,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -421,8 +421,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -446,8 +446,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTujuan(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -471,8 +471,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setLandasanHukum(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -496,8 +496,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setStrukturOrganisasi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

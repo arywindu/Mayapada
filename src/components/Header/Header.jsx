@@ -1,10 +1,10 @@
 import "./Header.css";
 
-// import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.svg'
 import { Link } from "react-router-dom";
 import React from "react";
 
-const Header = ({ logo }) => {
+const Header = () => {
   return (
     <div className="text-center mt-5 mb-3">
       <img className="mx-auto mt-4 mb-4" src={logo} width={"10%"}></img>
