@@ -1,16 +1,16 @@
-import './HomeAdmin.css';
+import "./HomeAdmin.css";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import LayoutAdmin from '../../../Layout/LayoutAdmin';
-import Popup from 'reactjs-popup';
-import { async } from 'q';
-import axios from 'axios';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import LayoutAdmin from "../../../Layout/LayoutAdmin";
+import Popup from "reactjs-popup";
+import { async } from "q";
+import axios from "axios";
 
 const HomeAdmin = () => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const [data, setData] = useState(null);
   const [dataBanner, setDataBanner] = useState(null);
   const [textVisi, setTextVisi] = useState(null);
@@ -40,45 +40,45 @@ const HomeAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/homepage/1'
+        "https://api.stikesmayapada.ac.id/api/homepage/1"
       );
-      console.log(response.data, 'res');
+      console.log(response.data, "res");
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const getDataBanner = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/homepage/1/banner'
+        "https://api.stikesmayapada.ac.id/api/homepage/1/banner"
       );
-      console.log(response.data, 'res');
+      console.log(response.data, "res");
       setDataBanner(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {
     try {
-      console.log(logoImage, '<<<<<<<<<<<<<<<,,');
+      console.log(logoImage, "<<<<<<<<<<<<<<<,,");
       let formData = new FormData();
-      formData.append('status', 1);
-      formData.append('logoImage', logoImage);
-      formData.append('textVisi', textVisi);
-      formData.append('textMisi', textMisi);
-      formData.append('tujuan', tujuan);
-      formData.append('landasanHukum', landasanHukum);
-      formData.append('strukturOrganisasi', strukturOrganisasi);
+      formData.append("status", 1);
+      formData.append("logoImage", logoImage);
+      formData.append("textVisi", textVisi);
+      formData.append("textMisi", textMisi);
+      formData.append("tujuan", tujuan);
+      formData.append("landasanHukum", landasanHukum);
+      formData.append("strukturOrganisasi", strukturOrganisasi);
       const response = await axios.put(
-        'https://api.stikesmayapada.ac.id/api/homepage/1',
+        "https://api.stikesmayapada.ac.id/api/homepage/1",
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response.status, 'test');
+      console.log(response.status, "test");
       getData();
       const { status } = response;
       if (status === 200) {
@@ -86,32 +86,32 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      console.log(error, "error");
     }
   };
 
   const saveDataBanner = async () => {
     try {
       let formData = new FormData();
-      formData.append('homePageId', 1);
-      formData.append('bannerImage', bannerImg);
-      formData.append('headline', headline);
-      formData.append('bannerText', textBanner);
-      formData.append('button1', btnBanner1);
-      formData.append('button2', btnBanner2);
-      formData.append('button1Show', showBtn1 ? 1 : 0);
-      formData.append('button2Show', showBtn2 ? 1 : 0);
+      formData.append("homePageId", 1);
+      formData.append("bannerImage", bannerImg);
+      formData.append("headline", headline);
+      formData.append("bannerText", textBanner);
+      formData.append("button1", btnBanner1);
+      formData.append("button2", btnBanner2);
+      formData.append("button1Show", showBtn1 ? 1 : 0);
+      formData.append("button2Show", showBtn2 ? 1 : 0);
       const response = await axios.post(
-        'https://api.stikesmayapada.ac.id/api/homepage/1/banner',
+        "https://api.stikesmayapada.ac.id/api/homepage/1/banner",
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response.status, 'test');
+      console.log(response.status, "test");
       getData();
       getDataBanner();
       const { status } = response;
@@ -121,29 +121,33 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      console.log(error, "error");
     }
   };
 
   const editDataBanner = async () => {
     try {
-      // console.log(bannerImg);
+      console.log(bannerImg);
+      console.log(indexing);
       let formData = new FormData();
-      formData.append('homePageId', 1);
-      formData.append('bannerImage', bannerImg[indexing]);
-      formData.append('headline', headline);
-      formData.append('bannerText', textBanner);
-      formData.append('button1', btnBanner1);
-      formData.append('button2', btnBanner2);
-      formData.append('button1Show', showBtn1 ? 1 : 0);
-      formData.append('button2Show', showBtn2 ? 1 : 0);
+      formData.append("homePageId", 1);
+      formData.append(
+        "bannerImage",
+        bannerImg === null ? null : bannerImg[indexing]
+      );
+      formData.append("headline", headline);
+      formData.append("bannerText", textBanner);
+      formData.append("button1", btnBanner1);
+      formData.append("button2", btnBanner2);
+      formData.append("button1Show", showBtn1 ? 1 : 0);
+      formData.append("button2Show", showBtn2 ? 1 : 0);
       const response = await axios.put(
         `https://api.stikesmayapada.ac.id/api/homepage/1/banner/${bannerId}`,
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -156,7 +160,7 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      console.log(error, "error");
     }
   };
 
@@ -167,26 +171,26 @@ const HomeAdmin = () => {
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response.status, 'test');
+      console.log(response.status, "test");
       getData();
       getDataBanner();
       const { status } = response;
-      if (status === 200 || status === 201) {
+      if (status === 200 || status === 201 || status === 204) {
         alert(`Berhasil delete data`);
         closeModalBanner();
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      console.log(error, "error");
     }
   };
 
   const handleLogo = (event) => {
-    console.log(event.target.files[0], 'logo');
+    console.log(event.target.files[0], "logo");
     setLogoImage(event.target.files[0]);
   };
   const handleLogos = (event, index) => {
@@ -226,12 +230,12 @@ const HomeAdmin = () => {
     setHeadline(null);
   };
 
-  console.log(data && data.logo_image, 'jancooookkkkkkkkkkkk');
+  console.log(data && data.logo_image, "jancooookkkkkkkkkkkk");
 
   return (
     <LayoutAdmin>
       <div class="Home-Admin">
-        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
+        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
           <h4>
             <span className="bg-primary text-white">Home Admin</span>
           </h4>
@@ -240,10 +244,10 @@ const HomeAdmin = () => {
           <button
             class="btn btn-primary"
             type="submit"
-            style={{ margin: '20px 0' }}
+            style={{ margin: "20px 0" }}
             onClick={() => {
               setOpenBanner(true);
-              setCategory('add');
+              setCategory("add");
             }}
           >
             Add More
@@ -261,14 +265,27 @@ const HomeAdmin = () => {
                   <tr
                     onClick={() => {
                       setOpenBanner(true);
-                      setBtnBanner1(item.button_1);
-                      setBtnBanner2(item.button_2);
+                      setBtnBanner1(
+                        item.button_1 === "null" ? "" : item.button_1
+                      );
+                      setBtnBanner2(
+                        item.button_2 === "null" ? "" : item.button_2
+                      );
                       setShowBtn1(item.button_1_show === 1 ? true : false);
                       setShowBtn2(item.button_2_show === 1 ? true : false);
-                      setTextBanner(item.banner_text);
-                      setHeadline(item.headline);
+                      setTextBanner(
+                        item.banner_text === "null" ? "" : item.banner_text
+                      );
+                      setHeadline(
+                        item.headline === "null" ? "" : item.headline
+                      );
                       setBannerId(item.id);
                       setIndexing(index);
+                      const arrBanner = [];
+                      dataBanner.map((item) => {
+                        arrBanner.push(item.banner_image);
+                      });
+                      setBannerImg(arrBanner);
                       setEdit(true);
                     }}
                   >
@@ -276,7 +293,7 @@ const HomeAdmin = () => {
                       <img
                         src={item.banner_image}
                         className="mx-auto"
-                        width={'15%'}
+                        width={"15%"}
                       />
                     </td>
                     <td>{item.banner_text}</td>
@@ -396,8 +413,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -421,8 +438,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -446,8 +463,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTujuan(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -471,8 +488,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setLandasanHukum(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -496,8 +513,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setStrukturOrganisasi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -520,17 +537,17 @@ const HomeAdmin = () => {
           >
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <div
                 style={{
-                  backgroundColor: 'white',
-                  width: '70%',
-                  padding: '30px',
-                  borderRadius: '10px',
+                  backgroundColor: "white",
+                  width: "70%",
+                  padding: "30px",
+                  borderRadius: "10px",
                 }}
               >
                 <div class="mb-3 row">
@@ -544,7 +561,7 @@ const HomeAdmin = () => {
                         class="form-control"
                         id={`inputGroupFile${bannerId}`}
                         onChange={(event) => {
-                          if (category === 'add') {
+                          if (category === "add") {
                             handleBanner(event);
                           } else {
                             handleBanners(event, indexing);
@@ -643,16 +660,16 @@ const HomeAdmin = () => {
                 <button
                   class="btn btn-primary mt-2"
                   type="submit"
-                  style={{ marginLeft: '20px' }}
+                  style={{ marginLeft: "20px" }}
                   onClick={edit ? editDataBanner : saveDataBanner}
                 >
-                  {edit ? 'Edit' : 'Add More'}
+                  {edit ? "Edit" : "Add More"}
                 </button>
                 {edit && (
                   <button
                     class="btn btn-danger mt-2"
                     type="submit"
-                    style={{ marginLeft: '20px' }}
+                    style={{ marginLeft: "20px" }}
                     onClick={deleteBanner}
                   >
                     Delete
