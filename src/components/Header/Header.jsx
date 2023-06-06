@@ -1,13 +1,13 @@
 import "./Header.css";
 
-import logo from '../../assets/images/logo.svg'
 import { Link } from "react-router-dom";
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
+  const { logo } = props;
   return (
     <div className="text-center mt-5 mb-3">
-      <img className="mx-auto mt-4 mb-4" src={logo} width={"10%"}></img>
+      <img className="mx-auto mt-4 mb-4" src={logo} width={"10%"} />
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <button

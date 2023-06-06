@@ -32,10 +32,7 @@ const HeaderAdmin = () => {
             <ul className="navbar-nav">
               <li className="nav-item px-2">
                 <a className="nav-link active" aria-current="page" href="#">
-                  <Link
-                    className="text-reset text-decoration-none"
-                    to="/HomeAdmin"
-                  >
+                  <Link className="text-reset text-decoration-none" to="/">
                     Home
                   </Link>
                 </a>

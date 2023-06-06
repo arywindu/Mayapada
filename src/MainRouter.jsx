@@ -44,7 +44,7 @@ import axios from "axios";
 const Authenticate = () => {
   return (
     <Routes>
-      <Route path="/HomeAdmin" element={<AdminDashboard />} />
+      <Route path="/" element={<AdminDashboard />} />
       <Route path="/KeperawatanAdmin" element={<KeperawatanAdmin />} />
       <Route path="/SopAdmin" element={<SopAdmin />} />
       <Route path="/KebijakanUpmiAdmin" element={<KebijakanUpmiAdmin />} />
@@ -141,7 +141,7 @@ export const MainRouter = () => {
       if (success) {
         localStorage.setItem("token", token);
         setIsAuthenticate(true);
-        navigate("/HomeAdmin");
+        navigate("/");
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
