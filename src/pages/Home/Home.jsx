@@ -27,7 +27,7 @@ const Home = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/homepage/1'
       );
-      console.log(response.data.data, 'res');
+      // console.log(response.data.data, 'res');
       setData(response.data.data);
     } catch (error) { }
   };
@@ -37,7 +37,7 @@ const Home = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/homepage/1/banner'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setDataBanner(response.data.data);
     } catch (error) { }
   };

@@ -24,7 +24,7 @@ const HubungiKami = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/contact/1'
       );
-      console.log(response.data, 'hub kami');
+      // console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setData(responseData);
     } catch (error) { }

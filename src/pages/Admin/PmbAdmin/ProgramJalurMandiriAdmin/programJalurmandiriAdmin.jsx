@@ -26,7 +26,7 @@ const ProgramJalurMandiriAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       const dataRes = response.data.data;
       setText1(dataRes.text_1);
       setText2(dataRes.text_2);
@@ -34,7 +34,7 @@ const ProgramJalurMandiriAdmin = () => {
       setContent(dataRes.konten);
       setData(dataRes);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -58,7 +58,7 @@ const ProgramJalurMandiriAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -66,7 +66,7 @@ const ProgramJalurMandiriAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 
@@ -199,8 +199,8 @@ const ProgramJalurMandiriAdmin = () => {
                     const data = editor.getData();
                     setContent(data);
                   }}
-                  onBlur={(event, editor) => {}}
-                  onFocus={(event, editor) => {}}
+                  onBlur={(event, editor) => { }}
+                  onFocus={(event, editor) => { }}
                 />
               </div>
             </div>

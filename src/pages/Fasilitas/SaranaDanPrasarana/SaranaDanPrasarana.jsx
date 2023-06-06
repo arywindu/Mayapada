@@ -38,10 +38,10 @@ const SaranaDanPrasarana = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/sarana-prasarana/1/images'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setDataPendidikan(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -50,10 +50,10 @@ const SaranaDanPrasarana = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/sarana-prasarana/2/images'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setDataUmum(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (

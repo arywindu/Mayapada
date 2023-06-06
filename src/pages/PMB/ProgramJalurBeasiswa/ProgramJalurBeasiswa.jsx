@@ -56,14 +56,14 @@ const ProgramJalurBeasiswa = () => {
           alamatAsalSekolah: data.alamatAsalSekolah,
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       const { status } = response;
       if (status === 200) {
         window.location.href = '/RegistrasiBerhasil';
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   return (

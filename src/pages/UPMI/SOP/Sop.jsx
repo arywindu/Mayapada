@@ -18,9 +18,9 @@ const Sop = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/spmi/1/sop'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>

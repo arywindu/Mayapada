@@ -23,7 +23,7 @@ const PenerimaanMahasiswaAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/PMB/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       const dataRes = response.data.data;
       setBanner(dataRes.banner_img);
       setTitle(dataRes.title_text);
@@ -44,7 +44,7 @@ const PenerimaanMahasiswaAdmin = () => {
         s6: dataRes.rs_smt_6,
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -75,7 +75,7 @@ const PenerimaanMahasiswaAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -83,7 +83,7 @@ const PenerimaanMahasiswaAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 

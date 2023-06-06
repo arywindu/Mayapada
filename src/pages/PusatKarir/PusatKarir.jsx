@@ -18,10 +18,10 @@ const PusatKarir = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/carrer/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (

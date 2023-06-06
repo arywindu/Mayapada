@@ -70,7 +70,7 @@ const Keperawatan = () => {
         'https://api.stikesmayapada.ac.id/api/akademik-keperawatan/1'
       );
       const responseData = response.data;
-      console.log(responseData);
+      // console.log(responseData);
       setBanner(responseData.banner_image);
       setTextBanner(responseData.text_banner);
       setImgVisiMisi(responseData.image_visi_misi);
@@ -79,7 +79,7 @@ const Keperawatan = () => {
       setTextKurikulum(responseData.text_kurikulum);
       setTitleMataKuliah(responseData.title_mata_kuliah);
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getJadwal = async () => {
     try {
@@ -90,7 +90,7 @@ const Keperawatan = () => {
       const images = responseData.map((item) => item.file_path);
       setSelectedJadwal(images);
       setJadwal(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getKuliah = async () => {
     try {
@@ -101,7 +101,7 @@ const Keperawatan = () => {
       const images = responseData.map((item) => item.file_path);
       setFileKuliah(images);
       setKuliah(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getFotoKuliah = async () => {
@@ -117,7 +117,7 @@ const Keperawatan = () => {
       setTitletext(descriptions);
 
       setDataFotoKuliah(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>

@@ -23,14 +23,14 @@ const HubungiKamiAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/contact/1'
       );
-      console.log(response.data, 'hub kami');
+      // console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setContactWa(responseData.contact_wa);
       setContactIg(responseData.contact_ig);
       setContactFb(responseData.contact_fb);
       setContactEmail(responseData.contact_email);
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -49,7 +49,7 @@ const HubungiKamiAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -57,7 +57,7 @@ const HubungiKamiAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   return (

@@ -40,7 +40,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data.images;
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataKegiatan = async () => {
     try {
@@ -48,9 +48,9 @@ const GalleryKegiatanAdmin = () => {
         'https://api.stikesmayapada.ac.id/api/galery-kegiatan/1/images?selectBy=KEGIATAN_MAHASISWA '
       );
       const responseData = response.data;
-      console.log(responseData, 'pantek');
+      // console.log(responseData, 'pantek');
       setDataImgKegiatan(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataOrientasi = async () => {
     try {
@@ -59,7 +59,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data;
       setDataImgOrientasi(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataWisuda = async () => {
     try {
@@ -68,7 +68,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data;
       setDataImgWisuda(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveDataImgKegiatan = async () => {
@@ -95,7 +95,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   const saveDataImgOrientasi = async () => {
@@ -122,7 +122,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   const saveDataImgWisuda = async () => {
@@ -149,7 +149,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 
@@ -179,7 +179,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   const updateDataImgOrientasi = async (index) => {
@@ -208,7 +208,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   const updateDataImgWisuda = async (index) => {
@@ -237,7 +237,7 @@ const GalleryKegiatanAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 
@@ -492,8 +492,8 @@ const GalleryKegiatanAdmin = () => {
                   {category === 'kegiatan'
                     ? 'Image Kegiatan Mahasiswa '
                     : category === 'orientasi'
-                    ? 'Image Orientasi Mahasiswa baru'
-                    : 'Image Wisuda'}
+                      ? 'Image Orientasi Mahasiswa baru'
+                      : 'Image Wisuda'}
                 </label>
                 <div class="col-sm-10">
                   <div class="input-group mb-3">
@@ -505,8 +505,8 @@ const GalleryKegiatanAdmin = () => {
                         category === 'kegiatan'
                           ? handleKegiatanChanges
                           : category === 'orientasi'
-                          ? handleOrientasiChanges
-                          : handleWisudaChanges
+                            ? handleOrientasiChanges
+                            : handleWisudaChanges
                       }
                     />
                   </div>
@@ -528,8 +528,8 @@ const GalleryKegiatanAdmin = () => {
                   category === 'kegiatan'
                     ? saveDataImgKegiatan
                     : category === 'orientasi'
-                    ? saveDataImgOrientasi
-                    : saveDataImgWisuda
+                      ? saveDataImgOrientasi
+                      : saveDataImgWisuda
                 }
               >
                 Save

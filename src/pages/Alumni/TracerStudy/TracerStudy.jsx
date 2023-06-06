@@ -20,9 +20,9 @@ const TracerStudy = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/alumni/tracer/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>

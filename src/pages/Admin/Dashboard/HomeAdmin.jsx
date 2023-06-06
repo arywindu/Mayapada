@@ -42,9 +42,9 @@ const HomeAdmin = () => {
       const response = await axios.get(
         "https://api.stikesmayapada.ac.id/api/homepage/1"
       );
-      console.log(response.data, "res");
+      // console.log(response.data, "res");
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getDataBanner = async () => {
@@ -52,14 +52,14 @@ const HomeAdmin = () => {
       const response = await axios.get(
         "https://api.stikesmayapada.ac.id/api/homepage/1/banner"
       );
-      console.log(response.data, "res");
+      // console.log(response.data, "res");
       setDataBanner(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
     try {
-      console.log(logoImage, "<<<<<<<<<<<<<<<,,");
+      // console.log(logoImage, "<<<<<<<<<<<<<<<,,");
       let formData = new FormData();
       formData.append("status", 1);
       formData.append("logoImage", logoImage);
@@ -78,7 +78,7 @@ const HomeAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      // console.log(response.status, "test");
       getData();
       const { status } = response;
       if (status === 200) {
@@ -86,7 +86,7 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      // console.log(error, "error");
     }
   };
 
@@ -111,7 +111,7 @@ const HomeAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      // console.log(response.status, "test");
       getData();
       getDataBanner();
       const { status } = response;
@@ -121,14 +121,14 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      // console.log(error, "error");
     }
   };
 
   const editDataBanner = async () => {
     try {
-      console.log(bannerImg);
-      console.log(indexing);
+      // console.log(bannerImg);
+      // console.log(indexing);
       let formData = new FormData();
       formData.append("homePageId", 1);
       formData.append(
@@ -160,7 +160,7 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      // console.log(error, "error");
     }
   };
 
@@ -175,7 +175,7 @@ const HomeAdmin = () => {
           },
         }
       );
-      console.log(response.status, "test");
+      // console.log(response.status, "test");
       getData();
       getDataBanner();
       const { status } = response;
@@ -185,12 +185,12 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      // console.log(error, "error");
     }
   };
 
   const handleLogo = (event) => {
-    console.log(event.target.files[0], "logo");
+    // console.log(event.target.files[0], "logo");
     setLogoImage(event.target.files[0]);
   };
   const handleLogos = (event, index) => {
@@ -229,8 +229,6 @@ const HomeAdmin = () => {
     setTextBanner(null);
     setHeadline(null);
   };
-
-  console.log(data && data.logo_image, "jancooookkkkkkkkkkkk");
 
   return (
     <LayoutAdmin>
@@ -302,7 +300,7 @@ const HomeAdmin = () => {
             </tbody>
           </table>
           <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-          {/* <div class="mb-3 row">
+          <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">
               Logo Image
             </label>
@@ -318,7 +316,7 @@ const HomeAdmin = () => {
               <div>{data && data.logo_image}</div>
             </div>
           </div>
-          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr> */}
+          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
           <div id="SectionBanner">
             {/* <div class="mb-3 row">
               <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -413,8 +411,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -438,8 +436,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -463,8 +461,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTujuan(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -488,8 +486,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setLandasanHukum(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -513,8 +511,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setStrukturOrganisasi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

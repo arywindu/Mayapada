@@ -20,11 +20,11 @@ const PusatKarirAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/carrer/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setCTitle(response.data.data.title);
       setData(response.data.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -42,7 +42,7 @@ const PusatKarirAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 201) {
@@ -50,7 +50,7 @@ const PusatKarirAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   return (
@@ -98,8 +98,8 @@ const PusatKarirAdmin = () => {
                         const data = editor.getData();
                         setCText(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

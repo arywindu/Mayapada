@@ -50,10 +50,10 @@ const SaranaDanPrasaranaAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/sarana-prasarana/1/images'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setDataPendidikan(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -62,10 +62,10 @@ const SaranaDanPrasaranaAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/sarana-prasarana/2/images'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setDataUmum(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -89,7 +89,7 @@ const SaranaDanPrasaranaAdmin = () => {
             },
           }
         );
-        console.log(response.status, 'test');
+        // console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -103,7 +103,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, 'error');
+        // console.log(error, 'error');
       }
     } else {
       try {
@@ -122,7 +122,7 @@ const SaranaDanPrasaranaAdmin = () => {
             },
           }
         );
-        console.log(response.status, 'test');
+        // console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -136,7 +136,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, 'error');
+        // console.log(error, 'error');
       }
     }
   };
@@ -165,7 +165,7 @@ const SaranaDanPrasaranaAdmin = () => {
             },
           }
         );
-        console.log(response.status, 'test');
+        // console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -179,7 +179,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, 'error');
+        // console.log(error, 'error');
       }
     } else {
       try {
@@ -198,7 +198,7 @@ const SaranaDanPrasaranaAdmin = () => {
             },
           }
         );
-        console.log(response.status, 'test');
+        // console.log(response.status, 'test');
 
         const { status } = response;
         if (status === 200 || status === 201) {
@@ -212,7 +212,7 @@ const SaranaDanPrasaranaAdmin = () => {
         }
       } catch (error) {
         alert(`${error.response.data.message}`);
-        console.log(error, 'error');
+        // console.log(error, 'error');
       }
     }
   };

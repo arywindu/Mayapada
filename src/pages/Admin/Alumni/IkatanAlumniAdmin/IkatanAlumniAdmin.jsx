@@ -22,9 +22,9 @@ const IkatanAlumniAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/alumni/ikatan/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -44,7 +44,7 @@ const IkatanAlumniAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -52,7 +52,7 @@ const IkatanAlumniAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 
@@ -120,8 +120,8 @@ const IkatanAlumniAdmin = () => {
                         const data = editor.getData();
                         setIkatanAlumniText(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

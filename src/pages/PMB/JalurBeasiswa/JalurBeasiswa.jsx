@@ -18,11 +18,11 @@ const JalurBeasiswa = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/PMB/beasiswa/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       const dataRes = response.data.data;
       setContent(dataRes.konten);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (

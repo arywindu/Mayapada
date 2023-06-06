@@ -27,7 +27,7 @@ import PenerimaanMahasiswaAdmin from "./pages/Admin/PmbAdmin/PenerimaanMahasiswa
 import PenerimaanMahasiswaBaru from "./pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru";
 import ProgramJalurBeasiswa from "./pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa";
 import ProgramJalurBeasiswaAdmin from "./pages/Admin/PmbAdmin/ProgramJalurBeasiswaAdmin/ProgramjalurBeasiswaAdmin";
-import ProgramJalurMandiriAdmin from "./pages/Admin/PmbAdmin/ProgramJalurMandiriAdmin/ProgramJalurmandiriAdmin";
+import ProgramJalurMandiriAdmin from "./pages/Admin/PmbAdmin/ProgramJalurMandiriAdmin/programJalurmandiriAdmin";
 import PusatKarir from "./pages/PusatKarir/PusatKarir";
 import PusatKarirAdmin from "./pages/Admin/PusatKarirAdmin/PusatKarirAdmin";
 import RegistrasiBerhasil from "./pages/PMB/RegistrasiBerhasil/RegistrasiBerhasil";
@@ -135,7 +135,7 @@ export const MainRouter = () => {
           password,
         }
       );
-      console.log(response);
+      // // console.log(response);
       const { data } = response;
       const { success, token } = data;
       if (success) {
@@ -145,7 +145,7 @@ export const MainRouter = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, "error");
+      // // console.log(error, "error");
     }
   };
 

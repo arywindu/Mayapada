@@ -21,10 +21,10 @@ const SopAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/spmi/1/sop'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -41,7 +41,7 @@ const SopAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -49,7 +49,7 @@ const SopAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   return (
@@ -91,8 +91,8 @@ const SopAdmin = () => {
                         const data = editor.getData();
                         setSOP(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

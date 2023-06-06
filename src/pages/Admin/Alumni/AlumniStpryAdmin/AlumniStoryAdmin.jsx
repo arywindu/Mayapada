@@ -33,9 +33,9 @@ const AlumniStoryAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/alumni/story/alumni'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -55,7 +55,7 @@ const AlumniStoryAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -64,7 +64,7 @@ const AlumniStoryAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
 

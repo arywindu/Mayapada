@@ -18,11 +18,11 @@ const JalurMandiri = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       const dataRes = response.data.data;
       setData(dataRes);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (

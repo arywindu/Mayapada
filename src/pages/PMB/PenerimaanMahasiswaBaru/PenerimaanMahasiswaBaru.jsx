@@ -24,7 +24,7 @@ const PenerimaanMahasiswa = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/PMB/1'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       const dataRes = response.data.data;
       setBanner(dataRes.banner_img);
       setTitle(dataRes.title_text);
@@ -45,7 +45,7 @@ const PenerimaanMahasiswa = () => {
         s6: dataRes.rs_smt_6,
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (

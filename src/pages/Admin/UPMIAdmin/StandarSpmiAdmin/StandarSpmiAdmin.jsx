@@ -19,9 +19,9 @@ const StandarSpmiAdmin = () => {
       const response = await axios.get(
         'https://api.stikesmayapada.ac.id/api/spmi/1/standar'
       );
-      console.log(response.data, 'res');
+      // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -37,7 +37,7 @@ const StandarSpmiAdmin = () => {
           },
         }
       );
-      console.log(response.status, 'test');
+      // console.log(response.status, 'test');
       getData();
       const { status } = response;
       if (status === 200) {
@@ -45,7 +45,7 @@ const StandarSpmiAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-      console.log(error, 'error');
+      // console.log(error, 'error');
     }
   };
   return (
@@ -87,8 +87,8 @@ const StandarSpmiAdmin = () => {
                         const data = editor.getData();
                         setStandar(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
