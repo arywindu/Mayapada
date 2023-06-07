@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from "react-router-dom";
 import logoFooter from '../../assets/images/logoFooter.svg'
 import iconWa from '../../assets/icons/wa.svg'
 import iconFb from '../../assets/icons/fb.svg'
@@ -46,19 +47,39 @@ const Footer = () => {
                                     Tentang Kami
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Sejarah</a>
+                                    <a href="" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/">
+                                            Sejarah
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Visi Misi</a>
+                                    <a href="" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/">
+                                            Visi Misi
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Nilai Utama</a>
+                                    <a href="" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/">
+                                            Nilai Utama
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Landasan Hukum</a>
+                                    <a href="" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/">
+                                            Landasan Hukum
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Akreditasi</a>
+                                    <a href="" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/">
+                                            Akreditasi
+                                        </Link>
+                                    </a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -73,14 +94,26 @@ const Footer = () => {
                                     <a href="#!" className="text-reset text-decoration-none">Program Studi</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">DIII Keperawatan</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link
+                                            className="text-reset text-decoration-none"
+                                            to="/Keperawatan"
+                                        >
+                                            Program DIII Keperawatan
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">S1 Admin RS</a>
+                                    <a href="#!" className="text-reset text-decoration-none"><Link
+                                        className="text-reset text-decoration-none"
+                                        to="/AdministrasiRumahSakit"
+                                    >
+                                        S1 Admin RS
+                                    </Link></a>
                                 </p>
-                                <p>
+                                {/* <p>
                                     <a href="#!" className="text-reset text-decoration-none">Profesi NERS</a>
-                                </p>
+                                </p> */}
                             </div>
                             {/* <!-- Grid column --> */}
 
@@ -91,16 +124,35 @@ const Footer = () => {
                                     UPMI
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Kebijakan SPMI</a>
+                                    <a href="#" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/KebijakanUpmi"
+                                        >Kebijakan SPMI
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Manual SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link className="text-reset text-decoration-none" to="/ManualSpmi"
+                                        >Manual SPMI
+                                        </Link></a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Standar SPMI</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link
+                                            className="text-reset text-decoration-none"
+                                            to="/StandarSpmi"
+                                        >
+                                            Standar SPMI
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">SOP</a>
+                                    <a href="#!" className="text-reset text-decoration-none"> <Link
+                                        className="text-reset text-decoration-none"
+                                        to="/SOP"
+                                    >
+                                        SOP
+                                    </Link></a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset text-decoration-none">Formulir SPMI</a>
@@ -115,10 +167,22 @@ const Footer = () => {
                                     FASILITAS
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Sarana Prasarana</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link
+                                            className="text-reset text-decoration-none"
+                                            to="/SaranaDanPrasarana"
+                                        >
+                                            Sarana dan Prasarana
+                                        </Link>
+                                    </a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Kegiatan</a>
+                                    <a href="#!" className="text-reset text-decoration-none">  <Link
+                                        className="text-reset text-decoration-none"
+                                        to="/GalleryKegiatan"
+                                    >
+                                        Kegiatan
+                                    </Link></a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -130,16 +194,16 @@ const Footer = () => {
                                     Hubungi Kami
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
+                                    <a href="mailto:info@antariksa.co.id" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
                                 </p>
                                 <div>
-                                    <a href="" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://wa.me/6281288710710" class="me-4 text-reset text-decoration-none">
                                         <img src={iconWa}></img>
                                     </a>
-                                    <a href="" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://www.facebook.com/stikesmayapada" class="me-4 text-reset text-decoration-none">
                                         <img src={iconFb}></img>
                                     </a>
-                                    <a href="" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://www.instagram.com/stikesmayapada" class="me-4 text-reset text-decoration-none">
                                         <img src={iconIg}></img>
                                     </a>
                                 </div>
@@ -153,13 +217,31 @@ const Footer = () => {
                                     ALUMNI
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Ikatan Alumni</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link
+                                            className="text-reset text-decoration-none"
+                                            to="/IkatanAlumni"
+                                        >
+                                            Ikatan Alumni
+                                        </Link></a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Testimoni</a>
+                                    <a href="#!" className="text-reset text-decoration-none"> <Link
+                                        className="text-reset text-decoration-none"
+                                        to="/AlumniStory"
+                                    >
+                                        Testimoni
+                                    </Link></a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Tracer Studi</a>
+                                    <a href="#!" className="text-reset text-decoration-none">
+                                        <Link
+                                            className="text-reset text-decoration-none"
+                                            to="/TracerStudy"
+                                        >
+                                            Tracer Study
+                                        </Link>
+                                    </a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -186,7 +268,12 @@ const Footer = () => {
                                     PUSAT KARIR
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Info Karir</a>
+                                    <a href="#!" className="text-reset text-decoration-none"> <Link
+                                        className="text-reset text-decoration-none"
+                                        to="/PusatKarir"
+                                    >
+                                        Pusat Karir
+                                    </Link></a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -195,7 +282,12 @@ const Footer = () => {
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
                                 {/* <!-- Links --> */}
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Informasi Pendaftaran Baru
+                                    <Link
+                                        className="text-reset text-decoration-none"
+                                        to="/PJB"
+                                    >
+                                        Informasi Pendaftaran Baru
+                                    </Link>
                                 </h6>
                             </div>
                             {/* <!-- Grid column --> */}
