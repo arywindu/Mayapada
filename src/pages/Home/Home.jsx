@@ -113,14 +113,29 @@ const Home = () => {
         <div class="container">
           <div class="row">
             <div class="col-md-6">
+              <Typhography
+                className="mt-5 mb-5"
+                type="title"
+                text="Visi"
+              />
               <div
                 dangerouslySetInnerHTML={{ __html: data && data.text_visi }}
               ></div>
+              <Typhography
+                className="mt-5 mb-5"
+                type="title"
+                text="Misi"
+              />
               <div
                 dangerouslySetInnerHTML={{ __html: data && data.text_misi }}
               ></div>
             </div>
             <div class="col-md-6">
+              <Typhography
+                className="mt-5 mb-5"
+                type="title"
+                text="Tujuan"
+              />
               <div
                 dangerouslySetInnerHTML={{ __html: data && data.tujuan }}
               ></div>

@@ -622,6 +622,20 @@ const HomeAdmin = () => {
                   </div>
                 </div>
                 <div class="mb-3 row">
+                  <label for="" class="col-sm-2 col-form-label">
+                    Link 1
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={btnBanner1}
+                      onChange={(e) => setBtnBanner1(e.target.value)}
+                    />
+                    <div class="form-check"></div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
                   <label for="inputPassword" class="col-sm-2 col-form-label">
                     Button 2
                   </label>
@@ -645,6 +659,20 @@ const HomeAdmin = () => {
                         Show Button 2
                       </label>
                     </div>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">
+                    Link 2
+                  </label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={btnBanner1}
+                      onChange={(e) => setBtnBanner1(e.target.value)}
+                    />
+                    <div class="form-check"></div>
                   </div>
                 </div>
 
