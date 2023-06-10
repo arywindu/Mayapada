@@ -21,7 +21,7 @@ const StandarSpmiAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {
@@ -87,8 +87,8 @@ const StandarSpmiAdmin = () => {
                         const data = editor.getData();
                         setStandar(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>

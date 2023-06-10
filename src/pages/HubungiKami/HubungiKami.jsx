@@ -27,7 +27,7 @@ const HubungiKami = () => {
       // console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setData(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   return (
     <Layout>

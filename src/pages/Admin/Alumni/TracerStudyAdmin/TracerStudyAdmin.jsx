@@ -24,7 +24,7 @@ const TracerStudyAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {
@@ -32,8 +32,14 @@ const TracerStudyAdmin = () => {
       let formData = new FormData();
       formData.append('id', 1);
       formData.append('tracerStudyText', tracerStudyText);
-      formData.append('tracerStudyImg', tracerStudyImg);
-      formData.append('tracerStudyForm', tracerStudyForm);
+      formData.append(
+        'tracerStudyImg',
+        tracerStudyImg ? tracerStudyImg : data.tracer_study_img
+      );
+      formData.append(
+        'tracerStudyForm',
+        tracerStudyForm ? tracerStudyForm : data.tracer_study_form
+      );
       const response = await axios.post(
         'https://api.stikesmayapada.ac.id/api/alumni/tracer',
         formData,
@@ -119,8 +125,8 @@ const TracerStudyAdmin = () => {
                         const data = editor.getData();
                         setTracerStudyText(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>

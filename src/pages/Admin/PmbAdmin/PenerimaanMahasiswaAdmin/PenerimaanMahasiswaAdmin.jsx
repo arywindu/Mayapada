@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const PenerimaanMahasiswaAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [banner, setBanner] = useState(null);
   const [bannerImg, setBannerImg] = useState(null);
   const [title, setTitle] = useState(null);
@@ -21,7 +21,7 @@ const PenerimaanMahasiswaAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://api.stikesmayapada.ac.id/api/PMB/1"
+        'https://api.stikesmayapada.ac.id/api/PMB/1'
       );
       // console.log(response.data, 'res');
       const dataRes = response.data.data;
@@ -49,29 +49,31 @@ const PenerimaanMahasiswaAdmin = () => {
   };
 
   const saveData = async () => {
+    console.log(bannerImg, 'cek');
+    console.log(banner, 'cek2');
     try {
       let formData = new FormData();
-      formData.append("bannerImg", bannerImg ? bannerImg : banner);
-      formData.append("titleText", title);
-      formData.append("perawatSmt1", semesterKeperawatan.s1);
-      formData.append("perawatSmt2", semesterKeperawatan.s2);
-      formData.append("perawatSmt3", semesterKeperawatan.s3);
-      formData.append("perawatSmt4", semesterKeperawatan.s4);
-      formData.append("perawatSmt5", semesterKeperawatan.s5);
-      formData.append("perawatSmt6", semesterKeperawatan.s6);
-      formData.append("rsSmt1", semesterRs.s1);
-      formData.append("rsSmt2", semesterRs.s2);
-      formData.append("rsSmt3", semesterRs.s3);
-      formData.append("rsSmt4", semesterRs.s4);
-      formData.append("rsSmt5", semesterRs.s5);
-      formData.append("rsSmt6", semesterRs.s6);
+      formData.append('bannerImg', bannerImg ? bannerImg : banner);
+      formData.append('titleText', title);
+      formData.append('perawatSmt1', semesterKeperawatan.s1);
+      formData.append('perawatSmt2', semesterKeperawatan.s2);
+      formData.append('perawatSmt3', semesterKeperawatan.s3);
+      formData.append('perawatSmt4', semesterKeperawatan.s4);
+      formData.append('perawatSmt5', semesterKeperawatan.s5);
+      formData.append('perawatSmt6', semesterKeperawatan.s6);
+      formData.append('rsSmt1', semesterRs.s1);
+      formData.append('rsSmt2', semesterRs.s2);
+      formData.append('rsSmt3', semesterRs.s3);
+      formData.append('rsSmt4', semesterRs.s4);
+      formData.append('rsSmt5', semesterRs.s5);
+      formData.append('rsSmt6', semesterRs.s6);
       const response = await axios.post(
-        "https://api.stikesmayapada.ac.id/api/PMB/1",
+        'https://api.stikesmayapada.ac.id/api/PMB/1',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
@@ -88,12 +90,14 @@ const PenerimaanMahasiswaAdmin = () => {
   };
 
   const handleBannerImg = (event) => {
-    setBannerImg(event.target.files[0]);
+    // setBannerImg(event.target.files[0]);
+    const file = event.target.files[0];
+    setBannerImg(file);
   };
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">
               Penerimaan Mahasiswa Baru

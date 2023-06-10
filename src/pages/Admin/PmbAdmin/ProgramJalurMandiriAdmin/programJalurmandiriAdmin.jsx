@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import LayoutAdmin from "../../../../Layout/LayoutAdmin";
-import { async } from "q";
-import axios from "axios";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LayoutAdmin from '../../../../Layout/LayoutAdmin';
+import { async } from 'q';
+import axios from 'axios';
 
 const ProgramJalurMandiriAdmin = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [img1, setImg1] = useState(null);
   const [text1, setText1] = useState(null);
@@ -24,7 +24,7 @@ const ProgramJalurMandiriAdmin = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://api.stikesmayapada.ac.id/api/PMB/mandiri/1"
+        'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1'
       );
       // console.log(response.data, 'res');
       const dataRes = response.data.data;
@@ -41,20 +41,20 @@ const ProgramJalurMandiriAdmin = () => {
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append("img1", img1 ? img1 : data.img_1);
-      formData.append("text1", text1);
-      formData.append("img2", img2 ? img2 : data.img_2);
-      formData.append("text2", text2);
-      formData.append("img3", img3 ? img3 : data.img_3);
-      formData.append("text3", text3);
-      formData.append("konten", content);
+      formData.append('img1', img1 ? img1 : data.img_1);
+      formData.append('text1', text1);
+      formData.append('img2', img2 ? img2 : data.img_2);
+      formData.append('text2', text2);
+      formData.append('img3', img3 ? img3 : data.img_3);
+      formData.append('text3', text3);
+      formData.append('konten', content);
       const response = await axios.post(
-        "https://api.stikesmayapada.ac.id/api/PMB/mandiri/1",
+        'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1',
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
@@ -84,7 +84,7 @@ const ProgramJalurMandiriAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
+        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
           <h4>
             <span className="bg-primary text-white">Jalur Mandiri Admin</span>
           </h4>

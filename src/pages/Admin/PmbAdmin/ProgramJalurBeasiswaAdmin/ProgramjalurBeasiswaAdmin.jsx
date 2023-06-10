@@ -76,8 +76,8 @@ const ProgramJalurBeasiswaAdmin = () => {
                     const data = editor.getData();
                     setContent(data);
                   }}
-                  onBlur={(event, editor) => { }}
-                  onFocus={(event, editor) => { }}
+                  onBlur={(event, editor) => {}}
+                  onFocus={(event, editor) => {}}
                 />
               </div>
             </div>

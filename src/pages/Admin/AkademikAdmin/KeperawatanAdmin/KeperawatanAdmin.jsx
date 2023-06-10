@@ -59,7 +59,7 @@ const HomeAdmin = () => {
       setTextKurikulum(responseData.text_kurikulum);
       setTitleMataKuliah(responseData.title_mata_kuliah);
       setData(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   const getJadwal = async () => {
     try {
@@ -70,7 +70,7 @@ const HomeAdmin = () => {
       const images = responseData.map((item) => item.file_path);
       setSelectedJadwal(images);
       setJadwal(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   const getKuliah = async () => {
     try {
@@ -81,7 +81,7 @@ const HomeAdmin = () => {
       const images = responseData.map((item) => item.file_path);
       setFileKuliah(images);
       setKuliah(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const getFotoKuliah = async () => {
@@ -97,7 +97,7 @@ const HomeAdmin = () => {
       setTitletext(descriptions);
 
       setDataFotoKuliah(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveDataFotoKuliah = async () => {
@@ -125,7 +125,6 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-
     }
   };
   const saveFileKurikulum = async () => {
@@ -151,7 +150,6 @@ const HomeAdmin = () => {
       }
     } catch (error) {
       alert(`${error.response.data.message}`);
-
     }
   };
   const saveFileJadwal = async () => {
@@ -445,8 +443,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -467,8 +465,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -492,8 +490,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextKurikulum(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -565,12 +563,12 @@ const HomeAdmin = () => {
                             }}
                           />
                           <button
-                            class="btn btn-success mt-2 mr-10"
+                            class="btn btn-info mt-2 mr-10"
                             type="submit"
-                            style={{ width: '150px' }}
+                            style={{ width: '150px', color: 'white' }}
                             onClick={() => updateDataFotoKuliah(index)}
                           >
-                            Save
+                            Update
                           </button>
                         </div>
                         <div class="mb-2 row">
@@ -624,12 +622,12 @@ const HomeAdmin = () => {
                         )}
                         <div class="col-sm-4">
                           <button
-                            class="btn btn-success mt-2 mb-3"
+                            class="btn btn-info mt-2 mb-3"
                             type="submit"
                             onClick={() => updateKurikulumKuliah(index)}
-                            style={{ width: '150px' }}
+                            style={{ width: '150px', color: 'white' }}
                           >
-                            Save
+                            Update
                           </button>
                         </div>
                       </div>
@@ -680,12 +678,12 @@ const HomeAdmin = () => {
                         )}
                         <div class="col-sm-4">
                           <button
-                            class="btn btn-success mt-2 mb-4"
+                            class="btn btn-info mt-2 mb-4"
                             type="submit"
                             onClick={() => updateFileKuliah(index)}
-                            style={{ width: '150px' }}
+                            style={{ width: '150px', color: 'white' }}
                           >
-                            Save
+                            Update
                           </button>
                         </div>
                       </div>
@@ -710,7 +708,7 @@ const HomeAdmin = () => {
                 type="submit"
                 onClick={updateDataKeperawatan}
               >
-                Save 123
+                Save
               </button>
             </div>
           </div>
@@ -744,8 +742,8 @@ const HomeAdmin = () => {
                   {category === 'Mata Kuliah'
                     ? 'Photo Mata Kuliah'
                     : category === 'Kurikulum'
-                      ? 'Jadwal Kurikulum DIII Keperawatan'
-                      : 'Jadwal perkuliahan DIII Keperawatan'}
+                    ? 'Jadwal Kurikulum DIII Keperawatan'
+                    : 'Jadwal perkuliahan DIII Keperawatan'}
                 </label>
                 <div class="col-sm-10">
                   <div class="input-group mb-3">
@@ -757,8 +755,8 @@ const HomeAdmin = () => {
                         category === 'Mata Kuliah'
                           ? handleFotoMataKuliahChanges
                           : category === 'Kurikulum'
-                            ? handleJadwalChanges
-                            : handleFileKuliahChanges
+                          ? handleJadwalChanges
+                          : handleFileKuliahChanges
                       }
                     />
                   </div>
@@ -802,8 +800,8 @@ const HomeAdmin = () => {
                   category === 'Mata Kuliah'
                     ? saveDataFotoKuliah
                     : category === 'Kurikulum'
-                      ? saveFileKurikulum
-                      : saveFileJadwal
+                    ? saveFileKurikulum
+                    : saveFileJadwal
                 }
               >
                 Save

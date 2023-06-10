@@ -30,7 +30,7 @@ const GalleryKegiatan = () => {
       const responseData = response.data;
       // console.log(responseData, 'pantek');
       setDataImgKegiatan(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   const getDataOrientasi = async () => {
     try {
@@ -39,7 +39,7 @@ const GalleryKegiatan = () => {
       );
       const responseData = response.data;
       setDataImgOrientasi(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   const getDataWisuda = async () => {
     try {
@@ -48,7 +48,7 @@ const GalleryKegiatan = () => {
       );
       const responseData = response.data;
       setDataImgWisuda(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
   return (
     <Layout>

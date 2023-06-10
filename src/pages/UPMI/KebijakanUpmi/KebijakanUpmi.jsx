@@ -20,7 +20,7 @@ const KebijakanUpmi = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
   return (
     <Layout>

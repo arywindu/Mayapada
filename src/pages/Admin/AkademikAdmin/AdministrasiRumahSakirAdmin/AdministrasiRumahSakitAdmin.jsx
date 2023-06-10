@@ -41,7 +41,7 @@ const AdministrasiRumahSakitAdmin = () => {
       setFileGanjilPeriode(responseData.file_jadwal_ganjil);
       setFileGenapPeriode(responseData.file_jadwal_genap);
       setData(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const handleBannerChange = (event) => {
@@ -200,8 +200,8 @@ const AdministrasiRumahSakitAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
@@ -222,8 +222,8 @@ const AdministrasiRumahSakitAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>

@@ -30,7 +30,7 @@ const HubungiKamiAdmin = () => {
       setContactFb(responseData.contact_fb);
       setContactEmail(responseData.contact_email);
       setData(responseData);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {

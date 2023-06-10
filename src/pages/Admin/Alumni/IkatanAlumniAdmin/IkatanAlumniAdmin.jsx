@@ -24,7 +24,7 @@ const IkatanAlumniAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {
@@ -32,8 +32,14 @@ const IkatanAlumniAdmin = () => {
       let formData = new FormData();
       formData.append('id', 1);
       formData.append('ikatanAlumniText', ikatanAlumniText);
-      formData.append('ikatanAlumniImg', ikatanAlumniImg);
-      formData.append('ikatanAlumniForm', ikatanAlumniForm);
+      formData.append(
+        'ikatanAlumniImg',
+        ikatanAlumniImg ? ikatanAlumniImg : data.ikatan_alumni_form
+      );
+      formData.append(
+        'ikatanAlumniForm',
+        ikatanAlumniForm ? ikatanAlumniForm : data.ikatan_alumni_form
+      );
       const response = await axios.post(
         'https://api.stikesmayapada.ac.id/api/alumni/ikatan',
         formData,
@@ -120,8 +126,8 @@ const IkatanAlumniAdmin = () => {
                         const data = editor.getData();
                         setIkatanAlumniText(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>

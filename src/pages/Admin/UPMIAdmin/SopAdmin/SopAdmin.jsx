@@ -91,8 +91,8 @@ const SopAdmin = () => {
                         const data = editor.getData();
                         setSOP(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>

@@ -98,8 +98,8 @@ const PusatKarirAdmin = () => {
                         const data = editor.getData();
                         setCText(data);
                       }}
-                      onBlur={(event, editor) => { }}
-                      onFocus={(event, editor) => { }}
+                      onBlur={(event, editor) => {}}
+                      onFocus={(event, editor) => {}}
                     />
                   </div>
                 </div>
