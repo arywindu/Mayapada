@@ -22,6 +22,62 @@ const SaranaDanPrasaranaAdmin = () => {
   const [umumImg, setUmumImg] = useState(null);
   const [umumDesc, setUmumDesc] = useState(null);
 
+  const deleteDataPendidikan = async () => {
+    setOpenFirst(false);
+    setPendidikanDesc(null);
+    setPendidikanImg(null);
+    setPendidikanId(null);
+    setEdit(false);
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/sarana-prasarana/delete/1/images/${pendidikanId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      // console.log(response.status, "test");
+      getDataPendidikan();
+      //getDataBanner();
+      const { status } = response;
+      if (status === 200 || status === 201 || status === 204) {
+        alert(`Berhasil delete data`);
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+    }
+  };
+
+  const deleteDataUmum = async () => {
+    setOpenFirst(false);
+    setPendidikanDesc(null);
+    setPendidikanImg(null);
+    setPendidikanId(null);
+    setEdit(false);
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/sarana-prasarana/delete/2/images/${umumId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      // console.log(response.status, "test");
+      getDataUmum();
+      //getDataBanner();
+      const { status } = response;
+      if (status === 200 || status === 201 || status === 204) {
+        alert(`Berhasil delete data`);
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+    }
+  };
+
   const closeModalFirst = () => {
     setOpenFirst(false);
     setPendidikanDesc(null);
@@ -382,7 +438,7 @@ const SaranaDanPrasaranaAdmin = () => {
                     class="btn btn-danger mt-2"
                     type="submit"
                     style={{ marginLeft: '20px' }}
-                    onClick={closeModalFirst}
+                    onClick={deleteDataPendidikan}
                   >
                     Delete
                   </button>
@@ -461,7 +517,7 @@ const SaranaDanPrasaranaAdmin = () => {
                     class="btn btn-danger mt-2"
                     type="submit"
                     style={{ marginLeft: '20px' }}
-                    onClick={closeModalSecond}
+                    onClick={deleteDataUmum}
                   >
                     Delete
                   </button>

@@ -243,6 +243,91 @@ const HomeAdmin = () => {
       // // console.log(error, 'error');
     }
   };
+
+  const deleteFotoKuliah = async (index) => {
+    const itemId = dataFotoKuliah[index].id;
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/delete/images/${itemId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      getData();
+      const { status } = response;
+      if (status === 200 || status === 204) {
+        alert(`Berhasil menghapus foto mata kuliah`);
+        setOpenFirst(false);
+        getFotoKuliah();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      // // console.log(error, 'error');
+    }
+  }
+
+  const deleteFileKuliah = async (index) => {
+    const file = selectedJadwal[index];
+    const itemId = jadwal[index].id;
+    let formData = new FormData();
+    formData.append('file_path', file);
+    formData.append('type', 'KURIKULUM ');
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/delete/file/${itemId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      getData();
+      const { status } = response;
+      if (status === 200 || status === 204) {
+        alert(`Berhasil menghapus File Kurikulum Perkuliahan mata kuliah`);
+        setOpenFirst(false);
+        getJadwal();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      // // console.log(error, 'error');
+    }
+  }
+
+  const deleteJadwalPerkuliahan = async (index) => {
+    const file = fileKuliah[index];
+    const itemId = kuliah[index].id;
+    let formData = new FormData();
+    formData.append('file_path', file);
+    formData.append('type', 'JADWAL');
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/akademik-keperawatan/delete/file/${itemId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      getData();
+      const { status } = response;
+      if (status === 200 || status === 204) {
+        alert(`Berhasil menghapus File Jadwal Perkuliahan mata kuliah`);
+        setOpenFirst(false);
+        getKuliah();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      // // console.log(error, 'error');
+    }
+  }
+
+
   const updateFileKuliah = async (index) => {
     try {
       const file = fileKuliah[index];
@@ -579,6 +664,16 @@ const HomeAdmin = () => {
                           >
                             Update
                           </button>
+                          &nbsp;
+                          <button
+                            class="btn btn-danger mt-2 mr-10"
+                            type="submit"
+                            style={{ width: '150px', color: 'white' }}
+                            onClick={() => deleteFotoKuliah(index)}
+                          >
+                            Delete
+                          </button>
+
                         </div>
                         <div class="mb-2 row">
                           <label for="" class="col-sm-2 col-form-label">
@@ -638,6 +733,15 @@ const HomeAdmin = () => {
                           >
                             Update
                           </button>
+                          &nbsp;
+                          <button
+                            class="btn btn-danger mt-2 mb-3"
+                            type="submit"
+                            style={{ width: '150px', color: 'white' }}
+                            onClick={() => deleteFileKuliah(index)}
+                          >
+                            Delete
+                          </button>
                         </div>
                       </div>
                     </>
@@ -693,6 +797,15 @@ const HomeAdmin = () => {
                             style={{ width: '150px', color: 'white' }}
                           >
                             Update
+                          </button>
+                          &nbsp;
+                          <button
+                            class="btn btn-danger mt-2 mb-4"
+                            type="submit"
+                            onClick={() => deleteJadwalPerkuliahan(index)}
+                            style={{ width: '150px', color: 'white' }}
+                          >
+                            Delete
                           </button>
                         </div>
                       </div>
