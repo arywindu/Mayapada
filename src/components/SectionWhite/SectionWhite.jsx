@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 const SectionWhite = (props) => {
     const { text, type, size, color, fontWeight, children, ...rest } = props;
     return (
-        <div>
+        <div className='mb-5 pb-5 pt-5'>
             <div className='section-white'>
-                <div className='container mt-5'>
+                <div className='container'>
                     <h2 style={{
                         fontSize: "40px",
                         fontWeight: "600",

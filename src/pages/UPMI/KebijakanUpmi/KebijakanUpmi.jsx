@@ -20,7 +20,7 @@ const KebijakanUpmi = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -31,7 +31,7 @@ const KebijakanUpmi = () => {
           text="Dokumen tertulis Kebijakan SPMI STIKes Mayapada dimaksudkan sebagai :"
           style={{ marginTop: "24px" }}
         /> */}
-        <div dangerouslySetInnerHTML={{ __html: data && data.kebijakan }}></div>
+        <div className='pt-4' dangerouslySetInnerHTML={{ __html: data && data.kebijakan }}></div>
       </div>
     </Layout>
   );

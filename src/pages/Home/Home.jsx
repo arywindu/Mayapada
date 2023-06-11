@@ -29,7 +29,7 @@ const Home = () => {
       );
       // console.log(response.data.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getDataBanner = async () => {
@@ -39,7 +39,7 @@ const Home = () => {
       );
       // console.log(response.data, 'res');
       setDataBanner(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   return (
@@ -110,7 +110,7 @@ const Home = () => {
         </div>
       </div>
       <SectionWhite>
-        <div class="container">
+        <div class="container pb-5 mb-5">
           <div class="row">
             <div class="col-md-6">
               <Typhography

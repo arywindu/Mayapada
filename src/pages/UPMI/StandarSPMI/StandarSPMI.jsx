@@ -20,7 +20,7 @@ const StandarSpmi = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -31,7 +31,7 @@ const StandarSpmi = () => {
           text="Standar Mutu SPMI"
           style={{ marginTop: "24px" }}
         /> */}
-        <div dangerouslySetInnerHTML={{ __html: data && data.standar }}></div>
+        <div className='pt-4' dangerouslySetInnerHTML={{ __html: data && data.standar }}></div>
       </div>
     </Layout>
   );

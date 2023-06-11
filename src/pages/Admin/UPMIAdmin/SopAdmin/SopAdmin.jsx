@@ -44,7 +44,7 @@ const SopAdmin = () => {
       // console.log(response.status, 'test');
       getData();
       const { status } = response;
-      if (status === 200) {
+      if (status === 200 || status === 201) {
         alert(`Berhasil update data`);
       }
     } catch (error) {
@@ -59,7 +59,7 @@ const SopAdmin = () => {
           <h4>
             <span className="bg-primary text-white">SOP Admin</span>
           </h4>
-          <hr class="bg-danger border-2 border-top border-dark mt-1 mb-4"></hr>
+          {/* <hr class="bg-danger border-2 border-top border-dark mt-1 mb-4"></hr>
           <div class="mb-3 row">
             <label for="" class="col-sm-2 col-form-label">
               Title
@@ -71,7 +71,7 @@ const SopAdmin = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div>
             <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
             <div class="mb-3 row">

@@ -8,8 +8,8 @@ import ellipse5 from '../../assets/icons/ellipse5.svg'
 
 const SectionNilaiUtamaKami = () => {
     return (
-        <div className='text-center text-nilai-utama mt-5 mb-5 pt-5'>
-            <h3>Nilai Utama Kami</h3>
+        <div className='text-center text-nilai-utama mt-5 mb-5 pb-5 pt-5'>
+            <h3 className='mt-5 pt-5'>Nilai Utama Kami</h3>
             <div class="container mt-5">
                 <div class="row gx-5 justify-content-center">
 

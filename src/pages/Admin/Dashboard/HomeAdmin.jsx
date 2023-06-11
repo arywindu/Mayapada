@@ -602,7 +602,7 @@ const HomeAdmin = () => {
                     Text Banner
                   </label>
                   <div class="col-sm-10">
-                    <input
+                    < textarea
                       type="text"
                       class="form-control"
                       value={textBanner}
