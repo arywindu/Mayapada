@@ -21,7 +21,7 @@ const KebijakanUpmiAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -78,6 +78,9 @@ const KebijakanUpmiAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.kebijakan}
                       onReady={(editor) => {
@@ -87,8 +90,8 @@ const KebijakanUpmiAdmin = () => {
                         const data = editor.getData();
                         setKebijakan(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

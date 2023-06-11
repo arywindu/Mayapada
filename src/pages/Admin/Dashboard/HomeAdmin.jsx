@@ -44,7 +44,7 @@ const HomeAdmin = () => {
       );
       // console.log(response.data, "res");
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getDataBanner = async () => {
@@ -54,7 +54,7 @@ const HomeAdmin = () => {
       );
       // console.log(response.data, "res");
       setDataBanner(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -316,7 +316,7 @@ const HomeAdmin = () => {
               <div>{data && data.logo_image}</div>
             </div>
           </div>
-          <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
+          {/* <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr> */}
           <div id="SectionBanner">
             {/* <div class="mb-3 row">
               <label for="staticEmail" class="col-sm-2 col-form-label">
@@ -402,6 +402,9 @@ const HomeAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.text_visi}
                       onReady={(editor) => {
@@ -411,8 +414,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -427,6 +430,9 @@ const HomeAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.text_misi}
                       onReady={(editor) => {
@@ -436,8 +442,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -452,6 +458,9 @@ const HomeAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.tujuan}
                       onReady={(editor) => {
@@ -461,8 +470,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setTujuan(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -477,6 +486,9 @@ const HomeAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.landasan_hukum}
                       onReady={(editor) => {
@@ -486,8 +498,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setLandasanHukum(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -502,6 +514,9 @@ const HomeAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.struktur_organisasi}
                       onReady={(editor) => {
@@ -511,8 +526,8 @@ const HomeAdmin = () => {
                         const data = editor.getData();
                         setStrukturOrganisasi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

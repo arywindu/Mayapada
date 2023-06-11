@@ -41,7 +41,7 @@ const AdministrasiRumahSakitAdmin = () => {
       setFileGanjilPeriode(responseData.file_jadwal_ganjil);
       setFileGenapPeriode(responseData.file_jadwal_genap);
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const handleBannerChange = (event) => {
@@ -191,6 +191,9 @@ const AdministrasiRumahSakitAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.text_visi ? data.text_visi : ''}
                       onReady={(editor) => {
@@ -200,8 +203,8 @@ const AdministrasiRumahSakitAdmin = () => {
                         const data = editor.getData();
                         setTextVisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
@@ -213,6 +216,9 @@ const AdministrasiRumahSakitAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.text_misi ? data.text_misi : ''}
                       onReady={(editor) => {
@@ -222,8 +228,8 @@ const AdministrasiRumahSakitAdmin = () => {
                         const data = editor.getData();
                         setTextMisi(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

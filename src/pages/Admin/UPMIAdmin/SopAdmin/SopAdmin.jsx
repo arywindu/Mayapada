@@ -82,6 +82,9 @@ const SopAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.sop}
                       onReady={(editor) => {
@@ -91,8 +94,8 @@ const SopAdmin = () => {
                         const data = editor.getData();
                         setSOP(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>

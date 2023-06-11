@@ -190,6 +190,9 @@ const ProgramJalurMandiriAdmin = () => {
               </label>
               <div class="col-sm-10">
                 <CKEditor
+                  config={{
+                    removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                  }}
                   editor={ClassicEditor}
                   data={content}
                   onReady={(editor) => {
@@ -199,8 +202,8 @@ const ProgramJalurMandiriAdmin = () => {
                     const data = editor.getData();
                     setContent(data);
                   }}
-                  onBlur={(event, editor) => {}}
-                  onFocus={(event, editor) => {}}
+                  onBlur={(event, editor) => { }}
+                  onFocus={(event, editor) => { }}
                 />
               </div>
             </div>

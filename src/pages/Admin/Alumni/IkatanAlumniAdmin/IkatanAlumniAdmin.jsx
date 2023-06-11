@@ -24,7 +24,7 @@ const IkatanAlumniAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {
@@ -117,6 +117,9 @@ const IkatanAlumniAdmin = () => {
                 <div class="input-group mb-3">
                   <div className="App">
                     <CKEditor
+                      config={{
+                        removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"]
+                      }}
                       editor={ClassicEditor}
                       data={data && data.ikatan_alumni_text}
                       onReady={(editor) => {
@@ -126,8 +129,8 @@ const IkatanAlumniAdmin = () => {
                         const data = editor.getData();
                         setIkatanAlumniText(data);
                       }}
-                      onBlur={(event, editor) => {}}
-                      onFocus={(event, editor) => {}}
+                      onBlur={(event, editor) => { }}
+                      onFocus={(event, editor) => { }}
                     />
                   </div>
                 </div>
