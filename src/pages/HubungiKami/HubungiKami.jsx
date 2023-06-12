@@ -1,6 +1,6 @@
 import './HubungiKami.css';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import Button from '../../components/Button/Button';
 import EmailIcon from '../../assets/icons/email-hub.svg';
@@ -11,6 +11,7 @@ import Typhography from '../../components/Typhography/Typhography';
 import WaIcon from '../../assets/icons/waHub.svg';
 import axios from 'axios';
 import imgHubKami from '../../assets/images/hubungiKamiImg.png';
+import emailjs from '@emailjs/browser';
 
 const HubungiKami = () => {
   const [data, setData] = useState(null);
@@ -18,6 +19,23 @@ const HubungiKami = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_0ibqfht', 'template_86p6xkb', form.current, 'Kfbkw_OeDHDfE8fgp')
+      .then((result) => {
+        alert(`Berhasil Terkirim`);
+        console.log(result.text);
+        // console.log("send");
+      }, (error) => {
+        alert(`Gagal terkirim`);
+        console.log(error.text);
+        // console.log("gagal");
+      });
+  };
 
   const getData = async () => {
     try {
@@ -27,7 +45,7 @@ const HubungiKami = () => {
       // console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -80,58 +98,73 @@ const HubungiKami = () => {
             </div>
           </div>
 
-          <div className="form-hub">
-            <Typhography
-              type="normal"
-              text="Hubungi Kami"
-              size="32px"
-              color="white"
-            />
-            <div className="form-row">
-              <div
-                style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
-              >
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Name"
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Handphone"
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Email"
-                />
-              </div>
-              <div
-                style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
-              >
-                <textarea
-                  type="text"
-                  className="form-control"
-                  rows="5"
-                  placeholder="Message"
-                />
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="form-hub">
+              <Typhography
+                type="normal"
+                text="Hubungi Kami"
+                size="32px"
+                color="white"
+              />
+              <div className="form-row">
+                {/* <Email> */}
                 <div
-                  style={{
-                    flex: 1,
-                    alignSelf: 'flex-end',
-                    alignContent: 'flex-end',
-                  }}
+                  style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
                 >
-                  <Button
-                    text="Send"
-                    borderColor="white"
-                    style={{ marginTop: '12px' }}
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    name='user_name'
+                    required
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Handphone"
+                    name='user_phone'
+                    required
+                  />
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                    name='user_email'
+                    required
                   />
                 </div>
+                <div
+                  style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
+                >
+                  <textarea
+                    type="text"
+                    className="form-control"
+                    rows="5"
+                    placeholder="Message"
+                    name='user_message'
+                    required
+                  />
+                  <div
+                    style={{
+                      flex: 1,
+                      alignSelf: 'flex-end',
+                      alignContent: 'flex-end',
+                    }}
+                  >
+                    <input
+                      className="btn-style"
+                      text="Send"
+                      borderColor="white"
+                      style={{ marginTop: '12px' }}
+                      type="submit"
+                      value="send"
+                    />
+                  </div>
+                </div>
+                {/* </form> */}
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </Layout>
