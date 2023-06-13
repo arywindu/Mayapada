@@ -164,8 +164,8 @@ const GalleryKegiatan = () => {
       <div className="mb-5 pb-5 desktop-hide">
         <div className="filter-blue">
           <img className="image-gallery-sarana-mobile" src={Landing}></img>
-          <div class="centered">
-            <h1 className="text-white">Galery Kegiatan</h1>
+          <div class="centered pt-5 mb-5">
+            <h1 className="text-white pt-5 mb-5">Galery Kegiatan</h1>
           </div>
         </div>
         <div className="galerry-container">

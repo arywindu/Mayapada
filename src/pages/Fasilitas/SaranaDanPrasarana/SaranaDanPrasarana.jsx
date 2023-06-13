@@ -164,7 +164,7 @@ const SaranaDanPrasarana = () => {
         <div className="filter-blue">
           <img className="image-gallery-sarana-mobile" src={Landing}></img>
           <div class="centered">
-            <h1 className="text-white">Sarana dan Prasarana</h1>
+            <h1 className="text-white pt-5 mt-5">Sarana dan Prasarana</h1>
           </div>
         </div>
         <div className="galerry-container">
