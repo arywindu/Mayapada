@@ -39,15 +39,19 @@ const Carousel = (props) => {
                     <h1>{item.banner_text}</h1>
                   </div>
                   {item.button_1_show === 1 && (
-                    <button type="button" class="btn btn-carousel btn">
-                      {item.button_1}
-                    </button>
+                    <a href={item.link_button_1}>
+                      <button type="button" class="btn btn-carousel btn" onClick={item.link_button_1}>
+                        {item.button_1}
+                      </button>
+                    </a>
                   )}
                   &nbsp; &nbsp;
                   {item.button_2_show === 1 && (
-                    <button type="button" class="btn btn-carousel btn">
-                      {item.button_2}
-                    </button>
+                    <a href={item.link_button_2}>
+                      <button type="button" class="btn btn-carousel btn">
+                        {item.button_2}
+                      </button>
+                    </a>
                   )}
                 </div>
               </div>

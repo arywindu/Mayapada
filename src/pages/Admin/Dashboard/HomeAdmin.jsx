@@ -23,6 +23,8 @@ const HomeAdmin = () => {
   const [textBanner, setTextBanner] = useState(null);
   const [btnBanner1, setBtnBanner1] = useState(null);
   const [btnBanner2, setBtnBanner2] = useState(null);
+  const [btnLinkBanner1, setBtnLinkBanner1] = useState(null);
+  const [btnLinkBanner2, setBtnLinkBanner2] = useState(null);
   const [showBtn1, setShowBtn1] = useState(false);
   const [showBtn2, setShowBtn2] = useState(false);
   const [openBanner, setOpenBanner] = useState(false);
@@ -99,6 +101,8 @@ const HomeAdmin = () => {
       formData.append('bannerText', textBanner);
       formData.append('button1', btnBanner1);
       formData.append('button2', btnBanner2);
+      formData.append('linkButton1', btnLinkBanner1);
+      formData.append('linkButton2', btnLinkBanner2);
       formData.append('button1Show', showBtn1 ? 1 : 0);
       formData.append('button2Show', showBtn2 ? 1 : 0);
       const response = await axios.post(
@@ -139,6 +143,8 @@ const HomeAdmin = () => {
       formData.append('bannerText', textBanner);
       formData.append('button1', btnBanner1);
       formData.append('button2', btnBanner2);
+      formData.append('linkButton1', btnLinkBanner1);
+      formData.append('linkButton2', btnLinkBanner2);
       formData.append('button1Show', showBtn1 ? 1 : 0);
       formData.append('button2Show', showBtn2 ? 1 : 0);
       const response = await axios.put(
@@ -224,6 +230,8 @@ const HomeAdmin = () => {
     setBannerImg(null);
     setBtnBanner1(null);
     setBtnBanner2(null);
+    setBtnLinkBanner1(null);
+    setBtnLinkBanner2(null);
     setShowBtn1(false);
     setShowBtn2(false);
     setTextBanner(null);
@@ -268,6 +276,12 @@ const HomeAdmin = () => {
                       );
                       setBtnBanner2(
                         item.button_2 === 'null' ? '' : item.button_2
+                      );
+                      setBtnLinkBanner1(
+                        item.link_button_1 === 'null' ? '' : item.link_button_1
+                      );
+                      setBtnLinkBanner2(
+                        item.link_button_2 === 'null' ? '' : item.link_button_2
                       );
                       setShowBtn1(item.button_1_show === 1 ? true : false);
                       setShowBtn2(item.button_2_show === 1 ? true : false);
@@ -644,8 +658,8 @@ const HomeAdmin = () => {
                     <input
                       type="text"
                       class="form-control"
-                      value={btnBanner1}
-                      onChange={(e) => setBtnBanner1(e.target.value)}
+                      value={btnLinkBanner1}
+                      onChange={(e) => setBtnLinkBanner1(e.target.value)}
                     />
                     <div class="form-check"></div>
                   </div>
@@ -684,8 +698,8 @@ const HomeAdmin = () => {
                     <input
                       type="text"
                       class="form-control"
-                      value={btnBanner1}
-                      onChange={(e) => setBtnBanner1(e.target.value)}
+                      value={btnLinkBanner2}
+                      onChange={(e) => setBtnLinkBanner2(e.target.value)}
                     />
                     <div class="form-check"></div>
                   </div>
