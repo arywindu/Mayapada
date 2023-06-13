@@ -197,13 +197,13 @@ const Footer = () => {
                                     <a href="mailto:info@antariksa.co.id" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
                                 </p>
                                 <div>
-                                    <a href="https://wa.me/6281288710710" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://wa.me/6281288710710" class="me-2 text-reset text-decoration-none">
                                         <img src={iconWa}></img>
                                     </a>
-                                    <a href="https://www.facebook.com/stikesmayapada" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://www.facebook.com/stikesmayapada" class="me-2 text-reset text-decoration-none">
                                         <img src={iconFb}></img>
                                     </a>
-                                    <a href="https://www.instagram.com/stikesmayapada" class="me-4 text-reset text-decoration-none">
+                                    <a href="https://www.instagram.com/stikesmayapada" class="me-2 text-reset text-decoration-none">
                                         <img src={iconIg}></img>
                                     </a>
                                 </div>
