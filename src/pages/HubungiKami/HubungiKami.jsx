@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 
 const HubungiKami = () => {
   const [data, setData] = useState(null);
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(max-width: 1024px)').matches;
   useEffect(() => {
     getData();
   }, []);
