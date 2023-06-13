@@ -58,11 +58,12 @@ const SaranaDanPrasarana = () => {
   };
   return (
     <Layout>
-      <div className="mb-5 pb-5">
+      {/* Desktop Section */}
+      <div className="mb-5 pb-5 mobile-hide">
         <div className="filter-blue">
           <img className="image-gallery" src={Landing}></img>
-          <div class="centered">
-            <h1 className="text-white">Sarana dan Prasarana</h1>
+          <div class="centered mt-5 pt-5">
+            <h1 className="text-white mt-5 pt-5">Sarana dan Prasarana</h1>
           </div>
         </div>
         <div className="galerry-container">
@@ -158,7 +159,91 @@ const SaranaDanPrasarana = () => {
           </div>
         </div>
       </div>
-    </Layout>
+      {/*  Mobile Section */}
+      <div className="mb-5 pb-5 desktop-hide">
+        <div className="filter-blue">
+          <img className="image-gallery-sarana-mobile" src={Landing}></img>
+          <div class="centered">
+            <h1 className="text-white">Sarana dan Prasarana</h1>
+          </div>
+        </div>
+        <div className="galerry-container">
+          <div className="text-center">
+            <nav>
+              <div
+                class="justify-content-center mt-5"
+                id="nav-tab"
+                role="tablist"
+              >
+                <h3 style={{ color: '#278bc8', fontWeight: 'bold' }}>
+                  FASILITAS PENDIDIKAN
+                </h3>
+              </div>
+            </nav>
+            <div class="tab-content mt-5">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  {dataPendidikan &&
+                    dataPendidikan.map((item, index) => {
+                      return (
+                        <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                          <img src={item.card_image} class="d-block w-100"></img>
+                          <p className='mt-2'><b>{item.card_description}</b></p>
+                        </div>
+                      )
+                    })}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <nav>
+              <div
+                class="justify-content-center mt-5"
+                id="nav-tab"
+                role="tablist"
+              >
+                <h3 style={{ color: '#278bc8', fontWeight: 'bold' }}>
+                  FASILITAS UMUM
+                </h3>
+              </div>
+            </nav>
+            <div class="tab-content mt-5" id="nav-tabContent">
+              <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  {dataUmum &&
+                    dataUmum.map((item, index) => {
+                      return (
+                        <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                          <img src={item.card_image} class="d-block w-100"></img>
+                          <p className='mt-2'><b>{item.card_description}</b></p>
+                        </div>
+                      )
+                    })}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout >
   );
 };
 

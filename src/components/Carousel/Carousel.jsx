@@ -35,8 +35,8 @@ const Carousel = (props) => {
                 <img src={item.banner_image} class="d-block w-100"></img>
                 <div class="carousel-caption">
                   <div className="text-carousel">
-                    <h5>{item.headline}</h5>
-                    <h1>{item.banner_text}</h1>
+                    <h5 className="font-headline-mobile">{item.headline}</h5>
+                    <h1 className="font-banner-mobile" >{item.banner_text}</h1>
                   </div>
                   {item.button_1_show === 1 && (
                     <a href={item.link_button_1}>

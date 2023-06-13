@@ -8,34 +8,34 @@ import ellipse5 from '../../assets/icons/ellipse5.svg'
 
 const SectionNilaiUtamaKami = () => {
     return (
-        <div className='text-center text-nilai-utama mt-5 mb-5 pb-5 pt-5'>
-            <h3 className='mt-5 pt-5'>Nilai Utama Kami</h3>
-            <div class="container mt-5">
+        <div className='text-center text-nilai-utama mb-5 pb-5'>
+            <h3>Nilai Utama Kami</h3>
+            <div class="container mt-5 pt-5">
                 <div class="row gx-5 justify-content-center">
 
-                    <div class="col-lg-2 col-md-12">
-                        <img class="mb-3" src={ellipse1}></img>
-                        Belas Kasih
+                    <div class="col">
+                        <img class="mb-3 mobile-size" src={ellipse1}></img>
+                        <p>Belas Kasih</p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6">
-                        <img class="mb-3" src={ellipse2}></img>
-                        Integritas
+                    <div class="col">
+                        <img class="mb-3 mobile-size" src={ellipse2}></img>
+                        <p>Integritas</p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6">
-                        <img class="mb-3" src={ellipse3}></img>
-                        Kepercayaan
+                    <div class="col">
+                        <img class="mb-3 mobile-size" src={ellipse3}></img>
+                        <p>Kepercayaan</p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6">
-                        <img class="mb-3" src={ellipse4}></img>
-                        Profesionalisme
+                    <div class="col">
+                        <img class="mb-3 mobile-size" src={ellipse4}></img>
+                        <p>Profesionalisme</p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6">
-                        <img class="mb-3" src={ellipse5}></img>
-                        Komitmen
+                    <div class="col">
+                        <img class="mb-3 mobile-size" src={ellipse5}></img>
+                        <p>Komitmen</p>
                     </div>
 
                 </div>

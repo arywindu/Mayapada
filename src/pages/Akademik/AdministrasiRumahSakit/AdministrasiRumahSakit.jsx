@@ -44,8 +44,8 @@ const Administrasi = () => {
   return (
     <Layout>
       <div className="filter-blue-adm">
-        <img src={banner} width={'100%'}></img>
-        <div class="centered-adm">
+        <img className='image-adm-rs' src={banner}></img>
+        <div class="centered-adm mt-5">
           <h1 className="text-white mt-5 pt-5">
             Program Studi S1 Administrasi Rumah Sakit
           </h1>
@@ -76,7 +76,7 @@ const Administrasi = () => {
 
       <div class="container mb-5">
         <div class="row gx-5 justify-content-center">
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12 pb-5">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title text-blue">Kalender Akademik</h5>
@@ -100,7 +100,7 @@ const Administrasi = () => {
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12 pb-5">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title text-blue">Jadwal Perkuliahan</h5>

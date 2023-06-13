@@ -122,7 +122,7 @@ const Keperawatan = () => {
   return (
     <Layout>
       <div>
-        <img src={banner} width={'100%'}></img>
+        <img className='image-banner-keperawatan' src={banner}></img>
         <div class="centered-keperawatan">
           <h1 className="text-white pt-5 mt-5">Program Studi DIII Keperawatan</h1>
           <p className="text-white mt-4">{data && data.text_banner}</p>

@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <Layout logo={data && data.logo_image}>
       <Carousel data={dataBanner} />
-      <div className="home-container" style={{ backgroundColor: '#F5F5F5' }}>
+      <div className="home-container mobile-hide" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="text-center">
           <div class="container">
             <div class="row justify-content-center">
@@ -54,16 +54,14 @@ const Home = () => {
                 type="title"
                 text="Sejarah Mayapada Nursing Academy"
               />
-              <div class="circlesbox mb-5" style={{ color: '#278BC8' }}>
-                <div class="circle">
-                  <p>1996</p>
-                </div>
-                <div class="circle">2011</div>
-                <div class="circle">2018</div>
-                <div class="circle">2023</div>
+              <div className="circlesbox mb-5" style={{ color: '#278BC8' }}>
+                <div className="circle">1996</div>
+                <div className="circle">2011</div>
+                <div className="circle">2018</div>
+                <div className="circle">2023</div>
               </div>
 
-              <div class="col-lg-3 col-md-6 mb-5 pb-5">
+              <div class="col-lg-3 col-md-3 mb-5 pb-5">
                 <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Pendirian Akademi Keperawatan Anariksa oleh Yayasan Mitra
@@ -72,14 +70,14 @@ const Home = () => {
                 </ul>
               </div>
 
-              <div class="col-lg-3 col-md-6 mb-5 pb-5">
+              <div class="col-lg-3 col-md-3 mb-5 pb-5">
                 <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">Alih Bina</li>
                   <li className="mt-3">Akreditasi BAN-PT “C”</li>
                 </ul>
               </div>
 
-              <div class="col-lg-3 col-md-6 mb-5 pb-5">
+              <div class="col-lg-3 col-md-3 mb-5 pb-5">
                 <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Akreditasi BAN-PTkes “B” Diploma III Keperawatan
@@ -90,7 +88,7 @@ const Home = () => {
                 </ul>
               </div>
 
-              <div class="col-lg-3 col-md-6 mb-5 pb-5">
+              <div class="col-lg-3 col-md-3 mb-5 pb-5">
                 <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                   <li className="mt-3">
                     Perubahan Bentuk Sekolah Tinggi Ilmu Kesehatan Mayapada SK
@@ -109,6 +107,70 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Mobile Section */}
+      <div className="home-container desktop-hide" style={{ backgroundColor: '#F5F5F5' }}>
+        <div className="text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <Typhography
+                className="mt-5 mb-5"
+                type="title"
+                text="Sejarah Mayapada Nursing Academy"
+              />
+              <div className="mb-5" style={{ color: '#278BC8' }}>
+
+                <div class="col-lg-12 col-md-3">
+                  <div className="circle">1996</div>
+                  <ul style={{ textAlign: 'left', color: '#278BC8' }}>
+                    <li className="mt-3">
+                      Pendirian Akademi Keperawatan Anariksa oleh Yayasan Mitra
+                      Antariksa
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3 pt-5">
+                  <div className="circle">2011</div>
+                  <ul style={{ textAlign: 'left', color: '#278BC8' }}>
+                    <li className="mt-3">Alih Bina</li>
+                    <li className="mt-3">Akreditasi BAN-PT “C”</li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3 pt-5">
+                  <div className="circle">2018</div>
+                  <ul style={{ textAlign: 'left', color: '#278BC8' }}>
+                    <li className="mt-3">
+                      Akreditasi BAN-PTkes “B” Diploma III Keperawatan
+                    </li>
+                    <li className="mt-3">
+                      Ahli Kelola Mayapada Health Care Group
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3 pt-5">
+                  <div className="circle">2023</div>
+                  <ul style={{ textAlign: 'left', color: '#278BC8' }}>
+                    <li className="mt-3">
+                      Perubahan Bentuk Sekolah Tinggi Ilmu Kesehatan Mayapada SK
+                      Kemenristik Dikti No: Tanggal:
+                    </li>
+                    <li className="mt-3">
+                      Program Studi:
+                      <ul>
+                        <li>Diploma III Keperawatan</li>
+                        <li>Sarjana Administrasi Rumah Sakit</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*  end mobile section */}
       <SectionWhite>
         <div class="container pb-5 mb-5">
           <div class="row">
@@ -143,7 +205,6 @@ const Home = () => {
           </div>
         </div>
       </SectionWhite>
-      <div className="mt-5 pt-5"></div>
       <SectionNilaiUtamaKami />
       <SectionBlue
         type="normal"

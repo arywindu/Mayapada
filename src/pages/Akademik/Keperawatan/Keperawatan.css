@@ -1,61 +1,139 @@
-.centered-keperawatan {
-    position: absolute;
-    top: 30rem;
-    left: 40%;
-    transform: translate(-50%, -50%);
+@media only screen and (min-width: 700px) {
+
+    .image-banner-keperawatan{
+        width: 100%;
+    }
+
+    .centered-keperawatan {
+        position: absolute;
+        top: 30rem;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+    
+    .bg-section-keperawatan {
+      background-image: url('../../../assets/images/SectionKeperawatan.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 548px;
+    }
+    
+    ul li::marker { 
+            color: #2EB4E8;
+    }
+    
+    .keperawatan-story-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 0 0 8% 8%;
+        margin-top: 2rem;
+    }
+    
+    .keperawatan-story-container .keperawatan-story-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 48px;
+        margin-top: 5rem;
+    }
+    
+    .keperawatan-story-container .card-wrapper {
+        width: 325px;
+        min-height: 270px;
+        background-color: #ffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .keperawatan-story-container .card-img {
+        height: 224px;
+        object-fit: cover;
+    }
+    
+    .keperawatan-story-container .card-content {
+        padding: 4px;
+    }
+    
+    .icon-download {
+        background: url(../../../assets/icons/download.svg) no-repeat;
+        width: 10px;
+        height: 40px;
+    }
+    
+    .btn-blue {
+        background-color: #278BC8;
+        color: #ffff;
+    }
   }
 
-.bg-section-keperawatan {
-  background-image: url('../../../assets/images/SectionKeperawatan.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 548px;
-}
+@media only screen and (max-width: 600px) {
 
-ul li::marker { 
-        color: #2EB4E8;
-}
+    .image-banner-keperawatan{
+        height: 70vh;
+        width: 100%;
+        object-fit: cover;
+    }
 
-.keperawatan-story-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 0 0 8% 8%;
-    margin-top: 2rem;
-}
-
-.keperawatan-story-container .keperawatan-story-card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 48px;
-    margin-top: 5rem;
-}
-
-.keperawatan-story-container .card-wrapper {
-    width: 325px;
-    min-height: 270px;
-    background-color: #ffff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.keperawatan-story-container .card-img {
-    height: 224px;
-    object-fit: cover;
-}
-
-.keperawatan-story-container .card-content {
-    padding: 4px;
-}
-
-.icon-download {
-    background: url(../../../assets/icons/download.svg) no-repeat;
-    width: 10px;
-    height: 40px;
-}
-
-.btn-blue {
-    background-color: #278BC8;
-    color: #ffff;
-}
+    .centered-keperawatan {
+        position: absolute;
+        top: 30rem;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+    
+    .bg-section-keperawatan {
+      background-image: url('../../../assets/images/SectionKeperawatan.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 548px;
+    }
+    
+    ul li::marker { 
+            color: #2EB4E8;
+    }
+    
+    .keperawatan-story-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 0 0 8% 8%;
+        margin-top: 2rem;
+    }
+    
+    .keperawatan-story-container .keperawatan-story-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 48px;
+        margin-top: 5rem;
+    }
+    
+    .keperawatan-story-container .card-wrapper {
+        width: 325px;
+        min-height: 270px;
+        background-color: #ffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .keperawatan-story-container .card-img {
+        height: 224px;
+        object-fit: cover;
+    }
+    
+    .keperawatan-story-container .card-content {
+        padding: 4px;
+    }
+    
+    .icon-download {
+        background: url(../../../assets/icons/download.svg) no-repeat;
+        width: 10px;
+        height: 40px;
+    }
+    
+    .btn-blue {
+        background-color: #278BC8;
+        color: #ffff;
+    }
+  }

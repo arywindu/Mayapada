@@ -6,10 +6,11 @@ import React from "react";
 const Header = (props) => {
   const { logo } = props;
   return (
-    <div className="text-center mt-5 mb-3">
-      <img className="mx-auto mt-4 mb-4" src={logo} width={"10%"} />
+    <div className="text-center mt-5 mb-3" style={{ zIndex: '999999' }}>
+      <img className="mx-auto mt-4 mb-4 mobile-hide" src={logo} width={"10%"} />
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
+          <img className=" mt-4 header-mobile desktop-hide" src={logo} /> {/* for mobile ONly */}
           <button
             className="navbar-toggler"
             type="button"
@@ -21,6 +22,7 @@ const Header = (props) => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div
             className="collapse navbar-collapse justify-content-center"
             id="navbarNavDropdown"
@@ -152,7 +154,7 @@ const Header = (props) => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item dropdown px-2">
+              {/* <li className="nav-item dropdown px-2">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -179,7 +181,7 @@ const Header = (props) => {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item px-2">
                 <a className="nav-link" href="#">
                   <Link
