@@ -28,7 +28,7 @@ const JalurBeasiswa = () => {
   return (
     <Layout>
       <div className="jalur-beasiswa-container">
-        <Typhography type="title" text="Program Jalur Mandiri" />
+        <Typhography type="title" text="Program Jalur Beasiswa" />
 
         <div className="jalur-beasiswa-type-row">
           <div className="jalur-beasiswa-type">

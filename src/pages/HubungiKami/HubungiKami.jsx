@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 
 const HubungiKami = () => {
   const [data, setData] = useState(null);
-
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   useEffect(() => {
     getData();
   }, []);
@@ -51,6 +51,57 @@ const HubungiKami = () => {
     <Layout>
       <div className="bg-hub">
         <div class="hubungi-kami-container">
+          {isMobile ? (
+            <>
+           <div class="top-info">
+           <h2 style={{fontSize: '20px'}}>Mayapada Hospital Jakarta Selatan</h2>
+           <h4 style={{fontSize: '16px'}}>(Tower 2 Lantai 8)</h4>
+           <p className="mt-4" style={{fontSize: '14px'}}>
+             Jl. Lebak Bulus 1, Kav. 29, Jakarta Selatan.
+           </p>
+           <h4 className="mt-5" style={{fontSize: '14px'}}>Hubungi Kami:</h4>
+           <table class="table table-borderless">
+             <tbody>
+               <tr>
+                 <td>
+                   <img src={WaIcon}></img>
+                   &nbsp; <span style={{fontSize: '14px'}}>Whatsapp</span>
+                 </td>
+                 <td style={{fontSize: '14px'}}>: {data && data.contact_wa}</td>
+               </tr>
+               <tr>
+                 <td>
+                   <img src={IgIcon}></img>
+                   &nbsp; <span style={{fontSize: '14px'}}>Instagram</span>
+                 </td>
+                 <td style={{fontSize: '14px'}}>: {data && data.contact_ig}</td>
+               </tr>
+               <tr>
+                 <td>
+                   <img src={FbIcon}></img>
+                   &nbsp; <span style={{fontSize: '14px'}}>Facebook</span>
+                 </td>
+                 <td style={{fontSize: '14px'}}>: {data && data.contact_fb}</td>
+               </tr>
+               <tr>
+                 <td>
+                   <img src={EmailIcon}></img>
+                   &nbsp; <span style={{fontSize: '14px'}}>Email</span>
+                 </td>
+                 <td style={{fontSize: '14px'}}>: {data && data.contact_email}</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         {/* <div className='blurring'></div> */}
+             <img src={imgHubKami} className='img-bg'></img>
+         {/* <div class="row mb-5"> */}
+           
+           
+         {/* </div> */}
+         </>)
+          
+          :
           <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
             <div class="col-md-5">
               <img src={imgHubKami}></img>
@@ -97,6 +148,7 @@ const HubungiKami = () => {
               </table>
             </div>
           </div>
+          }
 
           <form ref={form} onSubmit={sendEmail}>
             <div className="form-hub">

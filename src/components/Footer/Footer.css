@@ -1,3 +1,26 @@
 .bg-blue{
     background-color: #278BC8
 }
+
+@media (max-width: 768px) {
+    .container.text-center.text-md-start {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .container.text-center.text-md-start .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .container.text-center.text-md-start .col-md-3 {
+        flex-basis: 48%;
+        margin-bottom: 1rem;
+      }
+     .icon-mobile{
+        width: 20%;
+     }
+
+}

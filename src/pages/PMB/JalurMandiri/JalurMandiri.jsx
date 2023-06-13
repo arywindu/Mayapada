@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const JalurMandiri = () => {
   const [data, setData] = useState(null);
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
   useEffect(() => {
     getData();
@@ -41,8 +42,9 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
+          className='dot-item'
             style={{
-              width: '10%',
+              width: isMobile ? '20%' :'10%',
               height: '1px',
               borderBottom: '1px dashed #278BC8',
               marginBottom: '30px',
@@ -58,8 +60,9 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
+          className='dot-item'
             style={{
-              width: '10%',
+              width: isMobile ? '20%' :'10%',
               height: '1px',
               borderBottom: '1px dashed #278BC8',
               marginBottom: '30px',
@@ -67,7 +70,7 @@ const JalurMandiri = () => {
           />
           <div className="jalur-mandiri-progress-item">
             <img
-              className="jalur-mandiri-progress-item-top"
+              className="jalur-mandiri-progress-item-top" 
               src={data && data.img_3}
             />
             <div className="jalur-mandiri-progress-item-bottom">

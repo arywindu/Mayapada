@@ -29,3 +29,52 @@
     width: 561px;
     margin-right: 7rem;
 }
+
+@media (max-width: 768px) {
+    .tracer-study-container {
+      height: auto;
+      justify-content: end
+    }
+    .ikatan-alumni-text{
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: left;
+        color: #525252;
+        word-wrap: break-word;
+        /* word-break: break-all;   */
+        line-height: 1.5;
+    }
+
+    .tracer-study-container .tracer-study-card {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: auto;
+    }
+
+    .tracer-study-container .tracer-study-img {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+    }
+  
+
+    .tracer-study-container .tracer-study-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(180deg, #FFFFFF 55.35%, rgba(255, 255, 255, 0) 90.24%);
+      }
+  
+    .tracer-study-img {
+      width: 130%;
+      height: auto;
+      max-height: none;
+      margin-top: 250px;
+    }
+  }
+  

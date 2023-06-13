@@ -14,6 +14,7 @@ const PenerimaanMahasiswa = () => {
   const [title, setTitle] = useState(null);
   const [semesterKeperawatan, setsemesterKeperawatan] = useState(null);
   const [semesterRs, setSemesterRs] = useState(null);
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
   useEffect(() => {
     getData();
@@ -133,6 +134,37 @@ const PenerimaanMahasiswa = () => {
             color="#278BC8"
           />
           <div className="penerimaan-mahasiswa-row">
+            {isMobile ? (
+              <>
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>Semester I</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s1}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester II</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s2}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester III</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s3}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester IV</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s4}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester V</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s5}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester VI</td>
+                    <td>{semesterKeperawatan && semesterKeperawatan.s6}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>) : <>
             <table class="table table-bordered">
               <tbody>
                 <tr>
@@ -166,6 +198,7 @@ const PenerimaanMahasiswa = () => {
                 </tr>
               </tbody>
             </table>
+            </>}
           </div>
 
           <Typhography
@@ -175,6 +208,39 @@ const PenerimaanMahasiswa = () => {
           />
 
           <div className="penerimaan-mahasiswa-row">
+          {isMobile ? (
+              <>
+            <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>Semester I</td>
+                    <td>{semesterRs && semesterRs.s1}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester II</td>
+                    <td>{semesterRs && semesterRs.s2}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester III</td>
+                    <td>{semesterRs && semesterRs.s3}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester IV</td>
+                    <td>{semesterRs && semesterRs.s4}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester V</td>
+                    <td>{semesterRs && semesterRs.s5}</td>
+                  </tr>
+                  <tr>
+                    <td>Semester VI</td>
+                    <td>{semesterRs && semesterRs.s6}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>) 
+            : 
+            <>
             <table class="table table-bordered">
               <tbody>
                 <tr>
@@ -208,6 +274,7 @@ const PenerimaanMahasiswa = () => {
                 </tr>
               </tbody>
             </table>
+            </> }
           </div>
         </div>
       </div>

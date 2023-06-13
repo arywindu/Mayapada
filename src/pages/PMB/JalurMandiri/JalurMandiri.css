@@ -56,3 +56,39 @@
 .jalur-mandiri-container .jalur-mandiri-persyaratan-card li {
     margin: 10px 0;
 }
+
+@media (max-width: 768px) {
+    .jalur-mandiri-container {
+        display: flex;
+        flex-direction: column;
+        /* margin: 5% 10%; */
+    }
+    .jalur-mandiri-progress-item {
+        margin: auto;
+    }
+    .jalur-mandiri-container .jalur-mandiri-progress {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        margin-top: 7%;
+        margin-bottom: 7%;
+    }
+    .dot-item {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        transform: rotate(90deg);
+    }
+    .jalur-mandiri-container .jalur-mandiri-persyaratan-card {
+        display: flex;
+        flex: 1;
+        background: #F8F8F8;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    .jalur-mandiri-container .jalur-mandiri-persyaratan-card li {
+        margin: 0;
+    }
+      
+}

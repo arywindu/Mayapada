@@ -33,15 +33,16 @@ const IkatanAlumni = () => {
         />
         <div className="ikatan-alumni-content">
           <div className="ikatan-alumni-card">
-            <Typhography type="title" text="Ikatan Alumni" />
+          <Typhography type="title" text="Ikatan Alumni" className="ikatan-alumni-title" />
             <div
+              className = "ikatan-alumni-text"
               dangerouslySetInnerHTML={{
                 __html: data && data.ikatan_alumni_text,
               }}
             ></div>
             <Button
               text="Download Form"
-              style={{ marginTop: '24px' }}
+              style={{ marginTop: '10px' }}
               onClick={() =>
                 window.open(`${data && data.ikatan_alumni_form}`, '_blank')
               }

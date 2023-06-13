@@ -26,3 +26,45 @@
     margin-left: 10%;
     width: 561px;
 }
+
+@media (max-width: 768px) {
+    .ikatan-alumni-container {
+      height: auto;
+    }
+    .ikatan-alumni-text{
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: left;
+        color: #525252;
+        word-wrap: break-word;
+        /* word-break: break-all;   */
+        line-height: 1.5;
+    }
+
+    .ikatan-alumni-container .ikatan-alumni-card {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: auto;
+    }
+    
+
+    .ikatan-alumni-container .ikatan-alumni-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background: linear-gradient(180deg, #FFFFFF 65.35%, rgba(255, 255, 255, 0) 100.24%);
+      }
+  
+    .ikatan-alumni-img {
+      width: 130%;
+      height: auto;
+      max-height: none;
+      margin-top: 220px;
+    }
+  }
+  
