@@ -79,7 +79,7 @@ const Keperawatan = () => {
       setTextKurikulum(responseData.text_kurikulum);
       setTitleMataKuliah(responseData.title_mata_kuliah);
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getJadwal = async () => {
     try {
@@ -90,7 +90,7 @@ const Keperawatan = () => {
       const images = responseData.map((item) => item.file_path);
       setSelectedJadwal(images);
       setJadwal(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getKuliah = async () => {
     try {
@@ -101,7 +101,7 @@ const Keperawatan = () => {
       const images = responseData.map((item) => item.file_path);
       setFileKuliah(images);
       setKuliah(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getFotoKuliah = async () => {
@@ -117,14 +117,14 @@ const Keperawatan = () => {
       setTitletext(descriptions);
 
       setDataFotoKuliah(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
       <div>
         <img src={banner} width={'100%'}></img>
         <div class="centered-keperawatan">
-          <h1 className="text-white">Program Studi DIII Keperawatan</h1>
+          <h1 className="text-white pt-5 mt-5">Program Studi DIII Keperawatan</h1>
           <p className="text-white mt-4">{data && data.text_banner}</p>
         </div>
       </div>
