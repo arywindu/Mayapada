@@ -1,6 +1,8 @@
 @media only screen and (max-width: 600px) {
     .image-gallery-sarana-mobile{
-            width: 250%;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
             opacity: 0.3;
     }
 }
