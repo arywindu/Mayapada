@@ -6,7 +6,7 @@ import React from "react";
 const Header = (props) => {
   const { logo } = props;
   return (
-    <div className="text-center mt-1 mb-5" style={{ zIndex: '999999' }}>
+    <div className="text-center mt-1" style={{ zIndex: '999999' }}>
       <img className="mx-auto mobile-hide" src={logo} width={"10%"} />
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
