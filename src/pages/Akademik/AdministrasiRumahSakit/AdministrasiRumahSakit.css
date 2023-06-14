@@ -35,8 +35,9 @@
  @media only screen and (max-width: 600px) {
 
     .image-adm-rs{
-        width: auto;
-        height: 700px;
+        height: 80vh;
+        width: 100%;
+        object-fit: cover;
     }
 
     .administrasi-container {
@@ -47,8 +48,8 @@
     
     .centered-adm {
         position: absolute;
-        top: 30rem;
-        left: 54%;
+        top: 25rem;
+        left: 45%;
         transform: translate(-50%, -50%);
       }
     
