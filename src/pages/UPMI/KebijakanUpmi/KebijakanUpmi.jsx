@@ -25,7 +25,7 @@ const KebijakanUpmi = () => {
   return (
     <Layout>
       <div className="kebijakan-upmi-container">
-        <Typhography type="title" text="Kebijkan SPMI" />
+        <Typhography type="title" text="Kebijakan SPMI" />
         {/* <Typhography
           type="normal"
           text="Dokumen tertulis Kebijakan SPMI STIKes Mayapada dimaksudkan sebagai :"
