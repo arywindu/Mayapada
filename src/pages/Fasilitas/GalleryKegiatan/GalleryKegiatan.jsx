@@ -165,7 +165,7 @@ const GalleryKegiatan = () => {
         <div className="filter-blue">
           <img className="image-gallery-sarana-mobile" src={Landing}></img>
           <div class="centered pt-5 mb-5">
-            <h1 className="text-white pt-5 mb-5">Galery Kegiatan</h1>
+            <h1 className="text-white text-galery-title">Galery Kegiatan</h1>
           </div>
         </div>
         <div className="galerry-container">

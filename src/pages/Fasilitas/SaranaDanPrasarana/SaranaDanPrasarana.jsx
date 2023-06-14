@@ -62,8 +62,8 @@ const SaranaDanPrasarana = () => {
       <div className="mb-5 pb-5 mobile-hide">
         <div className="filter-blue">
           <img className="image-gallery" src={Landing}></img>
-          <div class="centered mt-5 pt-5">
-            <h1 className="text-white mt-5 pt-5">Sarana dan Prasarana</h1>
+          <div class="centered-sarana mb-5 pt-5">
+            <h1 className="text-white sarana-prasarana-title">Sarana dan Prasarana</h1>
           </div>
         </div>
         <div className="galerry-container">
