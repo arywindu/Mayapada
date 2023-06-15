@@ -167,7 +167,7 @@ const Footer = () => {
                                     FASILITAS
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">
+                                    <a href="#!" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-reset text-decoration-none">
                                         <Link
                                             className="text-reset text-decoration-none"
                                             to="/SaranaDanPrasarana"

@@ -69,7 +69,7 @@ const Administrasi = () => {
           </div>
 
           <div class="col-md-6">
-            <img src={imgVisiMisi} width={'100%'} height={'80%'}></img>
+            <img src={imgVisiMisi} width={'95%'} height={'95%'}></img>
           </div>
         </div>
       </div>

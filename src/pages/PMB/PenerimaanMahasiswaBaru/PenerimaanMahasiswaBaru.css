@@ -5,7 +5,7 @@
 
 .penerimaan-mahasiswa-container .penerimaan-mahasiswa-header {
     background-repeat:no-repeat;
-    background-size: 100% 480px;
+    background-size: auto;
     background-image: url("../../../assets/images/penerimaan_mahasiswa.png");
 }
 
@@ -56,5 +56,13 @@
     gap: 3rem;
     margin: 5% 8.5%;
 }
+
+.btn-daftar {
+    color: white; 
+    background-color: #2EB4E8;
+    border-radius: 35px;
+    border: 1px solid;
+    border: 1px solid #2EB4E8;
+  }
   
   
