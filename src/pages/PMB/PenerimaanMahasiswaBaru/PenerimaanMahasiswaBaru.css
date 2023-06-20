@@ -5,8 +5,7 @@
 
 .penerimaan-mahasiswa-container .penerimaan-mahasiswa-header {
     background-repeat:no-repeat;
-    background-size: auto;
-    background-image: url("../../../assets/images/penerimaan_mahasiswa.png");
+    background-size: 100% 480px;
 }
 
 .penerimaan-mahasiswa-container .penerimaan-mahasiswa-header-card {
@@ -38,6 +37,7 @@
     height: 325px;
     background-size: 512px 325px;
     background-repeat:no-repeat;
+    border-radius: 8px;
 }
 
 .penerimaan-mahasiswa-container .penerimaan-mahasiswa-card-content {
@@ -47,7 +47,8 @@
     justify-content: center;
     flex-direction: column;
     height: 325px;
-    background: #278ac8bf
+    background: #278ac8bf;
+    border-radius: 8px;
 }
 
 .penerimaan-mahasiswa-container .penerimaan-mahasiswa-row {
