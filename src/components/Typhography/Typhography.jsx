@@ -3,13 +3,15 @@ import React from "react";
 
 const Typhography = (props) => {
   const { text, type, size, color, fontWeight, ...rest } = props;
+  
+  const isMobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(max-width: 1024px)').matches;
   const typhographyType = () => {
     if (type === "title") {
       return (
         <div
           className="typography"
           style={{
-            fontSize: "40px",
+            fontSize: isMobile ? "24px" : "40px",
             fontWeight: "600",
             color: "#278BC8",
           }}

@@ -140,11 +140,20 @@ const PenerimaanMahasiswa = () => {
             </div>
           </div>
 
-          <Typhography
+          {/* <Typhography
             text="Biaya Prodi : Diploma III Keperawatan"
             size="37px"
             color="#278BC8"
-          />
+          /> */}
+          <div className="ikatan-alumni-title">
+          {isMobile ? (
+            <span>
+              Biaya Prodi : Diploma III <br /> Keperawatan
+            </span>
+          ) : (
+            "Biaya Prodi : Diploma III Keperawatan"
+          )}
+        </div>
           <div className="penerimaan-mahasiswa-row">
             {isMobile ? (
               <>
@@ -216,11 +225,20 @@ const PenerimaanMahasiswa = () => {
             )}
           </div>
 
-          <Typhography
+          {/* <Typhography
             text="Biaya Prodi : S1 Administrasi Rumah Sakit"
             size="37px"
             color="#278BC8"
-          />
+          /> */}
+           <div className="ikatan-alumni-title">
+          {isMobile ? (
+            <span>
+              Biaya Prodi : S1 Administrasi <br /> Rumah Sakit
+            </span>
+          ) : (
+            "Biaya Prodi : S1 Administrasi Rumah Sakit"
+          )}
+        </div>
 
           <div className="penerimaan-mahasiswa-row">
             {isMobile ? (

@@ -17,10 +17,15 @@
     background-color: #003F66;
 }
 .form-row {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .form-row .form-control {
@@ -29,6 +34,9 @@
 
 
 @media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
 .top-info {
     display: flex;
     flex-direction: column;

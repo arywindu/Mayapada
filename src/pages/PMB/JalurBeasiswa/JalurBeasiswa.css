@@ -8,7 +8,13 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
+    justify-content: center;
 }
+.ikatan-alumni-title{
+    font-size: 22px;
+    color: #278BC8;
+    font-weight: 600;
+  }
 
 .jalur-beasiswa-container .jalur-beasiswa-type {
     display: flex;
@@ -38,6 +44,11 @@
     padding: 10px;
 }
 
+.jalur-beasiswa-persyaratan-title {
+    text-align: left;
+  }
+  
+
 .jalur-beasiswa-container .jalur-beasiswa-persyaratan-card li {
     margin: 10px 0;
 }
@@ -47,6 +58,20 @@
         flex-direction: column;
         gap: 30px;
     }
+    .ikatan-alumni-title{
+        font-size: 22px;
+        color: #278BC8;
+        font-weight: 600;
+        align-self: left;
+      }
+
+      .ikatan-alumni-titles {
+        font-size: 22px;
+        color: #278BC8;
+        font-weight: 600;
+        text-align: left !important;
+      }
+      
 
     .jalur-beasiswa-container .jalur-beasiswa-type {
         display: flex;

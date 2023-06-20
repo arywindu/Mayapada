@@ -184,7 +184,36 @@ const HubungiKami = () => {
                     name='user_email'
                     required
                   />
+                  {isMobile ? 
+                  <>
+                   <textarea
+                   type="text"
+                   className="form-control"
+                   rows="5"
+                   placeholder="Message"
+                   name='user_message'
+                   required
+                 />
+                 <div
+                   style={{
+                     flex: 1,
+                     alignSelf: 'flex-end',
+                     alignContent: 'flex-end',
+                   }}
+                 >
+                   <input
+                     className="btn-style"
+                     text="Send"
+                     borderColor="white"
+                     style={{ marginTop: '12px', width: '100%' }}
+                     type="submit"
+                     value="send"
+                   />
+                 </div>
+                 </>
+                 : ""}
                 </div>
+                {isMobile ? "" :
                 <div
                   style={{ display: 'flex', flex: 1, flexDirection: 'column' }}
                 >
@@ -207,12 +236,13 @@ const HubungiKami = () => {
                       className="btn-style"
                       text="Send"
                       borderColor="white"
-                      style={{ marginTop: '12px' }}
+                      style={{ marginTop: '12px', width: '100%' }}
                       type="submit"
                       value="send"
                     />
                   </div>
                 </div>
+                }
                 {/* </form> */}
               </div>
             </div>

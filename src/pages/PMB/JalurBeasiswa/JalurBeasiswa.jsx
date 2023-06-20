@@ -28,8 +28,8 @@ const JalurBeasiswa = () => {
   return (
     <Layout>
       <div className="jalur-beasiswa-container">
-        <Typhography type="title" text="Program Jalur Beasiswa" />
-
+        {/* <Typhography type="title" text="Program Jalur Beasiswa" /> */}
+        <div className="ikatan-alumni-titles">Program Jalur Beasiswa</div>
         <div className="jalur-beasiswa-type-row">
           <div className="jalur-beasiswa-type">
             <Typhography
@@ -80,7 +80,9 @@ const JalurBeasiswa = () => {
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" />
+        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px'}}/>
+        {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
+
 
         <div className="jalur-beasiswa-persyaratan">
           <Typhography

@@ -29,8 +29,8 @@ const JalurMandiri = () => {
   return (
     <Layout>
       <div className="jalur-mandiri-container">
-        <Typhography type="title" text="Program Jalur Mandiri" />
-
+        {/* <Typhography type="title" text="Program Jalur Mandiri" /> */}
+        <div className="ikatan-alumni-title">Program Jalur Mandiri</div>
         <div className="jalur-mandiri-progress">
           <div className="jalur-mandiri-progress-item">
             <img
@@ -79,7 +79,9 @@ const JalurMandiri = () => {
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" />
+        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px'}}/>
+        {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
+
 
         <div className="jalur-mandiri-persyaratan">
           <Typhography

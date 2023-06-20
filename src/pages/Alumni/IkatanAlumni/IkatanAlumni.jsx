@@ -33,7 +33,7 @@ const IkatanAlumni = () => {
         />
         <div className="ikatan-alumni-content">
           <div className="ikatan-alumni-card">
-          <Typhography type="title" text="Ikatan Alumni" className="ikatan-alumni-title" />
+          <Typhography type="title" text="Ikatan Alumni" style={{ alignSelf: 'left' }}/>
             <div
               className = "ikatan-alumni-text"
               dangerouslySetInnerHTML={{

@@ -5,6 +5,13 @@
     justify-content: start;
 }
 
+.ikatan-alumni-title{
+    font-size: 40px;
+    color: #278BC8;
+    font-weight: 600;
+    margin-bottom: 24.27px;
+  }
+
 .tracer-study-container .tracer-study-img {
     position: relative;
     object-fit: cover;
@@ -35,6 +42,21 @@
       height: auto;
       justify-content: end
     }
+    .ikatan-alumni-text{
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: left;
+        color: #525252;
+        word-wrap: break-word;
+        /* word-break: break-all;   */
+        line-height: 1.5;
+    }
+    .ikatan-alumni-title{
+        font-size: 22px;
+        color: #278BC8;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
     .ikatan-alumni-text{
         margin-top: 10px;
         font-size: 16px;

@@ -30,8 +30,9 @@ const TracerStudy = () => {
         <img className="tracer-study-img" src={data && data.tracer_study_img} />
         <div className="tracer-study-content">
           <div className="tracer-study-card">
-            <Typhography type="title" text="Tracer Study" />
+            <Typhography type="title" text="Tracer Study" style={{ marginBottom: "10px", alignSelf: 'left' }}/>
             <div
+            className = "ikatan-alumni-text"
               dangerouslySetInnerHTML={{
                 __html: data && data.tracer_study_text,
               }}

@@ -40,6 +40,7 @@ const dataArray = [
   },
 ];
 
+
 const AlumniStory = () => {
   const [data, setData] = useState(null);
 
@@ -62,9 +63,9 @@ const AlumniStory = () => {
         <Typhography
           type="title"
           text="Alumni Story"
-          style={{ alignSelf: 'center' }}
+          style={{ alignSelf: 'center'}}
         />
-
+        {/* <div className="ikatan-alumni-title">Alumni Story</div> */}
         <div className="alumni-story-card">
           {data &&
             data.map((item) => (
@@ -82,7 +83,7 @@ const AlumniStory = () => {
                     type="normal"
                     text={item.alumni_story_history}
                     size="16px"
-                    style={{ marginTop: '10px' }}
+                    style={{ marginTop: '10px', textAlign: 'justify' }}
                   />
                 </div>
               </div>

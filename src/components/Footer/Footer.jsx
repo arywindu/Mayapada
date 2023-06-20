@@ -21,7 +21,7 @@ const Footer = () => {
                         {/* <!-- Grid row --> */}
                         <div className="row mt-3">
                             {/* <!-- Grid column --> */}
-                            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <div className="col-md-2 col-lg-3 col-xl-3 mx-auto mb-4">
                                 {/* <!-- Content --> */}
                                 <div className='mb-5'>
                                     <img className="mx-auto" src={logoFooter}></img>
