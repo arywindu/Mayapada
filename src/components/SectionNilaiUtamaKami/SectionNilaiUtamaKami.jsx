@@ -9,33 +9,33 @@ import ellipse5 from '../../assets/icons/ellipse5.svg'
 const SectionNilaiUtamaKami = () => {
     return (
         <div className='text-center text-nilai-utama mb-5 pb-5'>
-            <h3>Nilai Utama Kami</h3>
+            <h3 style={{ fontWeight: 'Bold' }} >Nilai Utama Kami</h3>
             <div class="container mt-5 pt-5">
                 <div class="row gx-5 justify-content-center">
 
                     <div class="col">
                         <img class="mb-3 mobile-size" src={ellipse1}></img>
-                        <p>Belas Kasih</p>
+                        <h3>Belas Kasih</h3>
                     </div>
 
                     <div class="col">
                         <img class="mb-3 mobile-size" src={ellipse2}></img>
-                        <p>Integritas</p>
+                        <h3>Integritas</h3>
                     </div>
 
                     <div class="col">
                         <img class="mb-3 mobile-size" src={ellipse3}></img>
-                        <p>Kepercayaan</p>
+                        <h3>Kepercayaan</h3>
                     </div>
 
                     <div class="col">
                         <img class="mb-3 mobile-size" src={ellipse4}></img>
-                        <p>Profesionalisme</p>
+                        <h3>Profesionalisme</h3>
                     </div>
 
                     <div class="col">
                         <img class="mb-3 mobile-size" src={ellipse5}></img>
-                        <p>Komitmen</p>
+                        <h3>Komitmen</h3>
                     </div>
 
                 </div>

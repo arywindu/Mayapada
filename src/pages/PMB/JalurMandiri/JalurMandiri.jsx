@@ -42,9 +42,9 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
-          className='dot-item'
+            className='dot-item'
             style={{
-              width: isMobile ? '20%' :'10%',
+              width: isMobile ? '20%' : '10%',
               height: '1px',
               borderBottom: '1px dashed #278BC8',
               marginBottom: '30px',
@@ -60,9 +60,9 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
-          className='dot-item'
+            className='dot-item'
             style={{
-              width: isMobile ? '20%' :'10%',
+              width: isMobile ? '20%' : '10%',
               height: '1px',
               borderBottom: '1px dashed #278BC8',
               marginBottom: '30px',
@@ -70,7 +70,7 @@ const JalurMandiri = () => {
           />
           <div className="jalur-mandiri-progress-item">
             <img
-              className="jalur-mandiri-progress-item-top" 
+              className="jalur-mandiri-progress-item-top"
               src={data && data.img_3}
             />
             <div className="jalur-mandiri-progress-item-bottom">
@@ -79,7 +79,7 @@ const JalurMandiri = () => {
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px'}}/>
+        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px' }} />
         {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
 
 
@@ -89,7 +89,7 @@ const JalurMandiri = () => {
             size="18px"
           />
 
-          <div className="jalur-mandiri-persyaratan-card">
+          <div className="jalur-mandiri-persyaratan-card mt-4">
             <div
               dangerouslySetInnerHTML={{
                 __html: data && data.konten,

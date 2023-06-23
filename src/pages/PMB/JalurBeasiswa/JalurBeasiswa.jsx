@@ -80,7 +80,7 @@ const JalurBeasiswa = () => {
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px'}}/>
+        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px' }} />
         {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
 
 
@@ -90,7 +90,7 @@ const JalurBeasiswa = () => {
             size="18px"
           />
 
-          <div className="jalur-beasiswa-persyaratan-card">
+          <div className="jalur-beasiswa-persyaratan-card mt-4">
             <div
               dangerouslySetInnerHTML={{
                 __html: content,

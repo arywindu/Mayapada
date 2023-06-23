@@ -37,6 +37,7 @@
         flex-wrap: wrap;
         gap: 48px;
         margin-top: 5rem;
+        margin-left: 4%;
     }
     
     .keperawatan-story-container .card-wrapper {
@@ -44,11 +45,14 @@
         min-height: 270px;
         background-color: #ffff;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
     }
     
     .keperawatan-story-container .card-img {
         height: 224px;
         object-fit: cover;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
     
     .keperawatan-story-container .card-content {
@@ -115,11 +119,14 @@
         min-height: 270px;
         background-color: #ffff;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
     }
     
     .keperawatan-story-container .card-img {
         height: 224px;
         object-fit: cover;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
     
     .keperawatan-story-container .card-content {
