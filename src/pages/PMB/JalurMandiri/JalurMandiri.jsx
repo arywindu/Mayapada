@@ -1,14 +1,14 @@
-import './JalurMandiri.css';
+import "./JalurMandiri.css";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import Layout from '../../../Layout/Layout';
-import Typhography from '../../../components/Typhography/Typhography';
-import axios from 'axios';
+import Layout from "../../../Layout/Layout";
+import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 
 const JalurMandiri = () => {
   const [data, setData] = useState(null);
-  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   useEffect(() => {
     getData();
@@ -17,7 +17,7 @@ const JalurMandiri = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/PMB/mandiri/1'
+        "https://api.stikesmayapada.ac.id/api/PMB/mandiri/1"
       );
       // console.log(response.data, 'res');
       const dataRes = response.data.data;
@@ -42,12 +42,12 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
-            className='dot-item'
+            className="dot-item"
             style={{
-              width: isMobile ? '20%' : '10%',
-              height: '1px',
-              borderBottom: '1px dashed #278BC8',
-              marginBottom: '30px',
+              width: isMobile ? "20%" : "10%",
+              height: "1px",
+              borderBottom: "1px dashed #278BC8",
+              marginBottom: "30px",
             }}
           />
           <div className="jalur-mandiri-progress-item">
@@ -60,12 +60,12 @@ const JalurMandiri = () => {
             </div>
           </div>
           <div
-            className='dot-item'
+            className="dot-item"
             style={{
-              width: isMobile ? '20%' : '10%',
-              height: '1px',
-              borderBottom: '1px dashed #278BC8',
-              marginBottom: '30px',
+              width: isMobile ? "20%" : "10%",
+              height: "1px",
+              borderBottom: "1px dashed #278BC8",
+              marginBottom: "30px",
             }}
           />
           <div className="jalur-mandiri-progress-item">
@@ -79,9 +79,12 @@ const JalurMandiri = () => {
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px' }} />
+        <Typhography
+          type="title"
+          text="Persyaratan Beasiswa"
+          style={{ marginTop: "40px" }}
+        />
         {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
-
 
         <div className="jalur-mandiri-persyaratan">
           <Typhography
@@ -97,8 +100,8 @@ const JalurMandiri = () => {
             ></div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </div >
+    </Layout >
   );
 };
 

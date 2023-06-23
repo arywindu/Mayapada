@@ -146,14 +146,14 @@ const PenerimaanMahasiswa = () => {
             color="#278BC8"
           /> */}
           <div className="ikatan-alumni-title">
-          {isMobile ? (
-            <span>
-              Biaya Prodi : Diploma III <br /> Keperawatan
-            </span>
-          ) : (
-            "Biaya Prodi : Diploma III Keperawatan"
-          )}
-        </div>
+            {isMobile ? (
+              <span>
+                Biaya Prodi : Diploma III <br /> Keperawatan
+              </span>
+            ) : (
+              "Biaya Prodi : Diploma III Keperawatan"
+            )}
+          </div>
           <div className="penerimaan-mahasiswa-row">
             {isMobile ? (
               <>
@@ -161,27 +161,39 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester I</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s1}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s1}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester II</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s2}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s2}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester III</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s3}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s3}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester IV</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s4}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s4}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester V</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s5}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s5}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester VI</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s6}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s6}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -192,15 +204,21 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester I</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s1}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s1}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester II</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s2}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s2}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester III</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s3}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s3}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -209,15 +227,21 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester IV</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s4}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s4}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester V</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s5}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s5}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester VI</td>
-                      <td>{semesterKeperawatan && semesterKeperawatan.s6}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterKeperawatan && semesterKeperawatan.s6}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -230,15 +254,15 @@ const PenerimaanMahasiswa = () => {
             size="37px"
             color="#278BC8"
           /> */}
-           <div className="ikatan-alumni-title">
-          {isMobile ? (
-            <span>
-              Biaya Prodi : S1 Administrasi <br /> Rumah Sakit
-            </span>
-          ) : (
-            "Biaya Prodi : S1 Administrasi Rumah Sakit"
-          )}
-        </div>
+          <div className="ikatan-alumni-title">
+            {isMobile ? (
+              <span>
+                Biaya Prodi : S1 Administrasi <br /> Rumah Sakit
+              </span>
+            ) : (
+              "Biaya Prodi : S1 Administrasi Rumah Sakit"
+            )}
+          </div>
 
           <div className="penerimaan-mahasiswa-row">
             {isMobile ? (
@@ -247,27 +271,39 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester I</td>
-                      <td>{semesterRs && semesterRs.s1}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s1}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester II</td>
-                      <td>{semesterRs && semesterRs.s2}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s2}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester III</td>
-                      <td>{semesterRs && semesterRs.s3}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s3}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester IV</td>
-                      <td>{semesterRs && semesterRs.s4}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s4}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester V</td>
-                      <td>{semesterRs && semesterRs.s5}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s5}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester VI</td>
-                      <td>{semesterRs && semesterRs.s6}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s6}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -278,15 +314,21 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester I</td>
-                      <td>{semesterRs && semesterRs.s1}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s1}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester II</td>
-                      <td>{semesterRs && semesterRs.s2}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s2}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester III</td>
-                      <td>{semesterRs && semesterRs.s3}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s3}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -295,15 +337,21 @@ const PenerimaanMahasiswa = () => {
                   <tbody>
                     <tr>
                       <td>Semester IV</td>
-                      <td>{semesterRs && semesterRs.s4}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s4}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester V</td>
-                      <td>{semesterRs && semesterRs.s5}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s5}
+                      </td>
                     </tr>
                     <tr>
                       <td>Semester VI</td>
-                      <td>{semesterRs && semesterRs.s6}</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s6}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

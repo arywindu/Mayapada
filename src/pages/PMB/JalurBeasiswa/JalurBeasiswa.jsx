@@ -1,10 +1,10 @@
-import './JalurBeasiswa.css';
+import "./JalurBeasiswa.css";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import Layout from '../../../Layout/Layout';
-import Typhography from '../../../components/Typhography/Typhography';
-import axios from 'axios';
+import Layout from "../../../Layout/Layout";
+import Typhography from "../../../components/Typhography/Typhography";
+import axios from "axios";
 
 const JalurBeasiswa = () => {
   const [content, setContent] = useState(null);
@@ -16,7 +16,7 @@ const JalurBeasiswa = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/PMB/beasiswa/1'
+        "https://api.stikesmayapada.ac.id/api/PMB/beasiswa/1"
       );
       // console.log(response.data, 'res');
       const dataRes = response.data.data;
@@ -51,7 +51,7 @@ const JalurBeasiswa = () => {
               size="20px"
               fontWeight="400"
               color="#525252"
-              style={{ marginTop: '20px' }}
+              style={{ marginTop: "20px" }}
             />
           </div>
 
@@ -75,14 +75,17 @@ const JalurBeasiswa = () => {
               size="20px"
               fontWeight="400"
               color="#525252"
-              style={{ marginTop: '20px' }}
+              style={{ marginTop: "20px" }}
             />
           </div>
         </div>
 
-        <Typhography type="title" text="Persyaratan Beasiswa" style={{ marginTop: '40px' }} />
+        <Typhography
+          type="title"
+          text="Persyaratan Beasiswa"
+          style={{ marginTop: "40px" }}
+        />
         {/* <div className="ikatan-alumni-titles" style={{ marginTop: '13px'}}>Persyaratan Beasiswa</div> */}
-
 
         <div className="jalur-beasiswa-persyaratan">
           <Typhography
