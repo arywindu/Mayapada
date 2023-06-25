@@ -46,7 +46,7 @@ const Administrasi = () => {
       <div className="filter-blue-adm">
         <img className='image-adm-rs' src={banner}></img>
         <div class="centered-adm mt-5">
-          <h1 className="text-white mt-5 pt-5">
+          <h1 className="text-white mt-5">
             Program Studi S1 Administrasi Rumah Sakit
           </h1>
           <p className="text-white mt-4">{textBanner}</p>

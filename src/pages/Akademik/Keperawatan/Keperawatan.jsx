@@ -124,7 +124,7 @@ const Keperawatan = () => {
       <div>
         <img className='image-banner-keperawatan' src={banner}></img>
         <div class="centered-keperawatan">
-          <h1 className="text-white pt-5 mt-5">Program Studi DIII Keperawatan</h1>
+          <h1 className="text-white mt-5">Program Studi DIII Keperawatan</h1>
           <p className="text-white mt-4">{data && data.text_banner}</p>
         </div>
       </div>
@@ -174,10 +174,11 @@ const Keperawatan = () => {
                 dataFotoKuliah.map((item) => (
                   <div className="card-wrapper">
                     <img className="card-img" src={item.image} />
-                    <div className="card-content">
+                    <div className="card-content pt-2">
                       <Typhography
                         type="normal"
                         text={item.description}
+                        style={{ marginLeft: '10px' }}
                         size="16px"
                         fontWeight="600"
                       />
@@ -198,7 +199,7 @@ const Keperawatan = () => {
             {jadwal &&
               jadwal.map((item, index) => (
                 <React.Fragment key={index}>
-                  <div class="col-lg-3 col-md-6 pt-4 mt-2">
+                  <div class="col-lg-3 col-md-6 pt-4 mt-2 d-grid gap-2">
                     <button
                       type="button"
                       class="btn btn-blue btn-lg"
@@ -225,7 +226,7 @@ const Keperawatan = () => {
             {kuliah &&
               kuliah.map((item, index) => (
                 <React.Fragment key={index}>
-                  <div class="col-lg-3 col-md-6 pt-4 mt-2">
+                  <div class="col-lg-3 col-md-6 pt-4 mt-2 d-grid gap-2">
                     <button
                       type="button"
                       class="btn btn-blue btn-lg"

@@ -11,8 +11,8 @@ import Typhography from "../../components/Typhography/Typhography";
 import WaIcon from "../../assets/icons/waHub.svg";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
-import hubKami from "../../assets/images/hubkami.jpeg";
-import imgHubKami from "../../assets/images/hubungiKamiImg.png";
+import hubKami from "../../assets/images/hubkami.png";
+import imgHubKami from "../../assets/images/hubkamiimg.png";
 
 const HubungiKami = () => {
   const [data, setData] = useState(null);
@@ -57,7 +57,7 @@ const HubungiKami = () => {
       // console.log(response.data, 'hub kami');
       const responseData = response.data.data;
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -65,17 +65,12 @@ const HubungiKami = () => {
         <div
           class="hubungi-kami-container"
           style={{
-            height: "100%",
             backgroundImage: `url(${hubKami})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
+            backgroundSize: "100% auto",
           }}
         >
           <div
-            style={{
-              background:
-                "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.600) 51.5%)",
-            }}
+
           >
             {isMobile ? (
               <div>

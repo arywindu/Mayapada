@@ -10,7 +10,7 @@
 
     .centered-keperawatan {
         position: absolute;
-        top: 25rem;
+        top: 30rem;
         left: 40%;
         transform: translate(-50%, -50%);
       }
@@ -78,14 +78,14 @@
 @media only screen and (max-width: 600px) {
 
     .image-banner-keperawatan{
-        height: 80vh;
+        height: 70vh;
         width: 100%;
         object-fit: cover;
     }
 
     .centered-keperawatan {
         position: absolute;
-        top: 30rem;
+        top: 400px;
         left: 40%;
         transform: translate(-50%, -50%);
       }
