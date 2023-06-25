@@ -162,7 +162,7 @@ const Keperawatan = () => {
       </div>
 
       <div className="mb-5">
-        <div className="keperawatan-story-container">
+        <div className="keperawatan-story-container bg-keperawatan-color">
           <Typhography
             type="title"
             text="Mata Kuliah yang Ditawarkan"

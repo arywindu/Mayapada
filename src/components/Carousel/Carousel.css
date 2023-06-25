@@ -9,6 +9,11 @@
      height: 10px;
      border-radius: 100%;
    }
+
+   .font-banner-mobile{
+    font-size: 50px;
+    font-weight: 600;
+  }
   
    .text-carousel {
       position: relative;

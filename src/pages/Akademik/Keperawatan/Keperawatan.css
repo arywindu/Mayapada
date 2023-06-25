@@ -4,6 +4,10 @@
         width: 100%;
     }
 
+    .bg-keperawatan-color{
+        background: linear-gradient(180deg, #FFFFFF 4.82%, #F9F9F9 45.69%);
+    }
+
     .centered-keperawatan {
         position: absolute;
         top: 25rem;
@@ -142,5 +146,9 @@
     .btn-blue {
         background-color: #278BC8;
         color: #ffff;
+    }
+
+    .bg-keperawatan-color{
+        background: linear-gradient(180deg, #FFFFFF 4.82%, #F9F9F9 45.69%);
     }
   }

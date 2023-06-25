@@ -10,13 +10,13 @@
     
     .centered-adm {
         position: absolute;
-        top: 45%;
+        top: 440px;
         left: 54%;
         transform: translate(-50%, -50%);
       }
     
     .bg-color-adm {
-        background-color: linear-gradient(90deg, #FFFFFF 0%, #F5F5F5 100%);
+        background: linear-gradient(180deg, #FFFFFF 4.82%, #F9F9F9 45.69%);
     }
     
     .btn-blue {
@@ -35,7 +35,7 @@
  @media only screen and (max-width: 600px) {
 
     .image-adm-rs{
-        height: 80vh;
+        height: 90vh;
         width: 100%;
         object-fit: cover;
     }

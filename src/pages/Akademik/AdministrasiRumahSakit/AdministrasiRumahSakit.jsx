@@ -53,29 +53,31 @@ const Administrasi = () => {
         </div>
       </div>
 
-      <div class="container bg-color-adm">
-        <div class="row mt-5 pt-5">
-          <div class="col-md-6">
-            <h2 className="text-blue">Visi</h2>
-            <div
-              style={{ textAlign: 'left' }}
-              dangerouslySetInnerHTML={{ __html: data && data.text_visi }}
-            ></div>
-            <h2 className="text-blue mt-5">Misi</h2>
-            <div
-              style={{ textAlign: 'left' }}
-              dangerouslySetInnerHTML={{ __html: data && data.text_misi }}
-            ></div>
-          </div>
+      <div className='bg-color-adm'>
+        <div class="container" >
+          <div class="row mt-5 pt-5">
+            <div class="col-md-6">
+              <h2 className="text-blue">Visi</h2>
+              <div
+                style={{ textAlign: 'left' }}
+                dangerouslySetInnerHTML={{ __html: data && data.text_visi }}
+              ></div>
+              <h2 className="text-blue mt-5">Misi</h2>
+              <div
+                style={{ textAlign: 'left' }}
+                dangerouslySetInnerHTML={{ __html: data && data.text_misi }}
+              ></div>
+            </div>
 
-          <div class="col-md-6">
-            <img src={imgVisiMisi} width={'95%'} height={'95%'}></img>
+            <div class="col-md-6">
+              <img src={imgVisiMisi} width={'95%'} height={'95%'}></img>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="container mb-5">
-        <div class="row gx-5 justify-content-center">
+      <div class="container mb-5 mt-5 pt-5">
+        <div class="row text-center">
           <div class="col-md-6 col-sm-12 pb-5">
             <div class="card text-center">
               <div class="card-body">
@@ -125,7 +127,7 @@ const Administrasi = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout >
   );
 };
 

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Layout from '../../../Layout/Layout';
 import Typhography from '../../../components/Typhography/Typhography';
 import axios from 'axios';
+import img from '../../../../src/assets/images/logo-bg.jpeg'
 
 const ManualSpmi = () => {
   const [data, setData] = useState(null);
@@ -31,6 +32,7 @@ const ManualSpmi = () => {
           text="Manual SPMI"
           style={{ marginTop: "24px" }}
         /> */}
+        <img className='floating-bg' src={img}></img>
         <div className='pt-4' dangerouslySetInnerHTML={{ __html: data && data.manual }}></div>
       </div>
     </Layout>

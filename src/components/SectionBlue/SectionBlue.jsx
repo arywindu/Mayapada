@@ -2,18 +2,19 @@ import React from 'react'
 import PropTypes from "prop-types";
 import './SectionBlue.css'
 import { propTypes } from 'react-bootstrap/esm/Image';
-import img from '../../assets/images/landasanHukum.png'
+import imgDesktop from '../../assets/images/landasanHukum.png'
+import imgMobile from '../../assets/images/landasanHukumMobile.png'
 
 const SectionBlue = (props) => {
     const { text, liText, type, size, color, fontWeight, paddingTop, children, ...rest } = props;
     return (
         <div>
             <div className='section-blue' {...rest}>
-                <img className='image-blue' src={img}
-                    style={{
-                        background: '(180deg, #2EB4E8 0%, #248BCB 100%)',
-                        mixBlendMode: 'multiply'
-                    }}>
+                <img className='image-blue mobile-hide' src={imgDesktop}
+                >
+                </img>
+                <img className='image-blue desktop-hide' src={imgMobile}
+                >
                 </img>
                 <div className='container'>
                     <h2

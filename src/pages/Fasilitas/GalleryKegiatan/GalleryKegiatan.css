@@ -21,7 +21,9 @@
 .nav-menu:hover{
     background-color:#fff;
     text-decoration:none;
-   border-bottom:4px solid #278BC8;
+    border-bottom: 3px solid #278BC8;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
   }
 
 .image-gallery{
@@ -36,7 +38,7 @@
 
 .centered {
   position: absolute;
-  top: 30%;
+  top: 270px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -81,7 +83,7 @@
 
 .centered {
   position: absolute;
-  top: 40%;
+  top: 270px;
   left: 50%;
   transform: translate(-50%, -50%);
 }

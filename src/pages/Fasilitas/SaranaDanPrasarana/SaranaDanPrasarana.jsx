@@ -63,7 +63,7 @@ const SaranaDanPrasarana = () => {
         <div className="filter-blue">
           <img className="image-gallery" src={Landing}></img>
           <div class="centered-sarana mb-5 pt-5">
-            <h1 className="text-white sarana-prasarana-title">Sarana dan Prasarana</h1>
+            <h1 className="text-white">Sarana dan Prasarana</h1>
           </div>
         </div>
         <div className="galerry-container">
@@ -84,7 +84,7 @@ const SaranaDanPrasarana = () => {
                   aria-controls="nav-home"
                   aria-selected="true"
                 >
-                  FASILITAS PENDIDIKAN
+                  <b>FASILITAS PENDIDIKAN</b>
                 </a>
                 <a
                   class="nav-menu text-reset"
@@ -96,7 +96,7 @@ const SaranaDanPrasarana = () => {
                   aria-controls="nav-profile"
                   aria-selected="false"
                 >
-                  FASILITAS UMUM
+                  <b>FASILITAS UMUM</b>
                 </a>
               </div>
             </nav>
@@ -119,7 +119,7 @@ const SaranaDanPrasarana = () => {
                             }
                           >
                             <img src={item.card_image} width={'100%'}></img>
-                            <p
+                            <p className='pt-2'
                               style={{ textAlign: 'left', fontWeight: 'bold' }}
                             >
                               {item.card_description}
@@ -147,7 +147,7 @@ const SaranaDanPrasarana = () => {
                           }
                         >
                           <img src={item.card_image} width={'100%'}></img>
-                          <p style={{ textAlign: 'left', fontWeight: 'bold' }}>
+                          <p className='pt-2' style={{ textAlign: 'left', fontWeight: 'bold' }}>
                             {item.card_description}
                           </p>
                         </div>

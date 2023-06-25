@@ -59,7 +59,7 @@ const GalleryKegiatan = () => {
             <h1 className="text-white mt-5 pt-5">Gallery Kegiatan </h1>
           </div>
         </div>
-        <div className="galerry-container">
+        <div className="galerry-container pt-5">
           <div className="text-center">
             <nav>
               <div class="justify-content-center" id="nav-tab" role="tablist">
