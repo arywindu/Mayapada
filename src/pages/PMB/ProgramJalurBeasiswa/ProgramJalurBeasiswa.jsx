@@ -140,7 +140,7 @@ const ProgramJalurBeasiswa = () => {
                   <option value="" disabled selected>
                     --Pilih Program Kelas--
                   </option>
-                  <option value="Kelas Reguler">Kelas Regular</option>
+                  <option value="Kelas Reguler">Kelas REGULER</option>
                 </select>
                 :
                 <select
