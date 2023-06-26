@@ -13,6 +13,7 @@ const IkatanAlumni = () => {
 
   useEffect(() => {
     getData();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const getData = async () => {
@@ -22,7 +23,7 @@ const IkatanAlumni = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -33,9 +34,9 @@ const IkatanAlumni = () => {
         />
         <div className="ikatan-alumni-content">
           <div className="ikatan-alumni-card">
-          <Typhography type="title" text="Ikatan Alumni" style={{ alignSelf: 'left' }}/>
+            <Typhography type="title" text="Ikatan Alumni" style={{ alignSelf: 'left' }} />
             <div
-              className = "ikatan-alumni-text"
+              className="ikatan-alumni-text"
               dangerouslySetInnerHTML={{
                 __html: data && data.ikatan_alumni_text,
               }}

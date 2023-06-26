@@ -26,6 +26,7 @@ const AlumniStoryAdmin = () => {
 
   useEffect(() => {
     getData();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const getData = async () => {
@@ -35,7 +36,7 @@ const AlumniStoryAdmin = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveData = async () => {

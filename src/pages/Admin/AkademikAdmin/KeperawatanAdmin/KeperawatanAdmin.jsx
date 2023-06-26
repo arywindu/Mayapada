@@ -31,6 +31,7 @@ const HomeAdmin = () => {
     getJadwal();
     getKuliah();
     getFotoKuliah();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const closeModalFirst = () => {

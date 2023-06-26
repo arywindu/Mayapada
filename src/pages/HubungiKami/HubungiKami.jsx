@@ -21,6 +21,7 @@ const HubungiKami = () => {
     window.matchMedia("(max-width: 1024px)").matches;
   useEffect(() => {
     getData();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const form = useRef();

@@ -7,7 +7,7 @@ const Header = (props) => {
   const { logo } = props;
   return (
     <div className="text-center mt-1" style={{ zIndex: '999999' }}>
-      <img className="mx-auto mobile-hide" src={logo} width={"10%"} />
+      <img className="mx-auto mobile-hide mt-2" src={logo} width={"10%"} />
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <img className="mt-4 header-mobile desktop-hide" src={logo} /> {/* for mobile ONly */}

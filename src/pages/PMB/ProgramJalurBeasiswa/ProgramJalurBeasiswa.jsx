@@ -9,6 +9,7 @@ import axios from 'axios';
 
 const ProgramJalurBeasiswa = () => {
   const [data, setData] = useState({
+    programStudi: '',
     programKelas: '',
     namaLengkap: '',
     tempatLahir: '',
@@ -30,64 +31,133 @@ const ProgramJalurBeasiswa = () => {
     alamatAsalSekolah: '',
   });
 
+
+  function resetData() {
+    window.location.reload(false);
+  }
+
+
   const saveData = async () => {
-    try {
-      const response = await axios.post(
-        'https://api.stikesmayapada.ac.id/api/form/register',
-        {
-          programKelas: data.programKelas,
-          namaLengkap: data.namaLengkap,
-          tempatLahir: data.tempatLahir,
-          tanggalLahir: data.tanggalLahir,
-          jenisKelamin: data.jenisKelamin,
-          pilihAgama: data.pilihAgama,
-          beratBadan: data.beratBadan,
-          tinggiBadan: data.tinggiBadan,
-          namaOrtu: data.namaOrtu,
-          alamat: data.alamat,
-          provinsi: data.provinsi,
-          kota: data.kota,
-          kodePos: data.kodePos,
-          ktp: data.ktp,
-          noHp: data.noHp,
-          nisn: data.nisn,
-          email: data.email,
-          asalSekolah: data.asalSekolah,
-          alamatAsalSekolah: data.alamatAsalSekolah,
+
+    if (data.programStudi === '' ||
+      data.programKelas === '' ||
+      data.namaLengkap === '' ||
+      data.tempatLahir === '' ||
+      data.tanggalLahir === '' ||
+      data.jenisKelamin === '' ||
+      data.pilihAgama === '' ||
+      data.beratBadan === '' ||
+      data.tinggiBadan === '' ||
+      data.namaOrtu === '' ||
+      data.alamat === '' ||
+      data.provinsi === '' ||
+      data.kota === '' ||
+      data.kodePos === '' ||
+      data.ktp === '' ||
+      data.noHp === '' ||
+      data.nisn === '' ||
+      data.email === '' ||
+      data.asalSekolah === '' ||
+      data.alamatAsalSekolah === '') {
+      alert(`Semua Form harus di isi`);
+    } else {
+      try {
+        const response = await axios.post(
+          'https://api.stikesmayapada.ac.id/api/form/register',
+          {
+            programStudi: data.programStudi,
+            programKelas: data.programKelas,
+            namaLengkap: data.namaLengkap,
+            tempatLahir: data.tempatLahir,
+            tanggalLahir: data.tanggalLahir,
+            jenisKelamin: data.jenisKelamin,
+            pilihAgama: data.pilihAgama,
+            beratBadan: data.beratBadan,
+            tinggiBadan: data.tinggiBadan,
+            namaOrtu: data.namaOrtu,
+            alamat: data.alamat,
+            provinsi: data.provinsi,
+            kota: data.kota,
+            kodePos: data.kodePos,
+            ktp: data.ktp,
+            noHp: data.noHp,
+            nisn: data.nisn,
+            email: data.email,
+            asalSekolah: data.asalSekolah,
+            alamatAsalSekolah: data.alamatAsalSekolah,
+          }
+        );
+        // console.log(response.status, 'test');
+        const { status } = response;
+        if (status === 200 || status === 201) {
+          window.location.href = '/RegistrasiBerhasil';
         }
-      );
-      // console.log(response.status, 'test');
-      const { status } = response;
-      if (status === 200 || status === 201) {
-        window.location.href = '/RegistrasiBerhasil';
+      } catch (error) {
+        alert(`${error.response.data.message}`);
+        // console.log(error, 'error');
       }
-    } catch (error) {
-      alert(`${error.response.data.message}`);
-      // console.log(error, 'error');
     }
   };
   return (
     <Layout>
-      <div className="pjb-container">
+      <div className="pjb-container" style={{ overflowY: 'hidden' }}>
         <Typhography type="title" text="Halaman Registrasi Mahasiswa Baru" />
 
         <div className="form-wrapper">
+
           <div className="form-row">
             <div className="col">
-              <label>Program Kelas* :</label>
+              <label>Program Studi* :</label>
               <select
                 className="form-control"
-                placeholder="--Pilih Program Kelas--"
-                value={data && data.programKelas}
+                placeholder="--Pilih Program Studi--"
+                value={data && data.programStudi}
                 onChange={(e) =>
-                  setData({ ...data, programKelas: e.target.value })
+                  setData({ ...data, programStudi: e.target.value })
                 }
               >
                 <option value="" disabled selected>
                   --Pilih Program Kelas--
                 </option>
-                <option value="Kelas Reguler">Kelas Regular</option>
+                <option value="D3 Keperawatan">D3 Keperawatan</option>
+                <option value="S1 Administrasi Rumah Sakit">S1 Administrasi Rumah Sakit</option>
               </select>
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="col">
+              <label>Program Kelas* :</label>
+              {data.programStudi === 'S1 Administrasi Rumah Sakit' ?
+                <select
+                  className="form-control"
+                  placeholder="--Pilih Program Kelas--"
+                  value={data && data.programKelas}
+                  onChange={(e) =>
+                    setData({ ...data, programKelas: e.target.value })
+                  }
+                >
+                  <option value="" disabled selected>
+                    --Pilih Program Kelas--
+                  </option>
+                  <option value="Kelas Reguler">Kelas Regular</option>
+                </select>
+                :
+                <select
+                  className="form-control"
+                  placeholder="--Pilih Program Kelas--"
+                  value={data && data.programKelas}
+                  onChange={(e) =>
+                    setData({ ...data, programKelas: e.target.value })
+                  }
+                >
+                  <option value="" disabled selected>
+                    --Pilih Program Kelas--
+                  </option>
+                  <option value="Kelas Reguler">Kelas REGULER</option>
+                  <option value="Kelas Reguler">Kelas KARYAWAN</option>
+                </select>
+              }
             </div>
             <div className="col">
               <label>Jenis Kelamin* :</label>
@@ -332,6 +402,7 @@ const ProgramJalurBeasiswa = () => {
           <Button
             text="Hapus"
             style={{ backgroundColor: '#494949', marginLeft: '20px' }}
+            onClick={resetData}
           />
         </div>
       </div>

@@ -8,10 +8,12 @@ import axios from 'axios';
 import img from '../../../../src/assets/images/logo-bg.jpeg'
 
 const ManualSpmi = () => {
+
   const [data, setData] = useState(null);
 
   useEffect(() => {
     getData();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const getData = async () => {

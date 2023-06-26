@@ -46,6 +46,7 @@ const AlumniStory = () => {
 
   useEffect(() => {
     getData();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const getData = async () => {
@@ -55,7 +56,7 @@ const AlumniStory = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -63,7 +64,7 @@ const AlumniStory = () => {
         <Typhography
           type="title"
           text="Alumni Story"
-          style={{ alignSelf: 'center'}}
+          style={{ alignSelf: 'center' }}
         />
         {/* <div className="ikatan-alumni-title">Alumni Story</div> */}
         <div className="alumni-story-card">

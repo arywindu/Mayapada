@@ -7,7 +7,14 @@ import Typhography from '../../../components/Typhography/Typhography';
 import axios from 'axios';
 import img from '../../../../src/assets/images/logo-bg.jpeg'
 
+
 const KebijakanUpmi = () => {
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   const [data, setData] = useState(null);
 
   useEffect(() => {

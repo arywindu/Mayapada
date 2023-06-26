@@ -7,6 +7,7 @@ import iconFb from '../../assets/icons/fb.svg'
 import iconIg from '../../assets/icons/ig.svg'
 
 const Footer = () => {
+
     return (
         <div>
             <footer className="text-center text-lg-start bg-blue">
@@ -167,7 +168,7 @@ const Footer = () => {
                                     FASILITAS
                                 </h6>
                                 <p>
-                                    <a href="#!" onClick={window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-reset text-decoration-none">
+                                    <a href="#!" className="text-reset text-decoration-none">
                                         <Link
                                             className="text-reset text-decoration-none"
                                             to="/SaranaDanPrasarana"
