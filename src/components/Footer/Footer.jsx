@@ -194,8 +194,12 @@ const Footer = () => {
 
                                     Hubungi Kami
                                 </h6>
+                                <p>Telepon: 0812 88710 710</p>
                                 <p>
                                     <a href="mailto:info@antariksa.co.id" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
+                                </p>
+                                <p>
+                                    <a href="mailto:info@stikesmayapada.ac.id" className="text-reset text-decoration-none">E-Mail: info@stikesmayapada.ac.id</a>
                                 </p>
                                 <div>
                                     <a href="https://wa.me/6281288710710" class="me-2 text-reset text-decoration-none">
