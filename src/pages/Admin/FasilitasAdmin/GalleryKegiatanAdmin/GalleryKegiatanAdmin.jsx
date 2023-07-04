@@ -40,7 +40,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data.images;
       setData(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataKegiatan = async () => {
     try {
@@ -50,7 +50,7 @@ const GalleryKegiatanAdmin = () => {
       const responseData = response.data;
       // console.log(responseData, 'pantek');
       setDataImgKegiatan(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataOrientasi = async () => {
     try {
@@ -59,7 +59,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data;
       setDataImgOrientasi(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
   const getDataWisuda = async () => {
     try {
@@ -68,7 +68,7 @@ const GalleryKegiatanAdmin = () => {
       );
       const responseData = response.data;
       setDataImgWisuda(responseData);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const saveDataImgKegiatan = async () => {
@@ -153,10 +153,11 @@ const GalleryKegiatanAdmin = () => {
     }
   };
 
-  const updateDataImgKegiatan = async (index) => {
+  const updateDataImgKegiatan = async (index1, item) => {
     try {
-      const file = imgKegiatan[index];
-      const itemId = data[index].id;
+
+      const file = imgKegiatan[index1];
+      const itemId = item.id
       let formData = new FormData();
       formData.append('type', 'KEGIATAN_MAHASISWA');
       formData.append('card_image', file);
@@ -182,10 +183,10 @@ const GalleryKegiatanAdmin = () => {
       // console.log(error, 'error');
     }
   };
-  const updateDataImgOrientasi = async (index) => {
+  const updateDataImgOrientasi = async (index2, item) => {
     try {
-      const file = imgOrientasi[index];
-      const itemId = data[index].id;
+      const file = imgOrientasi[index2];
+      const itemId = item.id
       let formData = new FormData();
       formData.append('type', 'ORIENTASI_MAHASISWA');
       formData.append('card_image', file);
@@ -211,10 +212,10 @@ const GalleryKegiatanAdmin = () => {
       // console.log(error, 'error');
     }
   };
-  const updateDataImgWisuda = async (index) => {
+  const updateDataImgWisuda = async (index3, item) => {
     try {
-      const file = imgWisuda[index];
-      const itemId = data[index].id;
+      const file = imgWisuda[index3];
+      const itemId = item.id;
       let formData = new FormData();
       formData.append('type', 'WISUDA');
       formData.append('card_image', file);
@@ -241,13 +242,13 @@ const GalleryKegiatanAdmin = () => {
     }
   };
 
-  const handleKegiatanChange = (event, index) => {
+  const handleKegiatanChange = (event, index1) => {
     const selectedFile = event.target.files[0];
     setImgKegiatan((prevFotoMataKuliah) => {
       const updatedFotoMataKuliah = Array.isArray(prevFotoMataKuliah)
         ? [...prevFotoMataKuliah]
         : [];
-      updatedFotoMataKuliah[index] = selectedFile;
+      updatedFotoMataKuliah[index1] = selectedFile;
       return updatedFotoMataKuliah;
     });
   };
@@ -256,13 +257,13 @@ const GalleryKegiatanAdmin = () => {
     const selectedFile = event.target.files[0];
     setImgKegiatan(selectedFile);
   };
-  const handleOrientasiChange = (event, index) => {
+  const handleOrientasiChange = (event, index2) => {
     const selectedFile = event.target.files[0];
     setImgOrientasi((prevFotoMataKuliah) => {
       const updatedFotoMataKuliah = Array.isArray(prevFotoMataKuliah)
         ? [...prevFotoMataKuliah]
         : [];
-      updatedFotoMataKuliah[index] = selectedFile;
+      updatedFotoMataKuliah[index2] = selectedFile;
       return updatedFotoMataKuliah;
     });
   };
@@ -270,13 +271,13 @@ const GalleryKegiatanAdmin = () => {
     const selectedFile = event.target.files[0];
     setImgOrientasi(selectedFile);
   };
-  const handleWisudaChange = (event, index) => {
+  const handleWisudaChange = (event, index3) => {
     const selectedFile = event.target.files[0];
     setImgWisuda((prevFotoMataKuliah) => {
       const updatedFotoMataKuliah = Array.isArray(prevFotoMataKuliah)
         ? [...prevFotoMataKuliah]
         : [];
-      updatedFotoMataKuliah[index] = selectedFile;
+      updatedFotoMataKuliah[index3] = selectedFile;
       return updatedFotoMataKuliah;
     });
   };
@@ -298,7 +299,7 @@ const GalleryKegiatanAdmin = () => {
           <div id="">
             <div class="mb-3 row">
               {dataImgKegiatan &&
-                dataImgKegiatan.map((item, index) => (
+                dataImgKegiatan.map((item, index1) => (
                   <>
                     <label for="staticEmail" class="col-sm-2 col-form-label">
                       Image Kegiatan Mahasiswa
@@ -310,11 +311,11 @@ const GalleryKegiatanAdmin = () => {
                           class="form-control"
                           id={`inputGroupFile${item.id}`}
                           onChange={(event) =>
-                            handleKegiatanChange(event, index)
+                            handleKegiatanChange(event, index1)
                           }
                         />
                       </div>
-                      {item && item.card_image && item.card_image[index] && (
+                      {item && item.card_image && item.card_image[index1] && (
                         <div>
                           <a
                             href={item.card_image}
@@ -329,7 +330,7 @@ const GalleryKegiatanAdmin = () => {
                         <button
                           class="btn btn-info mt-2 mb-4"
                           type="submit"
-                          onClick={() => updateDataImgKegiatan(index)}
+                          onClick={() => updateDataImgKegiatan(index1, item)}
                           style={{ width: '150px', color: 'white' }}
                         >
                           Update
@@ -355,7 +356,7 @@ const GalleryKegiatanAdmin = () => {
 
             <div class="mb-3 row">
               {dataImgOrientasi &&
-                dataImgOrientasi.map((item, index) => (
+                dataImgOrientasi.map((item, index2) => (
                   <>
                     <label for="staticEmail" class="col-sm-2 col-form-label">
                       Image Orientasi Mahasiswa baru
@@ -367,11 +368,11 @@ const GalleryKegiatanAdmin = () => {
                           class="form-control"
                           id={`inputGroupFile${item.id}`}
                           onChange={(event) =>
-                            handleOrientasiChange(event, index)
+                            handleOrientasiChange(event, index2)
                           }
                         />
                       </div>
-                      {item && item.card_image && item.card_image[index] && (
+                      {item && item.card_image && item.card_image[index2] && (
                         <div>
                           <a
                             href={item.card_image}
@@ -386,7 +387,7 @@ const GalleryKegiatanAdmin = () => {
                         <button
                           class="btn btn-info mt-2 mb-4"
                           type="submit"
-                          onClick={() => updateDataImgOrientasi(index)}
+                          onClick={() => updateDataImgOrientasi(index2, item)}
                           style={{ width: '150px', color: 'white' }}
                         >
                           Update
@@ -412,7 +413,7 @@ const GalleryKegiatanAdmin = () => {
 
             <div class="mb-3 row">
               {dataImgWisuda &&
-                dataImgWisuda.map((item, index) => (
+                dataImgWisuda.map((item, index3) => (
                   <>
                     <label for="staticEmail" class="col-sm-2 col-form-label">
                       Image Wisuda
@@ -423,10 +424,10 @@ const GalleryKegiatanAdmin = () => {
                           type="file"
                           class="form-control"
                           id={`inputGroupFile${item.id}`}
-                          onChange={(event) => handleWisudaChange(event, index)}
+                          onChange={(event) => handleWisudaChange(event, index3)}
                         />
                       </div>
-                      {item && item.card_image && item.card_image[index] && (
+                      {item && item.card_image && item.card_image[index3] && (
                         <div>
                           <a
                             href={item.card_image}
@@ -441,7 +442,7 @@ const GalleryKegiatanAdmin = () => {
                         <button
                           class="btn btn-info mt-2 mb-4"
                           type="submit"
-                          onClick={() => updateDataImgWisuda(index)}
+                          onClick={() => updateDataImgWisuda(index3, item)}
                           style={{ width: '150px', color: 'white' }}
                         >
                           Update
@@ -492,8 +493,8 @@ const GalleryKegiatanAdmin = () => {
                   {category === 'kegiatan'
                     ? 'Image Kegiatan Mahasiswa '
                     : category === 'orientasi'
-                    ? 'Image Orientasi Mahasiswa baru'
-                    : 'Image Wisuda'}
+                      ? 'Image Orientasi Mahasiswa baru'
+                      : 'Image Wisuda'}
                 </label>
                 <div class="col-sm-10">
                   <div class="input-group mb-3">
@@ -505,8 +506,8 @@ const GalleryKegiatanAdmin = () => {
                         category === 'kegiatan'
                           ? handleKegiatanChanges
                           : category === 'orientasi'
-                          ? handleOrientasiChanges
-                          : handleWisudaChanges
+                            ? handleOrientasiChanges
+                            : handleWisudaChanges
                       }
                     />
                   </div>
@@ -528,8 +529,8 @@ const GalleryKegiatanAdmin = () => {
                   category === 'kegiatan'
                     ? saveDataImgKegiatan
                     : category === 'orientasi'
-                    ? saveDataImgOrientasi
-                    : saveDataImgWisuda
+                      ? saveDataImgOrientasi
+                      : saveDataImgWisuda
                 }
               >
                 Save
