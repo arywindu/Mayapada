@@ -196,9 +196,6 @@ const Footer = () => {
                                 </h6>
                                 <p>Telepon: 0812 88710 710</p>
                                 <p>
-                                    <a href="mailto:info@antariksa.co.id" className="text-reset text-decoration-none">E-Mail: info@antariksa.co.id</a>
-                                </p>
-                                <p>
                                     <a href="mailto:info@stikesmayapada.ac.id" className="text-reset text-decoration-none">E-Mail: info@stikesmayapada.ac.id</a>
                                 </p>
                                 <div>
@@ -305,7 +302,7 @@ const Footer = () => {
 
                 {/* <!-- Copyright --> */}
                 <div className="mb-4 text-white mt-4 text-center">
-                    Copyright ©  2023 Mayapada Nursing Academy. All rights reserved.
+                    Copyright ©  2023 Stikes Mayapada. All rights reserved.
                 </div>
                 <div className='pb-3'>
 

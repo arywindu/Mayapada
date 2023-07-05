@@ -155,7 +155,7 @@ const Home = () => {
                   <ul style={{ textAlign: 'left', color: '#278BC8' }}>
                     <li className="mt-3">
                       Perubahan Bentuk Sekolah Tinggi Ilmu Kesehatan Mayapada SK
-                      Kemenristik Dikti No: Tanggal:
+                      Kemenristik Dikti No: 234/E/O/2023 Tanggal: 7 Maret 2023
                     </li>
                     <li className="mt-3">
                       Program Studi:
