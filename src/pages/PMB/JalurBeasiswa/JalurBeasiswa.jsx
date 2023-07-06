@@ -41,7 +41,7 @@ const JalurBeasiswa = () => {
             />
 
             <Typhography
-              text="(Peluang beasiswa 50%)"
+              text=""
               size="20px"
               fontWeight="400"
               color="#278BC8"
@@ -65,7 +65,7 @@ const JalurBeasiswa = () => {
             />
 
             <Typhography
-              text="(Peluang beasiswa 30%, 40%, 60%, 80%, 90%)"
+              text=""
               size="20px"
               fontWeight="400"
               color="#278BC8"
