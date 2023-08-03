@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import LayoutAdmin from '../../../../Layout/LayoutAdmin';
-import Popup from 'reactjs-popup';
-import { async } from 'q';
-import axios from 'axios';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import LayoutAdmin from "../../../../Layout/LayoutAdmin";
+import Popup from "reactjs-popup";
+import { async } from "q";
+import axios from "axios";
 
 const AlumniStoryAdmin = () => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const [data, setData] = useState(null);
   const [openFirst, setOpenFirst] = useState(false);
   const [edit, setEdit] = useState(false);
   const [alumniStoryName, setAlumniStoryName] = useState(null);
   const [alumniStoryHistory, setAlumniStoryHistory] = useState(null);
   const [alumniStoryImg, setAlumniStoryImg] = useState(null);
+  const [alumniStoryId, setAlumniStoryId] = useState(null);
 
   const closeModalFirst = () => {
     setOpenFirst(false);
@@ -26,36 +27,36 @@ const AlumniStoryAdmin = () => {
 
   useEffect(() => {
     getData();
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://api.stikesmayapada.ac.id/api/alumni/story/alumni'
+        "https://api.stikesmayapada.ac.id/api/alumni/story/alumni"
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   const saveData = async () => {
     try {
       let formData = new FormData();
-      formData.append('ikatanAlumniText', '');
-      formData.append('alumniStoryName', alumniStoryName);
-      formData.append('alumniStoryHistory', alumniStoryHistory);
+      formData.append("ikatanAlumniText", "");
+      formData.append("alumniStoryName", alumniStoryName);
+      formData.append("alumniStoryHistory", alumniStoryHistory);
       formData.append(
-        'alumniStoryImg',
+        "alumniStoryImg",
         alumniStoryImg ? alumniStoryImg : data.alumni_story_img
       );
       const response = await axios.post(
-        'https://api.stikesmayapada.ac.id/api/alumni/story',
+        "https://api.stikesmayapada.ac.id/api/alumni/story",
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -72,6 +73,61 @@ const AlumniStoryAdmin = () => {
     }
   };
 
+  const editData = async (id) => {
+    try {
+      let formData = new FormData();
+      formData.append("id", alumniStoryId);
+      formData.append("ikatanAlumniText", "");
+      formData.append("alumniStoryName", alumniStoryName);
+      formData.append("alumniStoryHistory", alumniStoryHistory);
+      formData.append(
+        "alumniStoryImg",
+        alumniStoryImg ? alumniStoryImg : data.alumni_story_img
+      );
+      const response = await axios.post(
+        "https://api.stikesmayapada.ac.id/api/alumni/story",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      // console.log(response.status, 'test');
+      getData();
+      const { status } = response;
+      if (status === 200) {
+        alert(`Berhasil update data`);
+        closeModalFirst();
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+      // console.log(error, 'error');
+    }
+  };
+
+  const deleteStory = async (id) => {
+    try {
+      const response = await axios.delete(
+        `https://api.stikesmayapada.ac.id/api/alumni/delete/story/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      getData();
+      const { status } = response;
+      if (status === 200 || status === 204) {
+        alert(`Berhasil menghapus story`);
+      }
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+    }
+  };
+
   const handleAlumniImg = (event) => {
     setAlumniStoryImg(event.target.files[0]);
   };
@@ -79,7 +135,7 @@ const AlumniStoryAdmin = () => {
   return (
     <LayoutAdmin>
       <div>
-        <div class="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%' }}>
+        <div class="row mt-5 mb-5" style={{ margin: "3% 10% 10% 10%" }}>
           <h4>
             <span className="bg-primary text-white">Alumni Story Admin</span>
           </h4>
@@ -98,6 +154,8 @@ const AlumniStoryAdmin = () => {
                   <th scope="col">Image</th>
                   <th scope="col">Name</th>
                   <th scope="col">Story</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -115,13 +173,33 @@ const AlumniStoryAdmin = () => {
                         <img
                           src={item.alumni_story_img}
                           className="mx-auto"
-                          width={'30%'}
+                          width={"30%"}
                         />
                       </td>
-                      <td><textarea name="" id="" cols="50" rows="5">{item.alumni_story_name}</textarea></td>
-                      <td><textarea name="" id="" cols="50" rows="5">{item.alumni_story_history}</textarea></td>
-                      <td><button class="btn btn-danger mt-2">Delete</button></td>
-                      <td><button class="btn btn-success mt-2">Save</button></td>
+                      <td>{item.alumni_story_name}</td>
+                      <td>{item.alumni_story_history}</td>
+                      <td>
+                        <button
+                          class="btn btn-danger mt-2"
+                          onClick={() => deleteStory(item.id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-success mt-2"
+                          onClick={() => {
+                            setOpenFirst(true);
+                            setEdit(true);
+                            setAlumniStoryId(item.id);
+                            setAlumniStoryName(item.alumni_story_name);
+                            setAlumniStoryHistory(item.alumni_story_history);
+                          }}
+                        >
+                          Edit
+                        </button>
+                      </td>
                     </tr>
                   ))}
               </tbody>
@@ -134,17 +212,17 @@ const AlumniStoryAdmin = () => {
             >
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 <div
                   style={{
-                    backgroundColor: 'white',
-                    width: '70%',
-                    padding: '30px',
-                    borderRadius: '10px',
+                    backgroundColor: "white",
+                    width: "70%",
+                    padding: "30px",
+                    borderRadius: "10px",
                   }}
                 >
                   <div class="mb-3 row">
@@ -204,21 +282,11 @@ const AlumniStoryAdmin = () => {
                   <button
                     class="btn btn-primary mt-2"
                     type="submit"
-                    style={{ marginLeft: '20px' }}
-                    onClick={saveData}
+                    style={{ marginLeft: "20px" }}
+                    onClick={edit ? editData : saveData}
                   >
-                    {edit ? 'Edit' : 'Add More'}
+                    {edit ? "Edit" : "Add More"}
                   </button>
-                  {edit && (
-                    <button
-                      class="btn btn-danger mt-2"
-                      type="submit"
-                      style={{ marginLeft: '20px' }}
-                      onClick={closeModalFirst}
-                    >
-                      Delete
-                    </button>
-                  )}
                 </div>
               </div>
             </Popup>
