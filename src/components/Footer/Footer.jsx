@@ -1,12 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import './Footer.css'
 import { Link } from "react-router-dom";
 import logoFooter from '../../assets/images/logoFooter.svg'
 import iconWa from '../../assets/icons/wa.svg'
 import iconFb from '../../assets/icons/fb.svg'
 import iconIg from '../../assets/icons/ig.svg'
+import { async } from 'q';
+import axios from 'axios';
 
 const Footer = () => {
+
+    const token = localStorage.getItem('token');
+    const [data, setData] = useState(null);
+    const [contactWa, setContactWa] = useState(null);
+    const [contackIg, setContactIg] = useState(null);
+    const [contactFb, setContactFb] = useState(null);
+    const [contactEmail, setContactEmail] = useState(null);
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = async () => {
+        try {
+            const response = await axios.get(
+                'https://api.stikesmayapada.ac.id/api/contact/1'
+            );
+            // console.log(response.data, 'hub kami');
+            const responseData = response.data.data;
+            setContactWa(responseData.contact_wa);
+            setContactIg(responseData.contact_ig);
+            setContactFb(responseData.contact_fb);
+            setContactEmail(responseData.contact_email);
+            setData(responseData);
+        } catch (error) { }
+    };
 
     return (
         <div>
@@ -194,9 +222,9 @@ const Footer = () => {
 
                                     Hubungi Kami
                                 </h6>
-                                <p>Telepon: 0812 88710 710</p>
+                                <p>Telepon: {contactWa}</p>
                                 <p>
-                                    <a href="mailto:info@stikesmayapada.ac.id" className="text-reset text-decoration-none">E-Mail: info@stikesmayapada.ac.id</a>
+                                    <a href="mailto:info@stikesmayapada.ac.id" className="text-reset text-decoration-none">E-Mail: {contactEmail}</a>
                                 </p>
                                 <div>
                                     <a href="https://wa.me/6281288710710" class="me-2 text-reset text-decoration-none">

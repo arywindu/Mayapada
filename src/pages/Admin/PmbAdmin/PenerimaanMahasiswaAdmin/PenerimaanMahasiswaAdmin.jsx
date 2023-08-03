@@ -42,6 +42,8 @@ const PenerimaanMahasiswaAdmin = () => {
         s4: dataRes.rs_smt_4,
         s5: dataRes.rs_smt_5,
         s6: dataRes.rs_smt_6,
+        s7: dataRes.rs_smt_7,
+        s8: dataRes.rs_smt_8,
       });
     } catch (error) {
       // console.log(error);
@@ -67,6 +69,8 @@ const PenerimaanMahasiswaAdmin = () => {
       formData.append('rsSmt4', semesterRs.s4);
       formData.append('rsSmt5', semesterRs.s5);
       formData.append('rsSmt6', semesterRs.s6);
+      formData.append('rsSmt7', semesterRs.s7);
+      formData.append('rsSmt8', semesterRs.s8);
       const response = await axios.post(
         'https://api.stikesmayapada.ac.id/api/PMB/1',
         formData,
@@ -255,7 +259,7 @@ const PenerimaanMahasiswaAdmin = () => {
               </div>
             </div>
             <hr class="bg-danger border-2 border-top border-dark mt-2 mb-4"></hr>
-            <h5>Biaya Diploma III Adm Rumah Sakit</h5>
+            <h5>Biaya S1 Adm Rumah Sakit</h5>
             <div class="mb-3 row">
               <div class="mb-3 row">
                 <label for="" class="col-sm-2 col-form-label">
@@ -366,6 +370,44 @@ const PenerimaanMahasiswaAdmin = () => {
                       setSemesterRs({
                         ...semesterRs,
                         s6: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="" class="col-sm-2 col-form-label">
+                  Semester VII
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    value={semesterRs && semesterRs.s7}
+                    onChange={(e) =>
+                      setSemesterRs({
+                        ...semesterRs,
+                        s7: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="" class="col-sm-2 col-form-label">
+                  Semester VIII
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    value={semesterRs && semesterRs.s8}
+                    onChange={(e) =>
+                      setSemesterRs({
+                        ...semesterRs,
+                        s8: e.target.value,
                       })
                     }
                   />

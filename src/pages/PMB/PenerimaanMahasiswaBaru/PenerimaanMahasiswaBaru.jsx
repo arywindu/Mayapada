@@ -47,6 +47,8 @@ const PenerimaanMahasiswa = () => {
         s4: dataRes.rs_smt_4,
         s5: dataRes.rs_smt_5,
         s6: dataRes.rs_smt_6,
+        s7: dataRes.rs_smt_7,
+        s8: dataRes.rs_smt_8,
       });
     } catch (error) {
       // console.log(error);
@@ -306,6 +308,18 @@ const PenerimaanMahasiswa = () => {
                         {semesterRs && semesterRs.s6}
                       </td>
                     </tr>
+                    <tr>
+                      <td>Semester VII</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s7}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Semester VIII</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s8}
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </>
@@ -331,17 +345,17 @@ const PenerimaanMahasiswa = () => {
                         {semesterRs && semesterRs.s3}
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-
-                <table class="table table-bordered">
-                  <tbody>
                     <tr>
                       <td>Semester IV</td>
                       <td style={{ fontWeight: "bold" }}>
                         {semesterRs && semesterRs.s4}
                       </td>
                     </tr>
+                  </tbody>
+                </table>
+
+                <table class="table table-bordered">
+                  <tbody>
                     <tr>
                       <td>Semester V</td>
                       <td style={{ fontWeight: "bold" }}>
@@ -352,6 +366,18 @@ const PenerimaanMahasiswa = () => {
                       <td>Semester VI</td>
                       <td style={{ fontWeight: "bold" }}>
                         {semesterRs && semesterRs.s6}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Semester VII</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s7}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Semester VII</td>
+                      <td style={{ fontWeight: "bold" }}>
+                        {semesterRs && semesterRs.s8}
                       </td>
                     </tr>
                   </tbody>

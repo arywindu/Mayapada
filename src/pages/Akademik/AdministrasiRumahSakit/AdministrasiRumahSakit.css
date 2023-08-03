@@ -35,7 +35,7 @@
  @media only screen and (max-width: 600px) {
 
     .image-adm-rs{
-        height: 90vh;
+        height: 45rem;
         width: 100%;
         object-fit: cover;
     }
