@@ -294,6 +294,16 @@ const HeaderAdmin = () => {
                 <a className="nav-link" href="#">
                   <Link
                     className="text-reset text-decoration-none"
+                    to="/PendaftaranAdmin"
+                  >
+                    Pendaftaran
+                  </Link>
+                </a>
+              </li>
+              <li className="nav-item px-2">
+                <a className="nav-link" href="#">
+                  <Link
+                    className="text-reset text-decoration-none"
                     to=""
                     onClick={logOut}
                   >

@@ -118,8 +118,10 @@ const AlumniStoryAdmin = () => {
                           width={'30%'}
                         />
                       </td>
-                      <td>{item.alumni_story_name}</td>
-                      <td>{item.alumni_story_history}</td>
+                      <td><textarea name="" id="" cols="50" rows="5">{item.alumni_story_name}</textarea></td>
+                      <td><textarea name="" id="" cols="50" rows="5">{item.alumni_story_history}</textarea></td>
+                      <td><button class="btn btn-danger mt-2">Delete</button></td>
+                      <td><button class="btn btn-success mt-2">Save</button></td>
                     </tr>
                   ))}
               </tbody>

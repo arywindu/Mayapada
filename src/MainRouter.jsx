@@ -25,6 +25,7 @@ import ManualSpmiAdmin from './pages/Admin/UPMIAdmin/ManualSpmiAdmin/ManualSpmiA
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import PenerimaanMahasiswaAdmin from './pages/Admin/PmbAdmin/PenerimaanMahasiswaAdmin/PenerimaanMahasiswaAdmin';
 import PenerimaanMahasiswaBaru from './pages/PMB/PenerimaanMahasiswaBaru/PenerimaanMahasiswaBaru';
+import PendaftaranAdmin from './pages/Admin/PendaftaranAdmin/PendaftaranAdmin'
 import ProgramJalurBeasiswa from './pages/PMB/ProgramJalurBeasiswa/ProgramJalurBeasiswa';
 import ProgramJalurBeasiswaAdmin from './pages/Admin/PmbAdmin/ProgramJalurBeasiswaAdmin/ProgramjalurBeasiswaAdmin';
 import ProgramJalurMandiriAdmin from './pages/Admin/PmbAdmin/ProgramJalurMandiriAdmin/programJalurmandiriAdmin';
@@ -55,6 +56,7 @@ const Authenticate = () => {
       <Route path="/TracerStudyAdmin" element={<TracerStudyAdmin />} />
       <Route path="/AlumniStoryAdmin" element={<AlumniStoryAdmin />} />
       <Route path="/HubungiKamiAdmin" element={<HubungiKamiAdmin />} />
+      <Route path="/PendaftaranAdmin" element={<PendaftaranAdmin />} />
       <Route
         path="/ProgramJalurMandiriAdmin"
         element={<ProgramJalurMandiriAdmin />}
