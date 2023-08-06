@@ -27,7 +27,7 @@ const PendaftaranAdmin = () => {
             <div>
                 <div className="row mt-5 mb-5" style={{ margin: '3% 10% 10% 10%', overflowX: 'auto' }}>
                     <h4>
-                        <span className="bg-primary text-white">Alumni Story Admin</span>
+                        <span className="bg-primary text-white">Data Pendaftar</span>
                     </h4>
                     <hr className="bg-danger border-2 border-top border-dark mt-2 mb-4" />
                     <div style={{ overflowX: 'auto' }}>

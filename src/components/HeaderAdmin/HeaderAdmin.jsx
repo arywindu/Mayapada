@@ -156,7 +156,7 @@ const HeaderAdmin = () => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item dropdown px-2">
+              {/* <li className="nav-item dropdown px-2">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -183,7 +183,7 @@ const HeaderAdmin = () => {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item px-2">
                 <a className="nav-link" href="#">
                   <Link
