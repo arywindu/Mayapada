@@ -75,7 +75,7 @@ const PenerimaanMahasiswa = () => {
                 size="18px"
               />
 
-              <Link to="/Pjb">
+              <Link to="https://s.id/formulirmna/"> {/* //PJB */}
                 <button
                   className='mt-3 btn-daftar btn btn-blue btn-lg"'
                   type="button"
