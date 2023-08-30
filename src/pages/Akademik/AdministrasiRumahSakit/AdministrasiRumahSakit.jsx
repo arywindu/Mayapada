@@ -19,6 +19,7 @@ const Administrasi = () => {
   const [fileGanjilPeriode, setFileGanjilPeriode] = useState(null);
   const [fileGenapPeriode, setFileGenapPeriode] = useState(null);
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     getData();
   }, []);
   const getData = async () => {

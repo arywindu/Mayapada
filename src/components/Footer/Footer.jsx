@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Footer.css'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoFooter from '../../assets/images/logoFooter.svg'
 import iconWa from '../../assets/icons/wa.svg'
 import iconFb from '../../assets/icons/fb.svg'
@@ -35,6 +35,13 @@ const Footer = () => {
             setData(responseData);
         } catch (error) { }
     };
+
+    const sejarahRef = useRef();
+    const visiMisiRef = useRef();
+    const nilaiUtamaRef = useRef();
+    const landasanHukumRef = useRef();
+    const akreditasiRef = useRef();
+
 
     return (
         <div>
@@ -77,37 +84,47 @@ const Footer = () => {
                                 </h6>
                                 <p>
                                     <a href="" className="text-reset text-decoration-none">
-                                        <Link className="text-reset text-decoration-none" to="/">
+                                        <NavLink className="text-reset text-decoration-none"
+                                            onClick={() => sejarahRef.current.scrollIntoView({ behavior: 'smooth' })}
+                                            to="/#sejarah">
                                             Sejarah
-                                        </Link>
+                                        </NavLink>
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" className="text-reset text-decoration-none">
-                                        <Link className="text-reset text-decoration-none" to="/">
+                                        <NavLink className="text-reset text-decoration-none"
+                                            onClick={() => visiMisiRef.current.scrollIntoView({ behavior: 'smooth' })}
+                                            to="/#visiMisi">
                                             Visi Misi
-                                        </Link>
+                                        </NavLink>
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" className="text-reset text-decoration-none">
-                                        <Link className="text-reset text-decoration-none" to="/">
+                                        <NavLink className="text-reset text-decoration-none"
+                                            onClick={() => nilaiUtamaRef.current.scrollIntoView({ behavior: 'smooth' })}
+                                            to="/#nilaiUtama">
                                             Nilai Utama
-                                        </Link>
+                                        </NavLink>
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" className="text-reset text-decoration-none">
-                                        <Link className="text-reset text-decoration-none" to="/">
+                                        <NavLink className="text-reset text-decoration-none"
+                                            onClick={() => landasanHukumRef.current.scrollIntoView({ behavior: 'smooth' })}
+                                            to="/#landasanHukum">
                                             Landasan Hukum
-                                        </Link>
+                                        </NavLink>
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" className="text-reset text-decoration-none">
-                                        <Link className="text-reset text-decoration-none" to="/">
+                                        <NavLink className="text-reset text-decoration-none"
+                                            onClick={() => akreditasiRef.current.scrollIntoView({ behavior: 'smooth' })}
+                                            to="/#akreditasi">
                                             Akreditasi
-                                        </Link>
+                                        </NavLink>
                                     </a>
                                 </p>
                             </div>
@@ -120,7 +137,7 @@ const Footer = () => {
                                     AKADEMIK
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset text-decoration-none">Program Studi</a>
+                                    <a className="text-reset text-decoration-none">Program Studi</a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset text-decoration-none">
@@ -314,7 +331,7 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     <Link
                                         className="text-reset text-decoration-none"
-                                        to="/PJB"
+                                        to="https://forms.gle/3C8L6pjWHRfzSK8j9"
                                     >
                                         Informasi Pendaftaran Baru
                                     </Link>

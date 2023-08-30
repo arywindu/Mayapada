@@ -1,7 +1,6 @@
 import './Home.css';
 
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState, useRef } from 'react';
 import Carousel from '../../components/Carousel/Carousel';
 import Layout from '../../Layout/Layout';
 import LogoBanPt from '../../assets/images/LogoBAN-PT.svg';
@@ -13,6 +12,14 @@ import Typhography from '../../components/Typhography/Typhography';
 import axios from 'axios';
 
 const Home = () => {
+
+  const sejarahRef = useRef(100);
+  const visiMisiRef = useRef();
+  const nilaiUtamaRef = useRef();
+  const landasanHukumRef = useRef();
+  const akreditasiRef = useRef();
+
+
   const token = localStorage.getItem('token');
   const [data, setData] = useState(null);
   const [dataBanner, setDataBanner] = useState(null);
@@ -20,7 +27,11 @@ const Home = () => {
   useEffect(() => {
     getData();
     getDataBanner();
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    const hash = window.location.hash;
+    if (hash && sejarahRef.current) {
+      sejarahRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
   }, []);
 
   const getData = async () => {
@@ -46,7 +57,7 @@ const Home = () => {
   return (
     <Layout logo={data && data.logo_image}>
       <Carousel data={dataBanner} />
-      <div className="home-container mobile-hide" style={{ backgroundColor: '#F5F5F5' }}>
+      <div id="sejarah" ref={sejarahRef} className="home-container mobile-hide" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="text-center">
           <div class="container">
             <div class="row justify-content-center">
@@ -173,7 +184,7 @@ const Home = () => {
       </div>
       {/*  end mobile section */}
       <SectionWhite>
-        <div class="container pb-5 mb-5">
+        <div id="visiMisi" ref={visiMisiRef} class="container pb-5 mb-5">
           <div class="row">
             <div class="col-md-6">
               <Typhography
@@ -206,9 +217,14 @@ const Home = () => {
           </div>
         </div>
       </SectionWhite>
-      <SectionNilaiUtamaKami />
+      <div id="nilaiUtama" ref={nilaiUtamaRef}>
+        <SectionNilaiUtamaKami
+        />
+      </div>
+
       <SectionBlue
         type="normal"
+        id="landasanHukum" ref={landasanHukumRef}
         text="Landasan Hukum"
         style={{ marginTop: '24px' }}
         liText="Undang-Undang No. 28 Tahun 2004 tentang Yayasan"
@@ -227,7 +243,7 @@ const Home = () => {
         ></div>
       </SectionWhite>
       <div>
-        <div class="container text-center mb-5">
+        <div id="akreditasi" ref={akreditasiRef} class="container text-center mb-5">
           <div class="row gx-5 justify-content-center">
             <div class="col-md-6">
               <img src={LogoBanPt} alt="" />

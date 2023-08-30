@@ -26,6 +26,7 @@ const SaranaDanPrasarana = () => {
   const [dataUmum, setDataUmum] = useState(null);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     getDataPendidikan();
   }, []);
 

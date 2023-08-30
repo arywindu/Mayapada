@@ -12,6 +12,7 @@ const TracerStudy = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     getData();
   }, []);
 
@@ -22,7 +23,7 @@ const TracerStudy = () => {
       );
       // console.log(response.data, 'res');
       setData(response.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
   return (
     <Layout>
@@ -30,9 +31,9 @@ const TracerStudy = () => {
         <img className="tracer-study-img" src={data && data.tracer_study_img} />
         <div className="tracer-study-content">
           <div className="tracer-study-card">
-            <Typhography type="title" text="Tracer Study" style={{ marginBottom: "10px", alignSelf: 'left' }}/>
+            <Typhography type="title" text="Tracer Study" style={{ marginBottom: "10px", alignSelf: 'left' }} />
             <div
-            className = "ikatan-alumni-text"
+              className="ikatan-alumni-text"
               dangerouslySetInnerHTML={{
                 __html: data && data.tracer_study_text,
               }}
