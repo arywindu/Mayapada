@@ -27,9 +27,24 @@ const Home = () => {
   useEffect(() => {
     getData();
     getDataBanner();
-    const hash = window.location.hash;
-    if (hash && sejarahRef.current) {
-      sejarahRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.href.includes("#sejarah")) {
+      window.scrollTo({ top: 700, left: 0, behavior: 'smooth' });
+    }
+    else if (window.location.href.includes("#visiMisi")) {
+      window.scrollTo({ top: 1400, left: 0, behavior: 'smooth' });
+    }
+    else if (window.location.href.includes("#nilaiUtama")) {
+      window.scrollTo({ top: 2500, left: 0, behavior: 'smooth' });
+    }
+    else if (window.location.href.includes("#landasanHukum")) {
+      setTimeout(function () {
+        window.scrollTo({ top: 2700, left: 0, behavior: 'smooth' });
+      }, 200); // 1000 milliseconds (1 second) delay
+    }
+    else if (window.location.href.includes("#akreditas")) {
+      setTimeout(function () {
+        window.scrollTo({ top: 3500, left: 0, behavior: 'smooth' });
+      }, 200); // 1000 milliseconds (1 second) delay
     }
 
   }, []);
