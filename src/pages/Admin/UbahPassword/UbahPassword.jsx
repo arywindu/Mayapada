@@ -26,7 +26,7 @@ const UbahPassword = () => {
 
         try {
             const response = await axios.put(
-                'https://api.stikesmayapada.ac.id/api/user/10',
+                'https://api.stikesmayapada.ac.id/api/user/2',
                 {
                     username: localStorage.getItem('username'),
                     password: newPassword,
