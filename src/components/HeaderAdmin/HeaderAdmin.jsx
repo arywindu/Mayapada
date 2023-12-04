@@ -304,10 +304,20 @@ const HeaderAdmin = () => {
                 <a className="nav-link" href="#">
                   <Link
                     className="text-reset text-decoration-none"
+                    to="/UbahPassword"
+                  >
+                    Ubah Password
+                  </Link>
+                </a>
+              </li>
+              <li className="nav-item px-2">
+                <a className="nav-link" href="#">
+                  <Link
+                    className="text-reset text-decoration-none"
                     to=""
                     onClick={logOut}
                   >
-                    LogOut
+                    Logout
                   </Link>
                 </a>
               </li>

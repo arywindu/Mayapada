@@ -40,6 +40,7 @@ import StandarSpmi from './pages/UPMI/StandarSPMI/StandarSPMI';
 import StandarSpmiAdmin from './pages/Admin/UPMIAdmin/StandarSpmiAdmin/StandarSpmiAdmin';
 import TracerStudy from './pages/Alumni/TracerStudy/TracerStudy';
 import TracerStudyAdmin from './pages/Admin/Alumni/TracerStudyAdmin/TracerStudyAdmin';
+import UbahPasword from './pages/Admin/UbahPassword/UbahPassword';
 import axios from 'axios';
 
 const Authenticate = () => {
@@ -57,6 +58,7 @@ const Authenticate = () => {
       <Route path="/AlumniStoryAdmin" element={<AlumniStoryAdmin />} />
       <Route path="/HubungiKamiAdmin" element={<HubungiKamiAdmin />} />
       <Route path="/PendaftaranAdmin" element={<PendaftaranAdmin />} />
+      <Route path ="/UbahPassword" element={<UbahPasword />} />
       <Route
         path="/ProgramJalurMandiriAdmin"
         element={<ProgramJalurMandiriAdmin />}
@@ -142,6 +144,7 @@ export const MainRouter = () => {
       const { success, token } = data;
       if (success) {
         localStorage.setItem('token', token);
+        localStorage.setItem('username', username)
         setIsAuthenticate(true);
         navigate('/');
       }
