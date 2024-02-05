@@ -263,7 +263,7 @@ const Home = () => {
             <div class="col-md-6">
               <img src={LogoBanPt} alt="" />
               <p>
-                No. 033/BAN-PT/Ak-XII/Dpl-III/XII/2012
+               {/*  No. 033/BAN-PT/Ak-XII/Dpl-III/XII/2012 */}
                 <br></br>
                 <b>Akreditasi BAN-PT Hasil C</b>
               </p>
@@ -272,7 +272,7 @@ const Home = () => {
             <div class="col-md-6">
               <img src={LogoLamKes} alt="" />
               <p>
-                No. 0503/LAM-PTKes/Akr/Dpl/VII/2018
+              {/*   No. 0503/LAM-PTKes/Akr/Dpl/VII/2018 */}
                 <br></br>
                 <b>Akreditasi LAM PT Kes Hasil B</b>
               </p>
